@@ -2,13 +2,13 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_groupon2'
   s.version     = '0.60.99'
-  s.summary     = 'Add gem summary here'
-  s.description = 'Add (optional) gem description here'
+  s.summary     = 'Add grouon function to spree project'
+  s.description = 'Add grouon function to spree project'
   s.required_ruby_version = '>= 1.8.7'
 
-  # s.author            = 'David Heinemeier Hansson'
-  # s.email             = 'david@loudthinking.com'
-  # s.homepage          = 'http://www.rubyonrails.org'
+  s.author            = 'Pronix LLC'
+  s.email             = 'root@tradefast.ru'
+  s.homepage          = 'http://tradefast.ru'
   # s.rubyforge_project = 'actionmailer'
 
   s.files         = `git ls-files`.split("\n")
