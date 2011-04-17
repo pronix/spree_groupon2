@@ -7,6 +7,7 @@ ru:
        do_not_provide_email: Мы никогда не предоставим вашу электронную почту третьим лицам
        rules: Фактом регистрации на сайте вы соглашаетесь с условиями публичной оферты
        condition_rules: условиями публичной оферты
+       mobile: Мобильный телефон
        buttons:
         registration: Зарегистрироваться
   'no': "Нет"
@@ -127,7 +128,8 @@ ru:
       taxonomy: 
         name: "Наименование"
       user: 
-        email: "Email"
+        phone: "Мобильный телефон:"
+        email: "Электронная почта:"
       variant: 
         cost_price: "Себестоимость"
         depth: "Глубина"
@@ -218,6 +220,16 @@ ru:
       zone: 
         one: "Зона"
         other: "Зоны"
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: не может быть пустой
+            password:
+              blank: не может быть пустым
+            phone: 
+              blank: не может быть пустым
   add: "Добавить"
   add_category: "Добавить категорию"
   add_country: "Добавить страну"

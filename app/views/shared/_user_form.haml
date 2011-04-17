@@ -1,0 +1,20 @@
+%p
+  = f.label :email, t("email")
+  %br/
+  = f.text_field :email, :class => 'title'
+%p
+  %label
+    = t("view.user_registrations.new.mobile")
+  %br/
+  = f.text_field :phone, :class => 'title'
+
+#password-credentials
+  %p
+    = f.label :password, t("password")
+    %br/
+    = f.password_field :password, :class => 'title'
+  %p
+    = f.label :password_confirmation, t(:confirm_password)
+    %br/
+    = f.password_field :password_confirmation, :class => 'title'
+= hook :signup_below_password_fields
