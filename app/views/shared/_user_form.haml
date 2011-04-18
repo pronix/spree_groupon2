@@ -3,10 +3,6 @@
   %br/
   = f.text_field :email, :class => 'title'
 %p
-  = f.label :phone, t("phone")
-  %br/
-  = f.text_field :phone, :class => 'title'
-%p
   = f.label :region_id
   %br/
   = f.select :region_id, options_from_collection_for_select(@regions, :id, :name)

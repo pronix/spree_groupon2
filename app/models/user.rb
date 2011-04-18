@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 
-  devise :database_authenticatable, :token_authenticatable, :registerable, :recoverable,
-         :rememberable, :trackable, :validatable, :encryptable, :encryptor => "authlogic_sha512", :confirmable
+  devise :database_authenticatable, :confirmable, :token_authenticatable, :registerable, :recoverable,
+         :rememberable, :trackable, :validatable, :encryptable, :encryptor => "authlogic_sha512"
 
   validates_presence_of :phone, :region_id
 
