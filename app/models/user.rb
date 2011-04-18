@@ -1,9 +1,9 @@
 class User < ActiveRecord::Base
 
   devise :database_authenticatable, :token_authenticatable, :registerable, :recoverable,
-         :rememberable, :trackable, :validatable, :encryptable, :encryptor => "authlogic_sha512"
+         :rememberable, :trackable, :validatable, :encryptable, :encryptor => "authlogic_sha512", :confirmable
 
-  validates_presence_of :phone
+  validates_presence_of :phone, :region_id
 
   has_many :orders
   has_and_belongs_to_many :roles
@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   before_validation :set_login
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :persistence_token
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :persistence_token, :phone, :region_id
 
   scope :admin, lambda { includes(:roles).where("roles.name" => "admin") }
   scope :registered, where("users.email NOT LIKE ?", "%@example.net")

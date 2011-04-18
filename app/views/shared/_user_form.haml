@@ -3,18 +3,17 @@
   %br/
   = f.text_field :email, :class => 'title'
 %p
+  = f.label :phone, t("phone")
+  %br/
+  = f.text_field :phone, :class => 'title'
+%p
+  = f.label :region_id
+  %br/
+  = f.select :region_id, options_from_collection_for_select(@regions, :id, :name)
+%p
   %label
     = t("view.user_registrations.new.mobile")
   %br/
   = f.text_field :phone, :class => 'title'
 
-#password-credentials
-  %p
-    = f.label :password, t("password")
-    %br/
-    = f.password_field :password, :class => 'title'
-  %p
-    = f.label :password_confirmation, t(:confirm_password)
-    %br/
-    = f.password_field :password_confirmation, :class => 'title'
 = hook :signup_below_password_fields

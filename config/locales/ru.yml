@@ -130,6 +130,8 @@ ru:
       user: 
         phone: "Мобильный телефон:"
         email: "Электронная почта:"
+        region_id: Город
+        password: "Пароль:"
       variant: 
         cost_price: "Себестоимость"
         depth: "Глубина"
@@ -230,6 +232,8 @@ ru:
               blank: не может быть пустым
             phone: 
               blank: не может быть пустым
+            region_id:
+              blank: обязательно должен быть выбран
   add: "Добавить"
   add_category: "Добавить категорию"
   add_country: "Добавить страну"

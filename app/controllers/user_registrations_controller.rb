@@ -6,6 +6,7 @@ class UserRegistrationsController < Devise::RegistrationsController
   after_filter :associate_user, :only => :create
   before_filter :check_permissions, :only => [:edit, :update]
   skip_before_filter :require_no_authentication
+  before_filter :init_regions, :only => [:new, :create]
 
   # GET /resource/sign_up
   def new
@@ -50,6 +51,10 @@ class UserRegistrationsController < Devise::RegistrationsController
   end
 
   protected
+
+  def init_regions
+    @regions = Region.all
+  end
 
   def check_permissions
     authorize!(:create, resource)
