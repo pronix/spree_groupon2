@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :locations do
     collection do
-      get 'get_city'
+      get 'get_state'
     end
   end
 end

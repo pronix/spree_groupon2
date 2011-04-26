@@ -1,4 +1,4 @@
-function get_cities() {
+function get_states() {
   $("#country").change(function () {
     $.ajax({
       url: "/locations/get_state",
