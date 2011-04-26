@@ -6,7 +6,11 @@ class UserRegistrationsController < Devise::RegistrationsController
   after_filter :associate_user, :only => :create
   before_filter :check_permissions, :only => [:edit, :update]
   skip_before_filter :require_no_authentication
-  before_filter :init_regions, :only => [:new, :create]
+  before_filter :init_regions, :only => [:new]
+
+  def confirm_phone
+    @user = User.find_by_email(params[:email])
+  end
 
   # GET /resource/sign_up
   def new
@@ -19,8 +23,11 @@ class UserRegistrationsController < Devise::RegistrationsController
     logger.debug(@user)
     if resource.save
       set_flash_message(:notice, :signed_up)
-      sign_in_and_redirect(:user, @user)
+      redirect_to user_confirm_phone_url(:email => resource.email)
+#      sign_in_and_redirect(:user, @user)
     else
+      puts "22222222222222222222222222222222222222"
+      @regions = Region.find(params[:user][:region_id]).countries.regions
       clean_up_passwords(resource)
       render_with_scope(:new)
     end
@@ -53,7 +60,7 @@ class UserRegistrationsController < Devise::RegistrationsController
   protected
 
   def init_regions
-    @regions = Region.all
+    @regions = Country.find_by_iso("RU").regions
   end
 
   def check_permissions

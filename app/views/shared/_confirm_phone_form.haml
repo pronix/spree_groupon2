@@ -1,0 +1,15 @@
+%p
+  = f.label :email, t("email")
+  %br/
+  = f.text_field :email, :class => 'title'
+%p
+  = f.label :region_id
+  %br/
+  = f.select :region_id, options_from_collection_for_select(@regions, :id, :name)
+%p
+  %label
+    = t("view.user_registrations.new.mobile")
+  %br/
+  = f.text_field :phone, :class => 'title'
+
+= hook :signup_below_password_fields

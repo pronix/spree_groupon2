@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  devise :database_authenticatable, :confirmable, :token_authenticatable, :registerable, :recoverable,
+  devise :database_authenticatable, :token_authenticatable, :registerable, :recoverable,
          :rememberable, :trackable, :validatable, :encryptable, :encryptor => "authlogic_sha512"
 
   validates_presence_of :phone, :region_id
@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :roles
   belongs_to :ship_address, :foreign_key => "ship_address_id", :class_name => "Address"
   belongs_to :bill_address, :foreign_key => "bill_address_id", :class_name => "Address"
+  belongs_to :region
 
   before_save :check_admin
   before_validation :set_login
@@ -47,7 +48,8 @@ class User < ActiveRecord::Base
 
   protected
   def password_required?
-    !persisted? || password.present? || password_confirmation.present?
+    false
+#    !persisted? || password.present? || password_confirmation.present?
   end
 
   private

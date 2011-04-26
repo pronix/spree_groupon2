@@ -1,7 +1,5 @@
 - @body_id = 'signup'
 = render "shared/error_messages", :target => @user
-- puts "44444444444444444444444444"
-- puts params.inspect
 #new-customer
   %h2= t("new_customer")
   %p
@@ -20,4 +18,3 @@
     = t("or")
     = link_to t("login_as_existing"), login_path
 = hook :login_extras
-

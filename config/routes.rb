@@ -1,3 +1,12 @@
 Rails.application.routes.draw do
-  # Add your extension routes here
+  devise_for :users do
+    get "user/confirm_phone", :to => "user_registrations#confirm_phone"
+    get "user/get_city", :to => "user_registrations#get_city"
+  end
+
+  resources :locations do
+    collection do
+      get 'get_city'
+    end
+  end
 end

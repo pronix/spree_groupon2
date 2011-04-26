@@ -3,13 +3,32 @@
   %br/
   = f.text_field :email, :class => 'title'
 %p
-  = f.label :region_id
-  %br/
-  = f.select :region_id, options_from_collection_for_select(@regions, :id, :name)
-%p
   %label
     = t("view.user_registrations.new.mobile")
   %br/
   = f.text_field :phone, :class => 'title'
+%p
+  %label
+    = t("view.user_registrations.new.country") 
+  %br
+  - if params[:country].nil?
+    = select_tag "country", options_for_select([["Украина", "ua"], ["Россия", "ru"]], "ru")
+  - else
+    = select_tag "country", options_for_select([["Украина", "ua"], ["Россия", "ru"]], params[:country])
+%p
+  %label
+    = t("view.user_registrations.new.region")
+  %br
+  #city_select
+    - if params[:user].nil?
+      = select_tag "user[region_id]", options_from_collection_for_select(@regions, "id", "name")
+    - else
+      = select_tag "user[region_id]", options_from_collection_for_select(@regions, "id", "name", params[:user][:region_id])
+
 
 = hook :signup_below_password_fields
+
+:javascript
+  $(document).ready(function() {
+    get_cities()
+  });
