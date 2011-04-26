@@ -17,13 +17,13 @@
     = select_tag "country", options_for_select([["Украина", "ua"], ["Россия", "ru"]], params[:country])
 %p
   %label
-    = t("view.user_registrations.new.region")
+    = t("view.user_registrations.new.state")
   %br
   #city_select
     - if params[:user].nil?
-      = select_tag "user[region_id]", options_from_collection_for_select(@regions, "id", "name")
+      = select_tag "user[state_id]", options_from_collection_for_select(@states, "id", "name")
     - else
-      = select_tag "user[region_id]", options_from_collection_for_select(@regions, "id", "name", params[:user][:region_id])
+      = select_tag "user[state_id]", options_from_collection_for_select(@states, "id", "name", params[:user][:region_id])
 
 
 = hook :signup_below_password_fields

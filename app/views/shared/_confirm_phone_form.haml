@@ -3,9 +3,9 @@
   %br/
   = f.text_field :email, :class => 'title'
 %p
-  = f.label :region_id
+  = f.label :state_id
   %br/
-  = f.select :region_id, options_from_collection_for_select(@regions, :id, :name)
+  = f.select :state_id, options_from_collection_for_select(@states, :id, :name)
 %p
   %label
     = t("view.user_registrations.new.mobile")

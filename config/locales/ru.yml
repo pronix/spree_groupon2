@@ -8,7 +8,7 @@ ru:
        rules: Фактом регистрации на сайте вы соглашаетесь с условиями публичной оферты
        condition_rules: условиями публичной оферты
        mobile: Мобильный телефон
-       region: Город
+       state: Город
        country: Страна
        buttons:
         registration: Зарегистрироваться
@@ -132,7 +132,7 @@ ru:
       user: 
         phone: "Мобильный телефон:"
         email: "Электронная почта:"
-        region_id: Город
+        state_id: Город
         password: "Пароль:"
       variant: 
         cost_price: "Себестоимость"
@@ -234,7 +234,7 @@ ru:
               blank: не может быть пустым
             phone: 
               blank: не может быть пустым
-            region_id:
+            state_id:
               blank: обязательно должен быть выбран
   add: "Добавить"
   add_category: "Добавить категорию"

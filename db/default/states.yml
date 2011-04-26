@@ -1,0 +1,167 @@
+--- 
+states_01: 
+  name: Москва
+  country_id: "1"
+  id: "1"
+  abbr: MI
+
+states_02: 
+  name: Екатеринбург
+  country_id: "1"
+  id: "2"
+  abbr: MI
+
+states_03: 
+  name: Красноярск
+  country_id: "1"
+  id: "3"
+  abbr: MI
+
+states_04: 
+  name: Оренбург
+  country_id: "1"
+  id: "4"
+  abbr: MI
+
+states_05: 
+  name: Тюмень
+  country_id: "1"
+  id: "5"
+  abbr: MI
+
+states_06: 
+  name: Санкт-Петербург
+  country_id: "1"
+  id: "6"
+  abbr: MI
+
+states_07:
+  name: Иркутск
+  country_id: 1
+  id: 7
+  abbr: MI
+states_08:
+  name: Нижний Новгород
+  country_id: 1
+  id: 8
+  abbr: MI
+states_09:
+  name: Пермь
+  country_id: 1
+  id: 9
+  abbr: MI
+
+states_10:
+  name: Ульяновск
+  country_id: 1
+  id: 10
+  abbr: MI
+
+states_11: 
+  name: Барнаул
+  country_id: 1
+  id: 11
+  abbr: MI
+states_12: 
+  name: Казань
+  country_id: 1
+  id: 12
+  abbr: MI
+states_13: 
+  name: Новокузнецк
+  country_id: 1
+  id: 13
+  abbr: MI
+states_14: 
+  name: Ростов-на-Дону
+  country_id: 1
+  id: 14
+  abbr: MI
+states_15: 
+  name: Уфа
+  country_id: 1
+  id: 15
+  abbr: MI
+states_16: 
+  name: Волгоград
+  country_id: 1
+  id: 16
+  abbr: MI
+states_17: 
+  name: Кемерово
+  country_id: 1
+  id: 17
+  abbr: MI
+states_18: 
+  name: Новосибирск
+  country_id: 1
+  id: 18
+  abbr: MI
+states_19: 
+  name: Самара
+  country_id: 1
+  id: 19
+  abbr: MI
+states_20: 
+  name: Челябинск
+  country_id: 1
+  id: 20
+  abbr: MI
+states_21: 
+  name: Воронеж
+  country_id: 1
+  id: 21
+  abbr: MI
+states_22: 
+  name: Краснодар
+  country_id: 1
+  id: 22
+  abbr: MI
+states_23: 
+  name: Омск
+  country_id: 1
+  id: 23
+  abbr: MI
+states_24: 
+  name: Саратов
+  country_id: 1
+  id: 24
+  abbr: MI
+states_25: 
+  name: Ярославль
+  country_id: 1
+  id: 25
+  abbr: MI
+
+
+states_26: 
+  name: Киев
+  country_id: 2
+  id: 26
+  abbr: MI
+states_27: 
+  name: Днепропетровск
+  country_id: 2
+  id: 27
+  abbr: MI
+states_28: 
+  name: Донецк
+  country_id: 2
+  id: 28
+  abbr: MI
+states_29: 
+  name: Львов
+  country_id: 2
+  id: 29
+  abbr: MI
+states_30: 
+  name: Одесса
+  country_id: 2
+  id: 30
+  abbr: MI
+states_31: 
+  name: Харьков
+  country_id: 2
+  id: 31
+  abbr: MI
+

@@ -1,13 +1,10 @@
 Допустим /^в сервисе есть geo$/ do
   YAML::load_file("db/default/countries.yml").each {|key, value|
-    country = Country.create("name"=> value.name, "iso_name"=> value.iso_name, "iso"=> value.iso, "iso3"=> value.iso, "numcode"=> value.numcode)
-    puts country.error.inspect unless country.error.blank?
+    country = Country.create(:name => value["name"], :iso_name => value["iso_name"], :iso => value["iso"], :iso3 => value["iso"], :numcode => value["numcode"])
   }
-  puts "11111111111111111111"
-  puts Country.all.inspect
 
   russia = Country.find_by_iso("RU")
-  Region.create(:name => "Москва", :country_id => russia)
+  Region.create(:name => "Москва", :country_id => russia.id)
   Region.create(:name => "Екатеринбург", :country_id => russia.id)
   Region.create(:name => "Красноярск", :country_id => russia.id)
   Region.create(:name => "Оренбург", :country_id => russia.id)

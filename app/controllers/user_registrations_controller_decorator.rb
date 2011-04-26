@@ -13,8 +13,7 @@ UserRegistrationsController.class_eval do
       redirect_to user_confirm_phone_url(:email => resource.email)
 #      sign_in_and_redirect(:user, @user)
     else
-      puts "22222222222222222222222222222222222222"
-      @regions = Region.find(params[:user][:region_id]).countries.regions
+      @states = State.find(params[:user][:state_id]).countries.regions
       clean_up_passwords(resource)
       render_with_scope(:new)
     end
@@ -23,7 +22,7 @@ UserRegistrationsController.class_eval do
   private
 
   def init_regions
-    @regions = Country.find_by_iso("RU").regions
+    @states = Country.find_by_iso("RU").states
   end
 
 end

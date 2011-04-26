@@ -1,0 +1,16 @@
+--- 
+countries_1: 
+  name: Russian Federation
+  iso3: RUS
+  iso: RU
+  iso_name: RUSSIAN FEDERATION
+  id: "1"
+  numcode: "643"
+countries_2: 
+  name: Ukraine
+  iso3: UKR
+  iso: UA
+  iso_name: UKRAINE
+  id: "2"
+  numcode: "804"
+
