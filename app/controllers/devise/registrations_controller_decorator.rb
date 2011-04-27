@@ -4,11 +4,9 @@ Devise::RegistrationsController.class_eval do
   before_filter :init_states, :only => :create
 
   def create
-    puts "1111111111111111111111111111"
     @user = build_resource(params[:user])
     logger.debug(@user)
     if resource.save
-      puts "33333333333333333333333333"
       set_flash_message(:notice, :signed_up)
       redirect_to user_confirm_phone_url(:email => resource.email)
 #      sign_in_and_redirect(:user, @user)
