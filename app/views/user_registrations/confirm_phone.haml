@@ -1,0 +1,10 @@
+= t("view.user_registrations.phone_confirm")
+= form_tag user_confirm_phone_path, :method => :get do 
+  = hidden_field_tag :email, params[:email]
+  %p
+    %label
+      = t("label.phone_confirm")
+    = text_field_tag :phone_confirm
+  %p
+    = submit_tag t("submits.confirm")
+

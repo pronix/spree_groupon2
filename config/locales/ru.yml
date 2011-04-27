@@ -1,7 +1,16 @@
 ---
 ru: 
+  notices:
+    successfully_phone_confirm: Ваш мобильный телефон подтверждён
+    not_successfully_phone_confirm: Не правельный код подтверждения мобильного телефона
+    phone_confirm_was_confirmed: Ваш мобильный телефон уже подтверждён
+  submits:
+    confirm: Подтвердить
+  labels:
+    phone_confirm: Введите код пришедший вам на мобильный
   view:
     user_registrations:
+      phone_confirm: Подтвертиде свой мобильный, присланным на него кодом в смс
       new:
        unsubscribe: Вы можете отписаться от рассылки в любое время, через ссылку в письме
        do_not_provide_email: Мы никогда не предоставим вашу электронную почту третьим лицам
@@ -230,6 +239,7 @@ ru:
           attributes:
             email:
               blank: не может быть пустой
+              invalid: имеет не допустимый формат
             password:
               blank: не может быть пустым
             phone: 
