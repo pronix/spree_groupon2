@@ -7,4 +7,6 @@
     = text_field_tag :phone_confirm
   %p
     = submit_tag t("submits.confirm")
+  %p
+    = link_to t("links.resend_mobile_code"), user_resend_code_path(:email => params[:email])
 

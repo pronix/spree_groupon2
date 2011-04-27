@@ -1,16 +1,19 @@
 ---
 ru: 
+  links:
+    resend_mobile_code: Повторно выслать код подтверждения
   notices:
     successfully_phone_confirm: Ваш мобильный телефон подтверждён
     not_successfully_phone_confirm: Не правельный код подтверждения мобильного телефона
     phone_confirm_was_confirmed: Ваш мобильный телефон уже подтверждён
+    resend_mobile_code: "Код подтверждения выслан на мобильный с номером %{phone}"
   submits:
     confirm: Подтвердить
   labels:
     phone_confirm: Введите код пришедший вам на мобильный
   view:
     user_registrations:
-      phone_confirm: Подтвертиде свой мобильный, присланным на него кодом в смс
+      phone_confirm: Чтобы активировать ваш аккаунт, запишите в поле ниже присланный вам код подтверждения мобильного
       new:
        unsubscribe: Вы можете отписаться от рассылки в любое время, через ссылку в письме
        do_not_provide_email: Мы никогда не предоставим вашу электронную почту третьим лицам

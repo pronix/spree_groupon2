@@ -16,6 +16,12 @@ User.class_eval do
     self.phone_confirm
   end
 
+  # Отправка нового кода подтверждения на мобильный
+  def send_new_mobile_code!
+    self.update_attribute(:phone_confirm_key, rand(9999))
+    # Тут должно отправится новое смс с новым кодом на мобильный пользователя
+  end
+
   protected
 
   # Ключ подтверждения который будет выслан на мобильный
