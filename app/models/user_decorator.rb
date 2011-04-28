@@ -1,12 +1,20 @@
 User.class_eval do
 
+  devise :confirmable, :database_authenticatable, :token_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :encryptable, :encryptor => "authlogic_sha512" 
+
   validates_presence_of :phone, :state_id
   belongs_to :state
+  has_one :profile
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :remember_me, :persistence_token, :phone, :state_id, :phone_confirm_key, :phone_confirm
 
   before_create :set_phone_confirm_key
+  after_save :create_user_profile
+
+  def create_user_profile
+    Profile.new(:balance => 0, :user_id => self.id).save(:validate => false)
+  end
 
   def phone_confirm!
     self.update_attributes(:phone_confirm_key => nil, :phone_confirm => true)

@@ -1,6 +1,12 @@
 UserRegistrationsController.class_eval do 
   before_filter :init_regions, :only => [:new]
 
+  # Повторная отправка подтверждения на мыло
+  def resend_confirmation_token
+    User.find_by_email(params[:email]).resend_confirmation_token
+    redirect_to :back, :notice => t("notices.resend_confirmation_token")
+  end
+
   def resend_code
     user = User.find_by_email(params[:email])
     user.send_new_mobile_code!
@@ -15,7 +21,7 @@ UserRegistrationsController.class_eval do
       redirect_to root_path, :notice => t("notices.phone_confirm_was_confirmed") if user.phone_confirm?
       if user.phone_confirm_key == params[:phone_confirm]
         user.phone_confirm!
-        redirect_to root_path, :notice => t("notices.successfully_phone_confirm")
+        redirect_to edit_profile_path(:email => user.email), :notice => t("notices.successfully_phone_confirm")
       else
          flash[:notice] = t("notices.not_successfully_phone_confirm")
       end

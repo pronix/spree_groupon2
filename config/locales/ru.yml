@@ -2,13 +2,16 @@
 ru: 
   links:
     resend_mobile_code: Повторно выслать код подтверждения
+    resend_confirmation_token: Отправить письмо повторно
   notices:
+    resend_confirmation_token: Вам было повторно отправленно пиьмо с подтверждением элкетронной почты
     successfully_phone_confirm: "Вам высланно письмо, с подтверждением вашего email. А пока вы ждёте письмо, заполните профиль и получите 100 бонусов!"
     not_successfully_phone_confirm: Не правельный код подтверждения мобильного телефона
     phone_confirm_was_confirmed: Ваш мобильный телефон уже подтверждён
     resend_mobile_code: "Код подтверждения выслан на мобильный с номером %{phone}"
   submits:
     confirm: Подтвердить
+    save: Сохранить
   labels:
     phone_confirm: Введите код пришедший вам на мобильный
   view:

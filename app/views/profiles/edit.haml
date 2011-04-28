@@ -1,0 +1,7 @@
+= form_for @profile do |f|
+  = f.hidden_field :id
+  %p
+    =f.text_field :balance
+  = f.submit t("submits.save")
+
+= link_to t("links.resend_confirmation_token"), user_resend_confirmation_token_path(:email => @profile.user.email)
