@@ -1,30 +1,24 @@
+require 'bundler'
+Bundler::GemHelper.install_tasks
+
+# copy from core
 require 'rubygems'
 require 'rake'
 require 'rake/testtask'
 require 'rake/packagetask'
 require 'rake/gempackagetask'
 
-gemfile = File.expand_path('../spec/test_app/Gemfile', __FILE__)
-if File.exists?(gemfile) && (%w(spec cucumber).include?(ARGV.first.to_s) || ARGV.size == 0)
-  require 'bundler'
-  ENV['BUNDLE_GEMFILE'] = gemfile
-  Bundler.setup
-
-  require 'rspec'
-  require 'rspec/core/rake_task'
-  RSpec::Core::RakeTask.new
-
-  require 'cucumber/rake/task'
-  Cucumber::Rake::Task.new do |t|
-    t.cucumber_opts = %w{--format progress}
-  end
-end
-
-desc "Default Task"
-task :default => [:spec, :cucumber ]
+# require define path to spree project
+ENV['SPREE_GEM_PATH'] = "/home/dima/project/spree"
+# or define spree as gem in Gemfile
+# and decomment this
+# gemfile = Pathname.new("Gemfile").expand_path
+# lockfile = gemfile.dirname.join('Gemfile.lock')
+# definition = Bundler::Definition.build(gemfile, lockfile, nil)
+# sc=definition.index.search "spree"
+# ENV['SPREE_GEM_PATH'] = sc[0].loaded_from.gsub(/\/[a-z_]*.gemspec$/,'')
 
 spec = eval(File.read('spree_groupon2.gemspec'))
-
 Rake::GemPackageTask.new(spec) do |p|
   p.gem_spec = spec
 end
@@ -37,17 +31,21 @@ task :release => :package do
 end
 
 desc "Default Task"
-task :default => [ :spec ]
+task :default => [:spec, :cucumber ]
 
 desc "Regenerates a rails 3 app for testing"
 task :test_app do
-  require '../spree/lib/generators/spree/test_app_generator'
-  class SpreeGroupon2TestAppGenerator < Spree::Generators::TestAppGenerator
+  require "#{ENV['SPREE_GEM_PATH']}/lib/generators/spree/test_app_generator"
+  class CoreTestAppGenerator < Spree::Generators::TestAppGenerator
 
-    def install_gems
+    def install_spree_core
       inside "test_app" do
         run 'rake spree_core:install'
+        run 'rake spree_auth:install'
         run 'rake spree_groupon2:install'
+        run "rake spree_sample:install"
+        run "sed -i 's/development/cucumber/' ../db/sample/payment_methods.yml"
+        run 'rake db:seed'
       end
     end
 
@@ -58,18 +56,15 @@ task :test_app do
     protected
     def full_path_for_local_gems
       <<-gems
-gem 'spree_core', :path => \'#{File.join(File.dirname(__FILE__), "../spree/", "core")}\'
 gem 'spree_groupon2', :path => \'#{File.dirname(__FILE__)}\'
+gem 'spree_core', :path => \'#{ENV['SPREE_GEM_PATH']}/core\'
+gem 'spree_sample', :path => \'#{ENV['SPREE_GEM_PATH']}/sample\'
+gem 'spree_auth', :path => \'#{ENV['SPREE_GEM_PATH']}/auth\'
       gems
     end
-
   end
-  SpreeGroupon2TestAppGenerator.start
+  CoreTestAppGenerator.start
 end
 
-namespace :test_app do
-  desc 'Rebuild test and cucumber databases'
-  task :rebuild_dbs do
-    system("cd spec/test_app && rake db:drop db:migrate RAILS_ENV=test && rake db:drop db:migrate RAILS_ENV=cucumber")
-  end
-end
+require File.expand_path("./core/lib/tasks/common", ENV['SPREE_GEM_PATH'])
+
