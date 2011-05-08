@@ -1,0 +1,7 @@
+%tr{:class => "product_feature fields"}
+  %td{:class => "name"}
+    = f.text_field :name
+  %td{:class => "desc"}
+    = f.text_field :desc
+  %td{:class => "actions"}
+    = link_to_remove_fields t("remove"), f

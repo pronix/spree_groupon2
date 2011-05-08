@@ -1,0 +1,20 @@
+%h1!= t("editing_product") + " &ldquo;#{@product.name}&rdquo;"
+
+= content_for :sidebar do
+  %h3
+    = @product.name
+    %span.sku= @product.sku
+  %br.clear
+
+  %ul{:class => "sidebar product-menu"}
+    = hook :admin_product_tabs, {:current => current} do
+      %li{:class => current.include?("Product Details") && "active"} 
+        = link_to t("product_details"), edit_admin_product_url(@product)
+      %li{:class => current.include?("Conditions") && "active"}
+        = link_to t("conditions"), admin_product_conditions_url(@product)
+      %li{:class => current.include?("Features") && "active"}
+        = link_to t("features"), admin_product_features_url(@product)
+      %li{:class => current.include?("Images") && "active"}
+        = link_to t("images"), admin_product_images_url(@product)
+
+  %br.clear

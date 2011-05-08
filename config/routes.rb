@@ -13,4 +13,12 @@ Rails.application.routes.draw do
       get 'get_state'
     end
   end
+  
+  namespace :admin do
+    resources :products do
+      resources :conditions
+      resources :features
+    end
+  end
+
 end

@@ -1,5 +1,7 @@
 ---
-ru: 
+ru:
+  conditions: Условия
+  features: Особенности
   devise:
     user_registrations:
       user:
@@ -129,7 +131,7 @@ ru:
         name: "Название"
         product_count: "Кол-во товаров"
         product_scopes: "Фильтры"
-        products: "Товары"
+        products: "Купоны"
         url: "URL"
       product_scope: 
         arguments: "Аргументы"
@@ -271,8 +273,8 @@ ru:
   add_option_type: "Добавить опцию"
   add_option_types: "Добавить опции"
   add_option_value: "Добавить значение опции"
-  add_product: "Добавить товар"
-  add_product_properties: "Добавить свойства товара"
+  add_product: "Добавить купон"
+  add_product_properties: "Добавить свойства купона"
   add_rule_of_type: "Добавить правило типа"
   add_scope: "Добавить фильтр"
   add_state: "Добавить регион/область"
@@ -423,7 +425,7 @@ ru:
   editing_option_type: "Редактирование опции"
   editing_option_types: "Редактирование опций"
   editing_payment_method: "Редактирование способа оплаты"
-  editing_product: "Редактирование товара"
+  editing_product: "Редактирование купона"
   editing_product_group: "Редактирование группы товаров"
   editing_promotion: "Редактирование промо-акции"
   editing_property: "Редактирование свойства"
@@ -592,7 +594,7 @@ ru:
   new_order_completed: "Оформление заказа завершено"
   new_payment: "Новый платёж"
   new_payment_method: "Новый способ оплаты"
-  new_product: "Новый товар"
+  new_product: "Новый купон"
   new_product_group: "Новая группа товаров"
   new_promotion: "Новая акция"
   new_property: "Новое свойство"
@@ -614,7 +616,7 @@ ru:
   no_items_in_cart: "нет товаров к корзине"
   no_match_found: "Совпадений не найдено"
   no_payment_methods_available: "Невозможно оформить заказ, так как отстуствуют способы оплаты."
-  no_products_found: "Не найдено ни одного товара"
+  no_products_found: "Не найдено ни одного купона"
   no_results: "Ничего не найдено"
   no_rules_added: "Ни одного правила не задано"
   no_user_found: "Пользователь с таким адресом email не найден."
@@ -731,8 +733,8 @@ ru:
   problems_processing_order: "При обработке Вашего заказа возникли проблемы"
   proceed_as_guest: "Нет, спасибо. Продолжить как гость."
   process: "Обработать"
-  product: "Товар"
-  product_details: "Описание товара"
+  product: "Купон"
+  product_details: "Описание купона"
   product_group: "Группа товаров"
   product_group_invalid: "Группа товаров содержит некорректные фильтры"
   product_groups: "Группы товаров"
@@ -862,7 +864,7 @@ ru:
         description: "Выбирает все товары, у которых есть хотя бы один вариант, для которого указанное свойство имеет указанное значение(например, вес:10)"
         name: "Имеет свойство с указанным значением  "
         sentence: "есть свойство <em>%s</em> со значением <em>%s</em>"
-  products: "Товары"
+  products: "Купоны"
   products_with_zero_inventory_display: "Отсутсвующие товары %{not} будут отображаться"
   promotion: "Промо-акция"
   promotion_form: 
