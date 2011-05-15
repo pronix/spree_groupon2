@@ -28,6 +28,7 @@ User.class_eval do
   def send_new_mobile_code!
     self.update_attribute(:phone_confirm_key, rand(9999))
     # Тут должно отправится новое смс с новым кодом на мобильный пользователя
+    
   end
 
   protected

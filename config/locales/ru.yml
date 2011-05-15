@@ -27,6 +27,13 @@ ru:
        country: Страна
        buttons:
         registration: Зарегистрироваться
+    profile:
+      edit:
+        firstname: "Имя"
+        lastname: "Фамилия"
+        sex_male:"Мужской"
+        sex_female:"Женский"
+        
   'no': "Нет"
   'yes': "Да"
   5_biggest_spenders: "5 крупнейших покупателей"
@@ -1112,3 +1119,4 @@ ru:
   zone_based: "Состоит из других зон"
   zone_setting_description: "Настройка торговых зон на основе стран, областей и других торговых зон."
   zones: "Торговые зоны"
+

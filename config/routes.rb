@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users do
     get "user/confirm_phone", :to => "user_registrations#confirm_phone"
     get "user/resend_code", :to => "user_registrations#resend_code"

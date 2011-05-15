@@ -1,6 +1,14 @@
 = form_for @profile do |f|
   = f.hidden_field :id
   %p
+    %label =t("view.profile.edit.firstname")
+    =f.text_field :firstname
+  %p
+    %label =t("view.profile.edit.lastname")
+    =f.text_field :lastname
+  %p
+    = select_tag :sex, options_for_select([[t("view.profile.edit.sex_male"), "male"], [t("view.profile.edit.sex_female"), "female"]], "male")
+  %p
     =f.text_field :balance
   = f.submit t("submits.save")
 
