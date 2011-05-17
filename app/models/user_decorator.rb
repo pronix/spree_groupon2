@@ -39,7 +39,8 @@ User.class_eval do
   end
 
   def send_phone_confirm_key
-    gw = ActiveSmsgate::Gateway.gateway('qtelecom').new(:login => '13560', :password => 'Gimler12', :ssl=>true)
+    # Надо вынести в ямл файл
+    gw = ActiveSmsgate::Gateway.gateway('qtelecom').new(:login => '13560', :password => 'MySecretPassword', :ssl=>true)
     gw.deliver_sms(:phones=>params[:phone], :message=>"Код подтверждения регистрации: #{phone_confirm_key}")
     logger.info("Confirmation code send by email to number '#{self.number}'")
   end
