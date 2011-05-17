@@ -29,10 +29,11 @@ ru:
         registration: Зарегистрироваться
     profile:
       edit:
-        firstname: "Имя"
-        lastname: "Фамилия"
-        sex_male:"Мужской"
-        sex_female:"Женский"
+        firstname: Имя
+        lastname: Фамилия
+        sex: Пол
+        sex_male: Мужской
+        sex_female: Женский
         
   'no': "Нет"
   'yes': "Да"

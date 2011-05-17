@@ -28,18 +28,25 @@ User.class_eval do
   def send_new_mobile_code!
     self.update_attribute(:phone_confirm_key, rand(9999))
     # Тут должно отправится новое смс с новым кодом на мобильный пользователя
-    
   end
 
-  protected
 
+  protected
+  
   # Ключ подтверждения который будет выслан на мобильный
   def set_phone_confirm_key
     self.phone_confirm_key = rand(9999)
   end
 
+  def send_phone_confirm_key
+    gw = ActiveSmsgate::Gateway.gateway('qtelecom').new(:login => '13560', :password => 'Gimler12', :ssl=>true)
+    gw.deliver_sms(:phones=>params[:phone], :message=>"Код подтверждения регистрации: #{phone_confirm_key}")
+    logger.info("Confirmation code send by email to number '#{self.number}'")
+  end
+
   def password_required?
-    false
+    true
+##    false
 #    !persisted? || password.present? || password_confirmation.present?
   end
 

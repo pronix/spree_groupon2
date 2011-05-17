@@ -1,15 +1,27 @@
 = form_for @profile do |f|
   = f.hidden_field :id
   %p
-    %label =t("view.profile.edit.firstname")
+    %label 
+      = t("view.profile.edit.firstname")
+    %br/
     =f.text_field :firstname
   %p
-    %label =t("view.profile.edit.lastname")
+    %label 
+      =t("view.profile.edit.lastname")
+    %br/
     =f.text_field :lastname
   %p
-    = select_tag :sex, options_for_select([[t("view.profile.edit.sex_male"), "male"], [t("view.profile.edit.sex_female"), "female"]], "male")
+    = fields_for @profile.user do |u|
+      %label 
+        =t("view.profile.edit.lastname")
+      %br/
+      = u.text_field :phone
   %p
-    =f.text_field :balance
+    %label 
+    =t("view.profile.edit.sex")
+    %br/
+    = select_tag :sex, options_for_select([[t("view.profile.edit.sex_male"), "male"], [t("view.profile.edit.sex_female"), "female"]], "male")
+
   = f.submit t("submits.save")
 
 = link_to t("links.resend_confirmation_token"), user_resend_confirmation_token_path(:email => @profile.user.email)

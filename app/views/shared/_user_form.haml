@@ -4,6 +4,16 @@
   = f.text_field :email, :class => 'title'
 %p
   %label
+  = f.label :password
+  %br/
+  = f.password_field :password
+%p
+  %label
+  = f.label :password_confirmation, t(:confirm_password)
+  %br/
+  = f.password_field :password_confirmation
+%p
+  %label
     = t("view.user_registrations.new.mobile")
   %br/
   = f.text_field :phone, :class => 'title'
