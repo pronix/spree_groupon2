@@ -1,6 +1,7 @@
+# -*- coding: utf-8 -*-
 User.class_eval do
 
-  devise :confirmable, :database_authenticatable, :token_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :encryptable, :encryptor => "authlogic_sha512" 
+  devise :confirmable, :database_authenticatable, :token_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :encryptable, :encryptor => "authlogic_sha512"
 
   validates_presence_of :phone, :state_id
   belongs_to :state
@@ -32,7 +33,7 @@ User.class_eval do
 
 
   protected
-  
+
   # Ключ подтверждения который будет выслан на мобильный
   def set_phone_confirm_key
     self.phone_confirm_key = rand(9999)
@@ -46,7 +47,6 @@ User.class_eval do
   end
 
   def password_required?
-#    true
     false
 #    !persisted? || password.present? || password_confirmation.present?
   end

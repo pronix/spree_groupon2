@@ -1,4 +1,5 @@
-UserRegistrationsController.class_eval do 
+# -*- coding: utf-8 -*-
+UserRegistrationsController.class_eval do
   before_filter :init_regions, :only => [:new]
 
 
@@ -33,7 +34,6 @@ UserRegistrationsController.class_eval do
   def create
     @user = build_resource(params[:user])
     logger.debug(@user)
-    logger.debug("lfsdjflk sldjf lksjdlf sldkjf sd")
     if resource.save
       set_flash_message(:notice, :signed_up)
       redirect_to user_confirm_phone_url(:email => resource.email)
