@@ -1,6 +1,7 @@
 UserRegistrationsController.class_eval do 
   before_filter :init_regions, :only => [:new]
 
+
   # Повторная отправка подтверждения на мыло
   def resend_confirmation_token
     User.find_by_email(params[:email]).resend_confirmation_token
@@ -32,12 +33,13 @@ UserRegistrationsController.class_eval do
   def create
     @user = build_resource(params[:user])
     logger.debug(@user)
+    logger.debug("lfsdjflk sldjf lksjdlf sldkjf sd")
     if resource.save
       set_flash_message(:notice, :signed_up)
       redirect_to user_confirm_phone_url(:email => resource.email)
 #      sign_in_and_redirect(:user, @user)
     else
-      @states = State.find(params[:user][:state_id]).countries.regions
+      @states = State.find(params[:user][:state_id]).country.states
       clean_up_passwords(resource)
       render_with_scope(:new)
     end
@@ -50,4 +52,3 @@ UserRegistrationsController.class_eval do
   end
 
 end
-
