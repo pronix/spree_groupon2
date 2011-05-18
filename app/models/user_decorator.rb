@@ -3,6 +3,7 @@ User.class_eval do
 
   devise :confirmable, :database_authenticatable, :token_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :encryptable, :encryptor => "authlogic_sha512"
 
+  # TODO: fix validation duplication of email
   validates_presence_of :phone, :state_id
   belongs_to :state
   has_one :profile
@@ -52,4 +53,3 @@ User.class_eval do
   end
 
 end
-

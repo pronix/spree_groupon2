@@ -25,10 +25,21 @@
     - else
       = select_tag "user[state_id]", options_from_collection_for_select(@states, "id", "name", params[:user][:region_id])
 
+%p
+  = f.label :password, t("password")
+  %br/
+  = f.password_field :password, :class => 'title'
+%p
+
+%p
+  = f.label :password_confirmation, t("confirm_password")
+  %br/
+  = f.password_field :password_confirmation, :class => 'title'
+%p
 
 = hook :signup_below_password_fields
 
 :javascript
   $(document).ready(function() {
-    get_states()
+  get_states()
   });
