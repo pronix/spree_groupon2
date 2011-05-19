@@ -4,6 +4,9 @@ ru:
     user_registrations:
       user:
         signed_up: Регистрация прошла успешно
+    confirmations:
+      user:
+        confirmed: Ваш аккаунт активирован
   links:
     resend_mobile_code: Повторно выслать код подтверждения
     resend_confirmation_token: Отправить письмо повторно

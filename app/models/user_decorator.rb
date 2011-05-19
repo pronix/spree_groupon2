@@ -9,7 +9,7 @@ User.class_eval do
   has_one :profile
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :remember_me, :persistence_token, :phone, :state_id, :phone_confirm_key, :phone_confirm
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :persistence_token, :phone, :state_id, :phone_confirm_key, :phone_confirm
 
   before_create :set_phone_confirm_key
   after_save :create_user_profile
@@ -30,6 +30,7 @@ User.class_eval do
   def send_new_mobile_code!
     self.update_attribute(:phone_confirm_key, rand(9999))
     # Тут должно отправится новое смс с новым кодом на мобильный пользователя
+    
   end
 
 

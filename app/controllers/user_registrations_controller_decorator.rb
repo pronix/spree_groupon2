@@ -3,6 +3,7 @@ UserRegistrationsController.class_eval do
   before_filter :init_regions, :only => [:new]
 
 
+
   # Повторная отправка подтверждения на мыло
   def resend_confirmation_token
     User.find_by_email(params[:email]).resend_confirmation_token
