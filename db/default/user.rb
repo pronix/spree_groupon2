@@ -46,8 +46,9 @@ def create_admin_user
   if User.find_by_email(email)
     say "\nWARNING: There is already a user with the email: #{email}, so no account changes were made.  If you wish to create an additional admin user, please run rake db:admin:create again with a different email.\n\n"
   else
-    admin = User.create(attributes)
-    admin.phone_confirm!
+    admin = User.new(attributes)
+    admin.skip_confirmation!
+    admin.save!
     # create an admin role and and assign the admin user to that role
     role = Role.find_or_create_by_name "admin"
     admin.roles << role

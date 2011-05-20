@@ -1,5 +1,7 @@
 ---
 ru: 
+  sms:
+    confirmation_text: Код подтверждения мобильного телефона
   devise:
     user_registrations:
       user:
@@ -262,10 +264,12 @@ ru:
             email:
               blank: не может быть пустой
               invalid: имеет не допустимый формат
+              taken: уже существует
             password:
               blank: не может быть пустым
             phone: 
               blank: не может быть пустым
+              taken: уже существует
             state_id:
               blank: обязательно должен быть выбран
   add: "Добавить"

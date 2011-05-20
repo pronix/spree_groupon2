@@ -5,6 +5,7 @@ User.class_eval do
 
   # TODO: fix validation duplication of email
   validates_presence_of :phone, :state_id
+  validates_uniqueness_of :phone
   belongs_to :state
   has_one :profile
 
@@ -28,9 +29,17 @@ User.class_eval do
 
   # Отправка нового кода подтверждения на мобильный
   def send_new_mobile_code!
+    puts "Entered in method"
     self.update_attribute(:phone_confirm_key, rand(9999))
+    puts "Attribute setted #{config.inspect}"
     # Тут должно отправится новое смс с новым кодом на мобильный пользователя
-    
+    cfg = YAML.load_file("config/sms_gateway.yml")
+    puts "Config loaded #{config.inspect}"
+    gw = ActiveSmsgate::Gateway.gateway('qtelecom').new(:login => cfg["login"], :password => cfg["password"], :ssl=>cfg["ssl"])
+    puts "Gateway created"
+    gw.deliver_sms(:phones=>self.phone, :message=>"#{t(ru.sms.confirmation_text)} #{phone_confirm_key}")
+    puts "Message delivered"
+    logger.info("Confirmation code send by email to number '#{self.number}'")
   end
 
 
@@ -39,13 +48,6 @@ User.class_eval do
   # Ключ подтверждения который будет выслан на мобильный
   def set_phone_confirm_key
     self.phone_confirm_key = rand(9999)
-  end
-
-  def send_phone_confirm_key
-    # Надо вынести в ямл файл
-    #gw = ActiveSmsgate::Gateway.gateway('qtelecom').new(:login => '13560', :password => 'MySecretPassword', :ssl=>true)
-    #gw.deliver_sms(:phones=>params[:phone], :message=>"Код подтверждения регистрации: #{phone_confirm_key}")
-    logger.info("Confirmation code send by email to number '#{self.number}'")
   end
 
   def password_required?
