@@ -1,7 +1,7 @@
 ---
 ru: 
   sms:
-    confirmation_text: Код подтверждения мобильного телефона
+    confirmation_text: Код подтверждения телефона
   devise:
     user_registrations:
       user:

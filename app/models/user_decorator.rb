@@ -28,18 +28,11 @@ User.class_eval do
   end
 
   # Отправка нового кода подтверждения на мобильный
-  def send_new_mobile_code!
-    puts "Entered in method"
-    self.update_attribute(:phone_confirm_key, rand(9999))
-    puts "Attribute setted #{config.inspect}"
-    # Тут должно отправится новое смс с новым кодом на мобильный пользователя
+  def send_new_mobile_code
     cfg = YAML.load_file("config/sms_gateway.yml")
-    puts "Config loaded #{config.inspect}"
     gw = ActiveSmsgate::Gateway.gateway('qtelecom').new(:login => cfg["login"], :password => cfg["password"], :ssl=>cfg["ssl"])
-    puts "Gateway created"
-    gw.deliver_sms(:phones=>self.phone, :message=>"#{t(ru.sms.confirmation_text)} #{phone_confirm_key}")
-    puts "Message delivered"
-    logger.info("Confirmation code send by email to number '#{self.number}'")
+    gw.deliver_sms(:phones=>self.phone, :message=>"#{I18n.t("sms.confirmation_text")} #{phone_confirm_key}")
+    logger.info("Confirmation code send by email to number '#{self.phone}'")
   end
 
 
@@ -48,6 +41,7 @@ User.class_eval do
   # Ключ подтверждения который будет выслан на мобильный
   def set_phone_confirm_key
     self.phone_confirm_key = rand(9999)
+    send_new_mobile_code
   end
 
   def password_required?
