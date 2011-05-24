@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_groupon2'
-  s.version     = '0.60.99'
+  s.version     = '0.60.00'
   s.summary     = 'Add grouon function to spree project'
   s.description = 'Add grouon function to spree project'
   s.required_ruby_version = '>= 1.8.7'
@@ -16,5 +16,5 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_dependency('spree_core', '>= 0.60.99')
+  s.add_dependency('spree_core', '>= 0.60.00')
 end
