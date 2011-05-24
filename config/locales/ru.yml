@@ -582,6 +582,8 @@ ru:
   minimal_amount: "Минимальная сумма"
   missing_required_information: "Пропущена необходимая информация"
   month: "Месяц"
+  currency: "руб."
+  private: "Личный кабинет"
   my_account: "Моя учетная запись"
   my_orders: "Мои заказы"
   name: "Наименование"

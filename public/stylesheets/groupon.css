@@ -1,0 +1,27 @@
+body {
+  margin:0px; padding:0px;
+  font-family: Arial, Helvetica, sans-serif;
+  background:#333;
+}
+
+#header {
+  height: 50px;
+  width: 100%;
+  background-image: url(/images/up_fon.png);
+  background-repeat: repeat-x;
+  background-position: left top;
+}
+
+ul#nav-bar {
+  background: black;
+  line-height: 15px;
+  color: white;
+  font-size:11px;
+}
+
+ul#nav-bar li {
+  padding:6px 10px 5px 10px;
+}
+ul#nav-bar li a {
+  color:white;
+}

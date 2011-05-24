@@ -23,6 +23,7 @@ UserRegistrationsController.class_eval do
       redirect_to root_path, :notice => t("notices.phone_confirm_was_confirmed") if user.phone_confirm?
       if user.phone_confirm_key == params[:phone_confirm]
         user.phone_confirm!
+        user.send_confirmation_instructions
         redirect_to edit_profile_path(:email => user.email), :notice => t("notices.successfully_phone_confirm")
       else
          flash[:notice] = t("notices.not_successfully_phone_confirm")

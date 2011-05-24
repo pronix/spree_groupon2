@@ -27,6 +27,12 @@ User.class_eval do
     self.phone_confirm
   end
 
+  # Генерация и сохранение нового пароля
+  def generate_new_password
+    new_password = ActiveSupport::SecureRandom.hex(4)
+    self.reset_password!(new_password, new_password)
+  end
+
   # Отправка нового кода подтверждения на мобильный
   def send_new_mobile_code
     cfg = YAML.load_file("config/sms_gateway.yml")

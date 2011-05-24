@@ -3,6 +3,11 @@ UserMailer.class_eval do
   include Devise::Controllers::ScopedViews
   attr_reader :scope_name, :resource
 
+  # Отправка пароля по почте
+  def password
+    setup_mail(record, :password)
+  end
+
   def confirmation_instructions(record)
     setup_mail(record, :confirmation_instructions)
   end

@@ -1,0 +1,13 @@
+%li
+  = current_user.email
+%li
+  = "#{current_user.profile.balance} #{t('currency')}"
+%li
+  = link_to t('private'), account_path
+%li
+  = link_to t('logout'), destroy_user_session_path
+%li
+  = current_user.state.name
+
+  
+
