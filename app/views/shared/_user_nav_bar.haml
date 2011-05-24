@@ -7,7 +7,19 @@
 %li
   = link_to t('logout'), destroy_user_session_path
 %li
-  = current_user.state.name
+  = link_to current_user.state.name, "#", :id=>"states_link"
+
+:javascript
+  $(document).ready(function() {
+    $("#states_link").click(function(){
+      if($("#states").is(":visible")){
+        $("#states").hide()
+      } else {
+        $("#states").show()
+      }
+        
+    })
+  });
 
   
 
