@@ -2,10 +2,15 @@
 ru:
   conditions: Условия
   features: Особенности
+  sms:
+    confirmation_text: Код подтверждения телефона
   devise:
     user_registrations:
       user:
         signed_up: Регистрация прошла успешно
+    confirmations:
+      user:
+        confirmed: Ваш аккаунт активирован
   links:
     resend_mobile_code: Повторно выслать код подтверждения
     resend_confirmation_token: Отправить письмо повторно
@@ -261,10 +266,12 @@ ru:
             email:
               blank: не может быть пустой
               invalid: имеет не допустимый формат
+              taken: уже существует
             password:
               blank: не может быть пустым
             phone: 
               blank: не может быть пустым
+              taken: уже существует
             state_id:
               blank: обязательно должен быть выбран
   add: "Добавить"
@@ -577,6 +584,8 @@ ru:
   minimal_amount: "Минимальная сумма"
   missing_required_information: "Пропущена необходимая информация"
   month: "Месяц"
+  currency: "руб."
+  private: "Личный кабинет"
   my_account: "Моя учетная запись"
   my_orders: "Мои заказы"
   name: "Наименование"
@@ -722,6 +731,15 @@ ru:
   place_order: "Разместить заказ"
   please_create_user: "Пожалуйста, создайте учётную запись."
   powered_by: "Работает на"
+  about_company: "О компании"
+  contacts: "Контакты"
+  offer: "Оферта"
+  faq: "FAQ"
+  feedback: "Обратная связь"
+  invite_friend: "Пригласи друга, получи бонус"
+  russia: "Россия"
+  ukraine: "Украина"
+  subbscrybe_in_socrial_networks: "Подписка на каналы в соц сетях"
   presentation: "Отображать как"
   preview: "Предпросмотр"
   previous: "пред."

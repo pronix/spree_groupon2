@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :locations do
     collection do
       get 'get_state'
+      get 'get_list'
     end
   end
   
