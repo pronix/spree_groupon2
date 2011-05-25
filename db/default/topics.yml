@@ -1,0 +1,22 @@
+--
+topics_01:
+  name: "Проблемы с сайтом"
+  email: "gnemot@gmail.com"
+topics_02:
+  name: "Подарочный купон"
+  email: "gnemot@gmail.com"
+topics_03:
+  name: "Вопрос по рассылке"
+  email: "gnemot@gmail.com"
+topics_04:
+  name: "Оплата"
+  email: "gnemot@gmail.com"
+topics_05:
+  name: "Сотрудничество"
+  email: "gnemot@gmail.com"
+topics_06:
+  name: "Презентация"
+  email: "gnemot@gmail.com"
+topics_07:
+  name: "Другое"
+  email: "gnemot@gmail.com"

@@ -1,5 +1,9 @@
 ---
 ru: 
+  contact_us: Форма обратной связи
+  send_message: Отправить
+  topic: Тема сообщения
+  message_body: Тело сообщения
   sms:
     confirmation_text: Код подтверждения телефона
   devise:
