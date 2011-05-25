@@ -5,13 +5,16 @@ Introduction goes here.
 
 Installation
 ============
+
 *Временно
 Создать файл config/sms_gateway.yml в папке проекта и туда:
-  # qtelecom || amegainform
-  gateway: qtelecom
-  login: qtelecom_login
-  password: qtelecom_password
-  ssl: true
+
+gateway: qtelecom
+login: qtelecom_login
+password: qtelecom_password
+ssl: true
+
+echo "gem 'spree_easy_contact'" >> Gemfile
 
 
 Example
