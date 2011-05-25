@@ -4,16 +4,6 @@
   = f.text_field :email, :class => 'title'
 %p
   %label
-  = f.label :password
-  %br/
-  = f.password_field :password
-%p
-  %label
-  = f.label :password_confirmation, t(:confirm_password)
-  %br/
-  = f.password_field :password_confirmation
-%p
-  %label
     = t("view.user_registrations.new.mobile")
   %br/
   = f.text_field :phone, :class => 'title'
@@ -35,10 +25,11 @@
     - else
       = select_tag "user[state_id]", options_from_collection_for_select(@states, "id", "name", params[:user][:region_id])
 
+%p
 
 = hook :signup_below_password_fields
 
 :javascript
   $(document).ready(function() {
-    get_cities()
+    get_states()
   });

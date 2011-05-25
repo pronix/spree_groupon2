@@ -1,0 +1,18 @@
+- states_ru = State.find_all_by_country_id(1)
+- states_ua = State.find_all_by_country_id(2)
+#states
+  .russia
+    .title= t("russia")
+    - states_ru.each do |state|
+      = link_to state.name, "#", :class=>"choose_state_link"
+  .ukraine
+    .title= t("ukraine")
+    - states_ua.each do |state|
+      = link_to state.name, "#", :class=>"choose_state_link"
+
+:javascript
+  $(document).ready(function() {
+    $(".choose_state_link").click(function(){
+      $("#states").hide()
+    })
+  })

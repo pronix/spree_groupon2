@@ -5,7 +5,6 @@ class CreateProfiles < ActiveRecord::Migration
       t.string  :lastname
       t.integer :user_id
       t.integer :balance
-      t.boolean :sex
       t.date    :birthday
       t.string  :metro
       t.timestamps

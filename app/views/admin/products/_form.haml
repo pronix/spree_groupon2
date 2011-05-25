@@ -1,0 +1,46 @@
+%div{:class => "yui-gc"}
+  %div{:class => "yui-u first"}
+    - locals = {:f => f}
+    = hook :admin_product_form_left, locals do
+      = f.field_container :name do
+        = f.label :name, t("name")
+        %span{:class => "required"}
+          *
+        %br
+        = f.text_field :name, :class => 'fullwidth title'
+        = f.error_message_on :name
+      
+      = f.field_container :permalink do
+        = f.label :permalink, t("permalink")
+        %span{:class => "required"}
+          *
+        %br
+        = f.text_field :permalink, :class => 'fullwidth title'
+        = f.error_message_on :permalink
+      
+      = f.field_container :description do
+        = f.label :description, t("description")
+        %br
+        = f.text_area :description, {:cols => 60, :rows => 4, :class => 'fullwidth'}
+        = f.error_message_on :description
+      
+  %div{:class => "yui-u"}            
+    = hook :admin_product_form_right, locals do
+      = f.field_container :price do
+        = f.label :price, t("master_price")
+        %span{:class => "required"}
+          *
+        %br
+        = f.text_field :price, :value => number_with_precision(@product.price, :precision => 2)
+        = f.error_message_on :price  
+
+      %p
+        = f.label :available_on, t("available_on")
+        %br 
+        = f.error_message_on :available_on
+        = f.spree_date_picker :available_on
+	
+      %p
+        = f.label :sku, t("sku")
+        %br
+        = f.text_field :sku, :size => 16

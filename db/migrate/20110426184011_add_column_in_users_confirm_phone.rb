@@ -1,7 +1,7 @@
 class AddColumnInUsersConfirmPhone < ActiveRecord::Migration
   def self.up
     add_column :users, :phone_confirm_key, :string
-    add_column :users, :phone_confirm, :boolean, :default => :false
+    add_column :users, :phone_confirm, :boolean, :default => false
   end
 
   def self.down
