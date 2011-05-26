@@ -1,0 +1,4 @@
+= form_for(:user, :url => user_session_path, :class=>"top-login") do |f| 
+  = f.text_field 'email', :class=>"top-field"
+  = f.password_field 'password', :class=>"top-field"
+  = submit_tag t("do_log_in"), :class=>"top-submit"

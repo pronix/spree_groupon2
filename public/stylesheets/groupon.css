@@ -132,6 +132,30 @@ div#states {
 }
 
 
+.top-login {
+  padding:0px;
+  margin:0px;
+  border:blue 1px solid;
+}
+
+.top-field {
+  font-size:11px;
+  height:14px;
+  border: solid 1px #CCC;
+  width:120px;
+  float:left;
+  margin-right:5px;
+}
+.top-submit {
+  margin:0px;
+  height:18px;
+  float:left;
+  border:1px solid #CCC;
+  background: #333;
+  color:white;
+  font-size:11px;
+}
+
 
 
 

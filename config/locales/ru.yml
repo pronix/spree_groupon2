@@ -1,5 +1,6 @@
 ---
 ru: 
+  
   contact_us: Форма обратной связи
   send_message: Отправить
   topic: Тема сообщения
@@ -561,6 +562,7 @@ ru:
   loading: "Загружается"
   locale_changed: "Язык изменён"
   log_in: "Вход для клиентов"
+  do_log_in: "Войти"
   logged_in_as: "Пользователь"
   logged_in_succesfully: "Вы вошли в систему"
   logged_out: "Вы вышли из системы."
