@@ -1,7 +1,8 @@
 ---
 ru:
-  conditions: Условия
-  features: Особенности
+  conditions: "Условия"
+  features: "Особенности"
+  discount: "Скидка"
   sms:
     confirmation_text: Код подтверждения телефона
   devise:
@@ -127,9 +128,12 @@ ru:
         available_on: "Доступно с"
         cost_price: "Себестоимость"
         description: "Описание"
+        discount: "Скидка"
         master_price: "Основная цена"
         name: "Название"
         on_hand: "В наличии"
+        permalink: "Линк"
+        price: "Цена"
         shipping_category: "Категория доставки"
         tax_category: "Налоговая категория"
       product_group: 
@@ -212,8 +216,8 @@ ru:
         one: "Платеж"
         other: "Платежи"
       product: 
-        one: "Товар"
-        other: "Товары"
+        one: "Купон"
+        other: "Купоны"
       product_group: 
         one: "Группа товаров"
         other: "Группы товаров"
@@ -274,6 +278,19 @@ ru:
               taken: уже существует
             state_id:
               blank: обязательно должен быть выбран
+        product:
+          attributes:
+            discount:
+              blank: не может быть пустым
+            name:
+              blank: не может быть пустым
+            price:
+              blank: не может быть пустым
+            permalink:
+              blank: не может быть пустым
+            state_id:
+              blank: не может быть пустым
+            
   add: "Добавить"
   add_category: "Добавить категорию"
   add_country: "Добавить страну"
@@ -1145,4 +1162,3 @@ ru:
   zone_based: "Состоит из других зон"
   zone_setting_description: "Настройка торговых зон на основе стран, областей и других торговых зон."
   zones: "Торговые зоны"
-

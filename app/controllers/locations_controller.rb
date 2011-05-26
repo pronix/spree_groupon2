@@ -6,6 +6,11 @@ class LocationsController < ApplicationController
   end
 
   def get_state
+    if params[:issuer].nil?
+      @issuer = 'user'
+    else
+      @issuer = params[:issuer]
+    end
     case params[:country]
     when "ru"
       @states = Country.find_by_iso("RU").states

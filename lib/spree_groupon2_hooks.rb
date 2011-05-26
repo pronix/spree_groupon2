@@ -1,3 +1,5 @@
 class SpreeGroupon2Hooks < Spree::ThemeSupport::HookListener
-  # custom hooks go here
+  insert_after :admin_inside_head do
+    '<%= javascript_include_tag "application" %>'
+  end
 end

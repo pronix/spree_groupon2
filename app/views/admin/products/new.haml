@@ -1,0 +1,48 @@
+= render :partial => 'admin/shared/product_sub_menu'
+
+= render "shared/error_messages", :target => @product
+
+= form_for(:product,  :url => collection_url, :html => { :multipart => true }) do |f|
+  %fieldset
+    = f.field_container :name do
+      = f.label :name, t("name")
+      %span{:class => "required"}
+        *
+      %br
+      = f.text_field :name, :class => 'fullwidth title'
+
+  %div{:class => "yui-gb"}
+    %div{:class => "yui-u first"}
+      = f.field_container :state_id do
+        = f.label :name, t("view.user_registrations.new.country")
+        %br
+        = select_tag "country", options_for_select([["Россия", "ru"], ["Украина", "ua"]], "ru")
+
+        %br
+        = f.label :name, t("view.user_registrations.new.state")
+        #city_select
+          = select_tag "product[state_id]", options_from_collection_for_select(@states, "id", "name")
+
+    %div{:class => "yui-u"}
+      = f.field_container :price do
+        = f.label :price, t("master_price")
+        %span{:class => "required"}
+          *
+        %br
+        = f.text_field :price
+
+      = f.field_container :discount do
+        = f.label :discount, t("discount")
+        %span{:class => "required"}
+          *
+        %br
+        = f.text_field :discount
+
+
+    = render :partial => 'admin/shared/new_resource_links'
+
+
+:javascript
+  $(document).ready(function() {
+    get_states('product')
+  });

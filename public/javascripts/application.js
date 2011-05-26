@@ -1,8 +1,12 @@
-function get_states() {
+function get_states(issuer) {
   $("#country").change(function () {
+    var data = {'country': this.value};
+    if (typeof issuer != 'undefined') {
+      data['issuer'] = issuer;
+    }
     $.ajax({
       url: "/locations/get_state",
-      data: "country=" + this.value,
+      data: data,
       success: function(msg){
         $("#city_select").html(msg)
       }
