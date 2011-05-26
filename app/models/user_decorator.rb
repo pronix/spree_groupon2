@@ -5,7 +5,9 @@ User.class_eval do
 
   # TODO: fix validation duplication of email
   validates_presence_of :phone, :state_id
-  validates_uniqueness_of :phone
+
+  #validates_uniqueness_of :phone
+
   belongs_to :state
   has_one :profile
 

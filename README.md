@@ -5,7 +5,6 @@ Introduction goes here.
 
 Installation
 ============
-
 *Временно
 Создать файл config/sms_gateway.yml в папке проекта и туда:
 gateway: qtelecom
@@ -27,7 +26,14 @@ rake db:bootstrap
 ==========
 В админке
 /admin/mail_methods
-
+=======
+*Временно
+Создать файл config/sms_gateway.yml в папке проекта и туда:
+  # qtelecom || amegainform
+  gateway: qtelecom
+  login: qtelecom_login
+  password: qtelecom_password
+  ssl: true
 
 Example
 =======
