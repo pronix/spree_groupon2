@@ -9,7 +9,7 @@
         %br
         = f.text_field :name, :class => 'fullwidth title'
         = f.error_message_on :name
-      
+
       = f.field_container :permalink do
         = f.label :permalink, t("permalink")
         %span{:class => "required"}
@@ -17,30 +17,54 @@
         %br
         = f.text_field :permalink, :class => 'fullwidth title'
         = f.error_message_on :permalink
-      
+
       = f.field_container :description do
         = f.label :description, t("description")
+        %span{:class => "required"}
+          *
         %br
         = f.text_area :description, {:cols => 60, :rows => 4, :class => 'fullwidth'}
         = f.error_message_on :description
-      
-  %div{:class => "yui-u"}            
+
+  %div{:class => "yui-u"}
     = hook :admin_product_form_right, locals do
       = f.field_container :price do
-        = f.label :price, t("master_price")
+        = f.label :price, t("price")
+
         %span{:class => "required"}
           *
         %br
         = f.text_field :price, :value => number_with_precision(@product.price, :precision => 2)
-        = f.error_message_on :price  
+        = f.error_message_on :price
 
-      %p
-        = f.label :available_on, t("available_on")
-        %br 
-        = f.error_message_on :available_on
-        = f.spree_date_picker :available_on
-	
-      %p
-        = f.label :sku, t("sku")
+      = f.field_container :discount do
+        = f.label :discount, t("discount")
+        %span{:class => "required"}
+          *
         %br
-        = f.text_field :sku, :size => 16
+        = f.error_message_on :discount
+        = f.text_field :discount
+
+      = f.field_container :state_id do
+        = f.label :name, t("view.user_registrations.new.country")
+        %br
+        -# Ugly code because of bad design, there is no consistency between
+        -# countries data and its controller (numeric vs string ids).
+        -# Needs huge refactoring and redesign
+        - if @states[@product.state_id - 1].country_id == 1 then country = 'ru' else country = 'ua' end
+        = select_tag "country", options_for_select([["Россия", "ru"], ["Украина", "ua"]], country)
+
+        %br
+        = f.label :name, t("view.user_registrations.new.state")
+        #city_select
+          - related_states = @states.select { |state| state.country_id == @states[@product.state_id - 1].country_id }
+          -# Rails.logger.debug(related_states)
+          -# Rails.logger.debug(@product.state_id)
+          = select_tag "product[state_id]", options_from_collection_for_select(related_states, "id", "name", @product.state_id)
+          = f.error_message_on :state_id
+
+:javascript
+  $(document).ready(function() {
+    get_states('product')
+  });
+
