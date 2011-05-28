@@ -11,8 +11,4 @@ Admin::ResourceController.class_eval do
     @states = russia_states + ukraine_states
   end
 
-  def init_conditions
-    @conditions = Condition.all
-  end
-
 end
