@@ -1,8 +1,10 @@
 ---
 ru:
+  add_condition: "Добавить условие"
+  add_feature: "Добавить особенность"
   conditions: "Условия"
-  features: "Особенности"
   discount: "Скидка"
+  features: "Особенности"
   sms:
     confirmation_text: Код подтверждения телефона
   devise:
@@ -127,9 +129,10 @@ ru:
       product: 
         available_on: "Доступно с"
         cost_price: "Себестоимость"
-        description: "Описание"
+        conditions: "Условия"
         discount: "Скидка"
-        master_price: "Основная цена"
+        features: "Особенности"
+        master_price: "Цена"
         name: "Название"
         on_hand: "В наличии"
         permalink: "Линк"
@@ -280,8 +283,14 @@ ru:
               blank: обязательно должен быть выбран
         product:
           attributes:
+            conditions:
+              blank: "не могут быть пустыми"
+            description:
+              blank: "не может быть пустым"
             discount:
-              blank: не может быть пустым
+              blank: "не может быть пустым"
+            features:
+              blank: "не могут быть пустыми"
             name:
               blank: не может быть пустым
             price:
@@ -592,7 +601,7 @@ ru:
   mail_server_preferences: "Настройки почтового сервера"
   make_refund: "Сделать возврат"
   mark_shipped: "Отметить как отправленный"
-  master_price: "Основная цена"
+  master_price: "Цена"
   max_items: "Максимальное число наименований по начальной ставке"
   may_be_combined_with_other_promotions: "Может быть совмещена с другими рекламными акциями"
   meta_description: "Описание"
