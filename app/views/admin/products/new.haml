@@ -46,6 +46,14 @@
         %br
         = f.text_field :discount
 
+      = f.field_container :on_hand do
+        = f.label :on_hand, t("on_hand")
+        %span{:class => "required"}
+          *
+        %br
+        = f.text_field :on_hand
+
+
   %table{:class => "index"}
     %thead
       %tr

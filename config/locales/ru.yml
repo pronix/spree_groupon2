@@ -5,6 +5,8 @@ ru:
   conditions: "Условия"
   discount: "Скидка"
   features: "Особенности"
+  must_have_at_least_one_condition: "Должно быть хотя бы одно условие"
+  must_have_at_least_one_feature: "Должна быть хотя бы одна особенность"
   sms:
     confirmation_text: Код подтверждения телефона
   devise:
@@ -293,6 +295,8 @@ ru:
               blank: "не могут быть пустыми"
             name:
               blank: не может быть пустым
+            on_hand:
+              must_be_greater_than_zero: "должно быть больше нуля"
             price:
               blank: не может быть пустым
             permalink:
