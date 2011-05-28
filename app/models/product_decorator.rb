@@ -3,10 +3,10 @@ Product.class_eval do
   has_many :conditions, :dependent => :destroy
   has_many :features, :dependent => :destroy
 
-  attr_accessible :name, :description, :price, :discount, :available_on, :sku, :on_hand,
+  attr_accessible :name, :description, :price, :discount, :available_on, :sku, :on_hand, :action_type,
     :state_id, :permalink, :conditions, :conditions_attributes, :features, :features_attributes
 
-  validates_presence_of :discount, :state_id, :description, :on_hand
+  validates_presence_of :discount, :state_id, :description, :on_hand, :action_type
   validates_numericality_of :on_hand, :only_integer => true, :greater_than => 0,
     :message => :must_be_greater_than_zero
 

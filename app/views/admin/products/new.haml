@@ -21,6 +21,11 @@
 
   %div{:class => "yui-gb"}
     %div{:class => "yui-u first"}
+      = f.field_container :action_type do
+        = f.label :action_type, t("action_type")
+        %br
+        = select_tag "product[action_type]", options_for_select([["Акция", 0], ["Бонусная акция", 1]], 0)
+
       = f.field_container :state_id do
         = f.label :name, t("view.user_registrations.new.country")
         %br

@@ -5,6 +5,7 @@ ru:
   conditions: "Условия"
   discount: "Скидка"
   features: "Особенности"
+  action_type: "Тип акции"
   must_have_at_least_one_condition: "Должно быть хотя бы одно условие"
   must_have_at_least_one_feature: "Должна быть хотя бы одна особенность"
   sms:
@@ -141,6 +142,7 @@ ru:
         price: "Цена"
         shipping_category: "Категория доставки"
         tax_category: "Налоговая категория"
+        action_type: "Тип акции"
       product_group: 
         name: "Название"
         product_count: "Кол-во товаров"
@@ -294,15 +296,17 @@ ru:
             features:
               blank: "не могут быть пустыми"
             name:
-              blank: не может быть пустым
+              blank: "не может быть пустым"
             on_hand:
               must_be_greater_than_zero: "должно быть больше нуля"
             price:
-              blank: не может быть пустым
+              blank: "не может быть пустым"
             permalink:
-              blank: не может быть пустым
+              blank: "не может быть пустым"
             state_id:
-              blank: не может быть пустым
+              blank: "не может быть пустым"
+            action_type:
+              blank: "должен присутствовать"
             
   add: "Добавить"
   add_category: "Добавить категорию"
