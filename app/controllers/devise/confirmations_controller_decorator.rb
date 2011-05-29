@@ -1,12 +1,6 @@
 Devise::ConfirmationsController.class_eval do
   after_filter :send_new_password, :only=>"show"
   
-<<<<<<< HEAD
-  def send_new_password
-    if resource.confirmed?
-      resource.generate_new_password
-      
-=======
   def show
     self.resource = resource_class.confirm_by_token(params[:confirmation_token])
 
@@ -22,7 +16,6 @@ Devise::ConfirmationsController.class_eval do
   def send_new_password
     if resource.confirmed?
       resource.generate_new_password
->>>>>>> for_social
     end
   end
 end
