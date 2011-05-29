@@ -18,7 +18,15 @@ Product.class_eval do
   accepts_nested_attributes_for :features,
     :allow_destroy => true
 
+  def self.find_all_in_state(state_abbr)
+    state = State.find_by_abbr(state_abbr)
+    self.find_all_by_state_id(state.id)
+  end
+
   private
+  def before_create
+    self.available_on=Time.zone.now.to_s(:db)
+  end
 
   def presence_of_conditions
     if conditions.empty? or conditions.all? {|condition| condition.marked_for_destruction? }

@@ -28,15 +28,8 @@ end
     <%= render 'shared/social_invites' %>
   </div>
 
-  <div id="wrapper" class="container">
-    <% if content_for?(:sidebar) %>
-    <div id="sidebar">
-      <%= hook :sidebar do %>
-        <%= yield :sidebar %>
-      <% end %>
-    </div>
-    <% end %>
-
+  <div id="groupon_wrapper" class="container">
+    
     <div id="content">
       <%= breadcrumbs(@taxon) if @taxon %>
       <% if flash.notice %>

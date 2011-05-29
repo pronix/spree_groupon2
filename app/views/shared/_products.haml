@@ -1,0 +1,61 @@
+- paginated_products = @searcher.products if params.key?(:keywords)
+- paginated_products ||= products
+
+- if products.empty?
+  = t(:no_products_found)
+- elsif params.key?(:keywords)
+  %h3= t(:search_results, :keywords => h(params[:keywords]))
+ 
+- if products.any?
+  - products.each do |product|
+    - if Spree::Config[:show_zero_stock_products] || product.has_stock?
+      = hook :products_list_item, {:product => product} do
+        = link_to small_image(product), product
+        = link_to raw(product.name + " <span class='price selling'>#{product_price(product)}</span>"), product, :class => 'info'
+
+ 
+%hr.space
+
+- if paginated_products.respond_to?(:total_pages)
+  - params.delete(:search)
+  - params.delete(:taxon)
+  = will_paginate(paginated_products, :previous_label => "&#171; #{t('previous')}", :next_label => "#{t('next')} &#187;")
+
+%hr.space
+
+:css
+  body.two-col #content {
+    background: #fff;
+    width:950px;
+  }
+
+  .product-wrapper {
+    border-right:1px solid #ccc;
+    width: 430px;
+    height: 450px;
+    padding:20px;
+    font-size:14px;
+    color:black;
+    float:left;
+  }
+  
+  .product-head a {
+    color:black;
+    text-decoration:none;
+  }
+
+  .srtong {
+    font-weight:bold;
+  }
+
+  .product-image {
+    border:1px solid #ccc;
+  }
+
+  .price {
+    
+  }
+
+  .discount {
+    
+  }

@@ -1,12 +1,23 @@
 ---
-ru: 
-  
+ru:   
   contact_us: Форма обратной связи
   send_message: Отправить
   topic: Тема сообщения
   message_body: Тело сообщения
+  action_conditions: Условия акции
+  action_descussion: Обсуждение акции
+  add_comment: Добавить комментарий
   conditions: Условия
   features: Особенности
+  action_of_the_day: Акция дня
+  current_actions: Активные акции
+  past_actions: Прошедшие акции
+  bonus_actions: Бонусные акции
+  buy: Купить
+  already_buyed: Уже купили
+  price_from: Цена
+  info: Инфо
+  discount_to: Скидка
   add_condition: "Добавить условие"
   add_feature: "Добавить особенность"
   conditions: "Условия"

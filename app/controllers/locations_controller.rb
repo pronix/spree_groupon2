@@ -1,10 +1,6 @@
 class LocationsController < ApplicationController
   layout nil
-
-  def get_list
-    render :text=>"Hello there!!!!"
-  end
-
+  
   def get_state
     if params[:issuer].nil?
       @issuer = 'user'

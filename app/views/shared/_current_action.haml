@@ -1,0 +1,36 @@
+#current-action
+  .action-banner
+    = link_to image_tag("/images/zara.jpg"), "#"
+    .action-head
+      = link_to "Весенняя коллекция женской одежды сети магазинов «ZARA» со скидкой 30%", "#"
+  .action-info
+    .action-price
+      Стоимость: 3000 руб.
+    .action-skidka
+      Скидка: 30%
+    .action-economy
+      Экономия: 900 руб.
+    .action-bigprice
+      2000 
+      %span
+        руб.
+      = link_to t("buy"), "#", :class=>"action-bye"
+    .action-deadline
+      До завершения осталось:
+      %br/
+      %span
+        3 дня 22 часа 45 минут
+    .action-kupleno
+      Уже купили:
+      %span
+        200
+      купонов
+      = link_to "Присоединяйтесь", "#", :class=>"action-join"
+#current-action-tabs
+  =link_to t("action_conditions"), "#", :class=>"action-conditions"
+  =link_to t("about_company"), "#", :class=>"action-about"
+  =link_to t("action_descussion"), "#", :class=>"action-comments"
+  =link_to t("add_comment"), "#", :class=>"action-addcomment"
+%br/
+%br/
+%br/

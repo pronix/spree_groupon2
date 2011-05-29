@@ -1,0 +1,21 @@
+.product-wrapper
+  .product-head
+    = link_to product.name, product
+    %strong
+      = t("discount")
+      = link_to product.discount, product, :class=>"strong"
+  .product_image
+    = link_to product_image(product, :size=>"430x250"), product
+
+  %hr/
+
+  .price
+    = t("price_from") 
+    = product_price(product)
+  .discount
+    = t("discount_to")
+    = product.discount
+  = link_to t("info"), product, :class=>"info-button"
+  = link_to t("buy"), product, :class=>"buy-button"
+
+
