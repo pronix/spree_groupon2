@@ -21,10 +21,21 @@
 
   %div{:class => "yui-gb"}
     %div{:class => "yui-u first"}
+      %p
+        = f.label :available_on, t("available_on")
+        %br
+        = f.error_message_on :available_on
+        = f.spree_date_picker :available_on, :style=>"width:150px"
+
       = f.field_container :action_type do
         = f.label :action_type, t("action_type")
         %br
         = select_tag "product[action_type]", options_for_select([["Акция", 0], ["Бонусная акция", 1]], 0)
+
+      = f.field_container :featured do
+        = f.label :featured, t("featured")
+        %br
+        = f.check_box :featured
 
       = f.field_container :state_id do
         = f.label :name, t("view.user_registrations.new.country")
@@ -37,12 +48,23 @@
           = select_tag "product[state_id]", options_from_collection_for_select(@states, "id", "name")
 
     %div{:class => "yui-u"}
+      %p
+        = f.label :available_till, t("available_till")
+        %br
+        = f.error_message_on :available_till
+        = f.spree_date_picker :available_till, :style=>"width:150px"
+
       = f.field_container :price do
         = f.label :price, t("master_price")
         %span{:class => "required"}
           *
         %br
         = f.text_field :price
+
+      = f.field_container :cost_price do
+        = f.label :cost_price, t("cost_price")
+        %br
+        = f.text_field :cost_price
 
       = f.field_container :discount do
         = f.label :discount, t("discount")
@@ -63,8 +85,6 @@
     %thead
       %tr
         %th
-          = t("name")
-        %th
           = t("description")
         %th
           = t("action")
@@ -82,8 +102,6 @@
   %table{:class => "index"}
     %thead
       %tr
-        %th
-          = t("name")
         %th
           = t("description")
         %th
@@ -106,3 +124,5 @@
   $(document).ready(function() {
     get_states('product')
   });
+
+= javascript_tag "datePickerController.create();"
