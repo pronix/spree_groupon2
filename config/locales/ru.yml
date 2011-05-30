@@ -25,6 +25,7 @@ ru:
   time_left_show: До завершения осталось
   cupons: купонов
   join_us: Присоединяйтесь
+  no_comments: Комментариев к продукту еще нет
   info: Инфо
   discount_to: Скидка
   sign_in_to_post_comments: Войдите в систему чтобы оставлять комментарий.
@@ -39,6 +40,9 @@ ru:
   action_type: "Тип акции"
   must_have_at_least_one_condition: "Должно быть хотя бы одно условие"
   must_have_at_least_one_feature: "Должна быть хотя бы одна особенность"
+  time:
+    formats:
+      long: "%d.%m.%Y %H:%M"
   sms:
     confirmation_text: Код подтверждения телефона
   devise:

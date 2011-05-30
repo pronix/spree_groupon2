@@ -7,7 +7,18 @@
     = p.submit "Добавить", :class=>"add-comment-submit"
 - else
   =t('sign_in_to_post_comments')
+
+:javascript
+  $(document).ready(function() {
+    $('.edit_product').bind('ajax:complete',function(evt,xhr,status){
+      $("#action-desc-wrapper").html(xhr.responseText);
+    });
+  })
+
 :css
+  .add-comment-form {
+    text-align:right;
+  }
   .comment-area {
     width:95%;
     height:150px;

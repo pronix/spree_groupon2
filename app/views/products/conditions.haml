@@ -5,11 +5,11 @@
       %ul
         - @product.conditions.each do |condition|
           %li
-            =condition.name
+            =condition.desc
     %td.conditions-wrapper
       %h2=t('features')
       %ul
         - @product.features.each do |feature|
           %li
-            =feature.name  
+            =feature.desc  
 

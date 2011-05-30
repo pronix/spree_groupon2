@@ -1,12 +1,33 @@
 
 #comments-wrapper
   %h2=t("comments_for_product")+":"
-  -@product.comments.each do |comment|
+  -@product.confirmed_comments.each do |comment|
     .comment
-      =comment.description
-    
+      .comment-description
+        = comment.description
+      .comment-info
+        = I18n.l comment.created_at, :format=>:long
+        - if comment.user.profile.firstname.to_s.empty? or comment.user.profile.lastname.to_s.empty?
+          = comment.user.email
+        - else
+          = comment.user.profile.firstname+" "+comment.user.profile.lastname
+  - if @product.comments.empty?
+    =t('no_comments')
 :css
   #comments-wrapper h2 {
     font-size:18px;
     font-weight:bold;
+  }
+  .comment{
+    color:#333;
+    padding:5px;
+    font-size:13px;
+    margin-bottom:10px;
+    border-bottom:1px dotted #999;
+  }
+  .comment-info{
+    padding-left:5px;
+    color:#666;
+    font-size:10px;
+    margin-bottom:10px;
   }

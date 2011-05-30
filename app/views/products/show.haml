@@ -7,11 +7,11 @@
       = link_to @product.name, "#"
   .action-info
     .action-price
-      ="#{t('self_price')}: 300 #{t('currency')}"
+      ="#{t('self_price')}: #{@product.cost_price.to_i} #{t('currency')}"
     .action-skidka
       ="#{t('discount')}: #{@product.discount}%"
     .action-economy
-      ="#{t('economy')}: 900 #{t('currency')}"
+      ="#{t('economy')}: #{(@product.cost_price.to_i/100)*@product.discount.to_i} #{t('currency')}"
     .action-bigprice
       ="#{@product.price.to_i}"
       %span=t('currency')

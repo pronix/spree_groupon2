@@ -3,6 +3,7 @@ Product.class_eval do
   has_many :conditions, :dependent => :destroy
   has_many :features, :dependent => :destroy
   has_many :comments, :dependent => :destroy
+  has_many :confirmed_comments, :class_name=>"Comment", :conditions=>{:confirmed=>true}
 
   attr_accessible :name, :description, :price, :cost_price, :discount, :available_on, :sku,
     :on_hand, :action_type, :state_id, :permalink, :conditions, :conditions_attributes,

@@ -21,7 +21,7 @@ ProductsController.class_eval do
   end
   
   def comments
-    @product = Product.find_by_permalink!(params[:id])    
+    @product = Product.find_by_permalink!(params[:id])
     render :layout=>false
   end
   
