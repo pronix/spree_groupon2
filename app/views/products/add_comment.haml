@@ -1,0 +1,38 @@
+%h2= t("add_comment")
+- if current_user
+  = form_for @product, :remote=>true do |p|
+    = p.fields_for :comment do |f|
+      %p
+        = f.text_area :description, :class=>"comment-area"
+    = p.submit "Добавить", :class=>"add-comment-submit"
+- else
+  =t('sign_in_to_post_comments')
+:css
+  .comment-area {
+    width:95%;
+    height:150px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid #333;
+    font-size:16px;
+    color: #333;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px
+  }
+
+  .add-comment-submit {
+    border: #6AAA22 solid 1px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    width:200px;
+    padding:5px;
+    padding-left:10px;
+    padding-right:10px;
+    background: #6AAA22;
+    color:white;
+    margin-top:10px;
+    margin-left:10px;
+    text-decoration:none;
+  }
+  

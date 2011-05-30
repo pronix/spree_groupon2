@@ -10,6 +10,7 @@ User.class_eval do
 
   belongs_to :state
   has_one :profile
+  has_many :comments
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :persistence_token, :phone, :state_id, :phone_confirm_key, :phone_confirm

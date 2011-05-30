@@ -2,6 +2,7 @@ Product.class_eval do
 
   has_many :conditions, :dependent => :destroy
   has_many :features, :dependent => :destroy
+  has_many :comments, :dependent => :destroy
 
   attr_accessible :name, :description, :price, :discount, :available_on, :sku, :on_hand, :action_type,
     :state_id, :permalink, :conditions, :conditions_attributes, :features, :features_attributes

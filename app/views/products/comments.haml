@@ -1,0 +1,12 @@
+
+#comments-wrapper
+  %h2=t("comments_for_product")+":"
+  -@product.comments.each do |comment|
+    .comment
+      =comment.description
+    
+:css
+  #comments-wrapper h2 {
+    font-size:18px;
+    font-weight:bold;
+  }

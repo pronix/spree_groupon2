@@ -22,6 +22,15 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :products do
+    member do
+      get 'conditions'
+      get 'comments'
+      get 'description'
+      get 'add_comment'
+    end
+  end
+
   
 
 end

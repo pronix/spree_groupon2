@@ -1,0 +1,53 @@
+=# render 'shared/products_main'
+= render 'shared/main_tabs'
+#current-action
+  .action-banner
+    = link_to large_image(@product, :size=>"610x300"), "#"
+    .action-head
+      = link_to @product.name, "#"
+  .action-info
+    .action-price
+      ="#{t('self_price')}: 300 #{t('currency')}"
+    .action-skidka
+      ="#{t('discount')}: #{@product.discount}%"
+    .action-economy
+      ="#{t('economy')}: 900 #{t('currency')}"
+    .action-bigprice
+      ="#{@product.price.to_i}"
+      %span=t('currency')
+      
+      = link_to t("buy"), "#", :class=>"action-bye"
+    .action-deadline
+      =t("time_left_show")+":"
+      %br/
+      %span
+        3 дня 22 часа 45 минут
+    .action-kupleno
+      =t('already_buyed')+":"
+      %span
+        200
+      =t('cupons')
+      = link_to t('join_us'), "#", :class=>"action-join"
+#current-action-tabs
+  =link_to_function t("action_description"), "loadContent('description')", :class=>"action-conditions selected-action-tab"
+  =link_to_function t("action_conditions"), "loadContent('conditions')", :class=>"action-about"
+  =link_to_function t("action_comments"), "loadContent('comments')", :class=>"action-comments"
+  =link_to_function t("add_comment"), "loadContent('add_comment')", :class=>"action-addcomment"
+%br/
+%br/
+#action-desc-wrapper
+  =@product.description
+
+%br/
+
+
+:javascript
+  function loadContent(url){
+    $("#current-action-tabs").children().each( function(indx,child){
+      $(this).removeClass("selected-action-tab")
+    });
+    $(event.target).addClass("selected-action-tab");
+    $("#action-desc-wrapper").html("Загружается...")
+    $("#action-desc-wrapper").load(window.location.pathname+'/'+url);
+  }
+

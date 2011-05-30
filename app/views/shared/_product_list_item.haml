@@ -4,18 +4,28 @@
     %strong
       = t("discount")
       = link_to product.discount, product, :class=>"strong"
-  .product_image
-    = link_to product_image(product, :size=>"430x250"), product
 
-  %hr/
+  .product-image
+    = link_to product_image(product, :size=>"425x200"), product
 
-  .price
-    = t("price_from") 
-    = product_price(product)
-  .discount
-    = t("discount_to")
-    = product.discount
+  .product-info
+    %span
+      = "#{t('already_buyed')} 2 #{t('people')}"
+    %span
+      = "#{t('time_left')} 3 дня 22 часа 45 минут"
+
+  .price-block
+    = t("price_from")+": "
+    %strong
+      = "#{product.price.to_i} #{t('currency')}"
+    &nbsp;|&nbsp;
+    = t("discount_to")+": "
+    %strong
+      = product.discount
+      ="%"
+
   = link_to t("info"), product, :class=>"info-button"
   = link_to t("buy"), product, :class=>"buy-button"
-
-
+  %br/
+  %br/
+  %hr/

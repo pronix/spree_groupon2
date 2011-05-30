@@ -5,8 +5,10 @@ ru:
   topic: Тема сообщения
   message_body: Тело сообщения
   action_conditions: Условия акции
-  action_descussion: Обсуждение акции
+  action_comments: Комментарии
+  action_description: Описание
   add_comment: Добавить комментарий
+  comments_for_product: Комментарии к акции
   conditions: Условия
   features: Особенности
   action_of_the_day: Акция дня
@@ -16,8 +18,18 @@ ru:
   buy: Купить
   already_buyed: Уже купили
   price_from: Цена
+  self_price: Стоимость
+  economy: Экономия
+  people: человек
+  time_left: До завершения акции
+  time_left_show: До завершения осталось
+  cupons: купонов
+  join_us: Присоединяйтесь
   info: Инфо
   discount_to: Скидка
+  sign_in_to_post_comments: Войдите в систему чтобы оставлять комментарий.
+  thank_you_for_comment: Спасибо за комментарий
+  comment_sent_to_moderation: Ваш комментарий отправлен на премодерацию, и вскоре появится на сайте.
   add_condition: "Добавить условие"
   add_feature: "Добавить особенность"
   conditions: "Условия"

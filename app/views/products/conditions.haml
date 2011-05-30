@@ -1,0 +1,15 @@
+%table
+  %tr
+    %td.conditions-wrapper
+      %h2=t('conditions')
+      %ul
+        - @product.conditions.each do |condition|
+          %li
+            =condition.name
+    %td.conditions-wrapper
+      %h2=t('features')
+      %ul
+        - @product.features.each do |feature|
+          %li
+            =feature.name  
+

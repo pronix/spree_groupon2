@@ -1,3 +1,4 @@
+= render 'shared/main_tabs'
 - paginated_products = @searcher.products if params.key?(:keywords)
 - paginated_products ||= products
 
@@ -23,39 +24,7 @@
 
 %hr.space
 
-:css
-  body.two-col #content {
-    background: #fff;
-    width:950px;
-  }
 
-  .product-wrapper {
-    border-right:1px solid #ccc;
-    width: 430px;
-    height: 450px;
-    padding:20px;
-    font-size:14px;
-    color:black;
-    float:left;
-  }
-  
-  .product-head a {
-    color:black;
-    text-decoration:none;
-  }
 
-  .srtong {
-    font-weight:bold;
-  }
 
-  .product-image {
-    border:1px solid #ccc;
-  }
 
-  .price {
-    
-  }
-
-  .discount {
-    
-  }
