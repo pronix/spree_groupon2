@@ -467,7 +467,7 @@ div#states {
   }
   .action-more-in:hover {}
 
-  body.two-col #content {
+  body.two-col #content, #content {
     background: #fff;
     width:950px;
     -webkit-border-top-right-radius: 6px;

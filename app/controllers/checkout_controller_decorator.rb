@@ -1,11 +1,12 @@
 CheckoutController.class_eval do
   helper :locations
 
-  def edit
+#  def edit
 
-    flash[:notice] = I18n.t(:order_processed_successfully)
-    flash[:commerce_tracking] = "nothing special"
-    respond_with(@order, :location => completion_route)
+###    flash[:notice] = I18n.t(:order_processed_successfully)
+###    flash[:commerce_tracking] = "nothing special"
+###    respond_with(@order, :location => completion_route)
+##    render :text=>@order.state
 #    if @order.update_attributes(object_params)
 #      if @order.next
 #        state_callback(:after)
@@ -25,5 +26,7 @@ CheckoutController.class_eval do
 #      respond_with(@order) { |format| format.html { render :edit } }
 #    end
 
-  end
+#  end
+
+
 end

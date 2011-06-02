@@ -24,11 +24,14 @@ ru:
   people: человек
   time_left: До завершения акции
   time_left_show: До завершения осталось
+  back_to_description: Вернуться к описанию
+  choose_payment_method: Выберите метод оплаты
   cupons: купонов
   join_us: Присоединяйтесь
   no_comments: Комментариев к продукту еще нет
   all_actions: Все акции
   info: Инфо
+  valid_until: Действует до
   discount_to: Скидка
   sign_in_to_post_comments: Войдите в систему чтобы оставлять комментарий.
   thank_you_for_comment: Спасибо за комментарий
@@ -1081,7 +1084,7 @@ ru:
   shipping_methods_description: "Управление методами доставки"
   shipping_total: "Доставка"
   shop_by_taxonomy: "%{taxonomy}"
-  shopping_cart: "Корзина"
+  shopping_cart: "Покупка купона"
   show: "Показать"
   show_active: "Показать активные"
   show_deleted: "Показать удаленные"
