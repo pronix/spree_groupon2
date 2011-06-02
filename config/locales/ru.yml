@@ -11,6 +11,7 @@ ru:
   comments_for_product: Комментарии к акции
   conditions: Условия
   features: Особенности
+  action_header: Акция
   action_of_the_day: Акция дня
   current_actions: Активные акции
   past_actions: Прошедшие акции
@@ -26,6 +27,7 @@ ru:
   cupons: купонов
   join_us: Присоединяйтесь
   no_comments: Комментариев к продукту еще нет
+  all_actions: Все акции
   info: Инфо
   discount_to: Скидка
   sign_in_to_post_comments: Войдите в систему чтобы оставлять комментарий.

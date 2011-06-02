@@ -2,6 +2,9 @@
 - paginated_products = @searcher.products if params.key?(:keywords)
 - paginated_products ||= products
 
+%h2
+  = "#{t('all_actions')} #{@state.name}"
+  
 - if products.empty?
   = t(:no_products_found)
 - elsif params.key?(:keywords)

@@ -4,11 +4,11 @@
   .russia
     .title= t("russia")
     - states_ru.each do |state|
-      = link_to state.name, "/#{state.abbr}", :class=>"choose_state_link"
+      = link_to state.name, "/change_state/#{state.id}", :class=>"choose_state_link"
   .ukraine
     .title= t("ukraine")
     - states_ua.each do |state|
-      = link_to state.name, "/#{state.abbr}", :class=>"choose_state_link"
+      = link_to state.name, "/change_state/#{state.id}", :class=>"choose_state_link"
 
 :javascript
   $(document).ready(function() {

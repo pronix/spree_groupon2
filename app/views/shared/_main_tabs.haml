@@ -1,4 +1,7 @@
 #main-page-tabs
-    = link_to t("action_of_the_day")+" "+"15 февраля 15 марта", "#", :class=>"selected"
-    = link_to t("current_actions"), "#"
-    =link_to t("past_actions"), "#"
+  -# unless @product.nil?
+    =# link_to "#{t("action_header")} #{@product.available_till}", "#", :class=>"selected"
+  = link_to t("current_actions"), "/current", :class=>"selected"
+  = link_to t("past_actions"), "/recently"
+%br/
+%br/

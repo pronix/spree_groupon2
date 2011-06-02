@@ -1,0 +1,134 @@
+%fieldset#billing
+  = form.fields_for :bill_address do |bill_form|
+    %legend= t("billing_address")
+    .inner
+      %p{:id=>"bfname", :class=>"field"}
+        = bill_form.label :firstname, t(:first_name) 
+        = bill_form.text_field :firstname, :class => 'required' 
+        %span.req*
+      %p{:id=>"blname", :class=>"field"}
+        = bill_form.label :lastname, t(:last_name) 
+        = bill_form.text_field :lastname, :class => 'required'
+        %span.req*
+      %p{:id=>"baddress", :class=>"field"}
+        = bill_form.label :address1, t(:street_address) 
+        = bill_form.text_field :address1, :class => 'required'
+        %span.req*
+      %p{:id=>"baddress2", :class=>"field"}
+        = bill_form.label :address2, t(:street_address_2) 
+        = bill_form.text_field :address2 
+      %p{:id=>"bcity", :class=>"field"}
+        = bill_form.label :city, t(:city) 
+        = bill_form.text_field :city, :class => 'required'
+        %span.req*
+
+      - if false #Spree::Config[:address_requires_state] 
+        %p.field
+          %span#bstate
+            - have_states = @order.bill_address.country.states.empty? 
+            = bill_form.label :state, t(:state) 
+            %noscript
+              = bill_form.text_field :state_name, :class => 'required' 
+
+            - state_elements = [ bill_form.collection_select(:state_id, @order.bill_address.country.states,
+            -   :id, :name, {:include_blank => true}, {:class => have_states ? "required" : "hidden", :disabled => !have_states}) +
+            -   bill_form.text_field(:state_name, :class => !have_states ? "required" : "hidden", :disabled => have_states)
+            - ].join.gsub('"', "'").gsub("\n", "")
+            
+            
+          %span.req*
+      %p{:id=>"bzip", :class=>"field"}
+        = bill_form.label :zipcode, t(:zip) 
+        = bill_form.text_field :zipcode, :class => 'required'
+        %span.req*
+
+      %p{:id=>"bcountry", :class=>"field"}
+        = bill_form.label :country_id, t(:country) 
+        %span#bcountry
+          = bill_form.collection_select :country_id, available_countries, :id, :name, {}, {:class => 'required'}
+        %span.req*
+
+      %p{:id=>"bphone", :class=>"field"}
+        = bill_form.label :phone, t(:phone) 
+        = bill_form.text_field :phone, :class => 'required'
+        %span.req*
+        - if Spree::Config[:alternative_billing_phone] 
+          %p#baltphone
+            = bill_form.label :alternative_phone, t(:alternative_phone) 
+            = bill_form.text_field :alternative_phone 
+
+%fieldset#shipping
+  = form.fields_for :ship_address do |ship_form| 
+    %legend
+      = t("shipping_address")
+    %p{:class=>"field checkbox"}
+      %label{:for=>"order_use_billing", :id=>"use_billing"}
+        = check_box_tag 'order[use_billing]', '1', (!(@order.bill_address.empty? && @order.ship_address.empty?) && @order.bill_address.eql?(@order.ship_address))  
+        = t("use_billing_address") 
+
+    #inner
+      %p{:id=>"sfname", :class=>"field"}
+        = ship_form.label :firstname, t(:first_name) 
+        = ship_form.text_field :firstname, :class => 'required'
+        %span.req*
+
+      %p{:id=>"slname", :class=>"field"}
+        = ship_form.label :lastname, t(:last_name) 
+        = ship_form.text_field :lastname, :class => 'required'
+        %span.req*
+
+      %p{:id=>"saddress", :class=>"field"}
+        = ship_form.label :address1, t(:street_address) 
+        = ship_form.text_field :address1, :class => 'required'
+        %span.req*
+
+      %p{:id=>"saddress2", :class=>"field"}
+        = ship_form.label :address2, t(:street_address_2) 
+        = ship_form.text_field :address2 
+
+      %p{:id=>"scity", :class=>"field"}
+        = ship_form.label :city, t(:city) 
+        = ship_form.text_field :city, :class => 'required'
+        %span.req*
+
+      - if false #Spree::Config[:address_requires_state] 
+        %p.field
+          %span#sstate
+            - have_states = !@order.ship_address.country.states.empty? 
+            = ship_form.label :state, t(:state) 
+            %noscript
+              = ship_form.text_field :state_name, :class => 'required' 
+            - state_elements = [ ship_form.collection_select(:state_id, @order.bill_address.country.states, :id, :name,
+            -   {:include_blank => true}, {:class => have_states ? "required" : "hidden", :disabled => !have_states}) +
+            -   ship_form.text_field(:state_name, :class => !have_states ? "required" : "hidden", :disabled => have_states)
+            - ].join.gsub('"', "'").gsub("\n", "")
+          %span.req*
+
+      %p{:id=>"szip", :class=>"field"}
+        = ship_form.label :zipcode, t(:zip) 
+        = ship_form.text_field :zipcode, :class => 'required'
+        %span.req*
+
+      %p{:id=>"scountry", :class=>"field"}
+        = ship_form.label :country_id, t(:country) 
+        %span#scountry
+          = ship_form.collection_select :country_id, available_countries, :id, :name, {}, {:class => 'required'}
+        %span.req*
+
+      %p{:id=>"sphone", :class=>"field"}
+        = ship_form.label :phone, t(:phone) 
+        = ship_form.text_field :phone, :class => 'required'
+        %span.req*
+      - if Spree::Config[:alternative_shipping_phone] 
+        %p#saltphone
+          = ship_form.label :alternative_phone, t(:alternative_phone) 
+          = ship_form.text_field :alternative_phone 
+
+%hr.space
+.form-buttons
+  %input{:type=>"submit", :class=>"continue button primary", :value=>t("save_and_continue")}
+
+
+:css
+  div.inner input[type=text], div.inner select { width: 80%; }
+  .hidden { display: none; }

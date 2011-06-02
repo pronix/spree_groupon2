@@ -30,7 +30,9 @@ Rails.application.routes.draw do
       get 'add_comment'
     end
   end
-
-  
+#  match '/add_to_cart/:id' => "products#add_to_cart", :via=>:get, :as=>:add_to_cart
+  get '/recently' => "products#recently"
+  get '/current' => "products#current"
+  match "/change_state/:id" => "locations#change_state"
 
 end

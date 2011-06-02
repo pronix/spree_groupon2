@@ -160,10 +160,7 @@ div#states {
   background-image:none;
 }
 
-#main-page-tabs{
-  position:absolute;
-  top:65px;
-}
+
 
 
 #main-page-tabs a {
@@ -288,25 +285,7 @@ div#states {
   .action-bigprice span {
     font-size: 14px;
   }
-  .action-bye {
-    background-color: #FFF;
-    display: block;
-    height: 30px;
-    width: 120px;
-    font-size: 16px;
-    text-align: center;
-    color: #000;
-    text-decoration: none;
-    line-height: 30px;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-
-  }
-  .action-bye:hover {}
+  
   .action-deadline {
     width: 300px;
     font-size: 14px;
@@ -500,14 +479,22 @@ div#states {
     -webkit-border-bottom-left-radius: 6px;
     -moz-border-radius-bottomleft: 6px;
     border-bottom-left-radius: 6px;
+    margin-top:10px;
     padding-top:30px;
+    padding-right:30px;
+    padding-left:30px;
+  }
+  
+  #main-page-tabs{
+    position:relative;
+    margin-left:-30px;
+    margin-top:-60px;
   }
 
   .product-wrapper {
     border-right:1px solid #ccc;
     width: 430px;
     height: 450px;
-    padding:20px;
     font-size:14px;
     color:black;
     float:left;

@@ -1,5 +1,4 @@
-=# render 'shared/products_main'
-= render 'shared/main_tabs'
+= render 'shared/main_tabs', :locals=>{:product=>@product}
 #current-action
   .action-banner
     = link_to large_image(@product, :size=>"610x300"), "#"
@@ -15,12 +14,13 @@
     .action-bigprice
       ="#{@product.price.to_i}"
       %span=t('currency')
-      
-      = link_to t("buy"), "#", :class=>"action-bye"
+      = render 'cart_form'
     .action-deadline
+      = hidden_field_tag 'end_time', @product.available_till.to_s
       =t("time_left_show")+":"
       %br/
-      %span
+      %span#timeLeft
+        
         3 дня 22 часа 45 минут
     .action-kupleno
       =t('already_buyed')+":"
@@ -39,9 +39,34 @@
   =@product.description
 
 %br/
-
+:css
+  .action-bye {
+    background-color: #FFF;
+    display: block;
+    height: 30px;
+    width: 120px;
+    font-size: 16px;
+    text-align: center;
+    color: #000;
+    text-decoration: none;
+    line-height: 30px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px white solid;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-weight:bold;
+    padding:0px;
+    coursor:pointer;
+  }
+  .action-bye:hover {}
 
 :javascript
+  var endDate = new Date(Date.parse($('#end_time').val()))
+  TimeLeft(endDate, "#timeLeft")
   function loadContent(url){
     $("#current-action-tabs").children().each( function(indx,child){
       $(this).removeClass("selected-action-tab")
