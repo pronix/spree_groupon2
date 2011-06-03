@@ -1,0 +1,9 @@
+1:
+  product: ochki
+  option_values: 
+  sku: ROR-00001
+  price: 19.99
+  cost_price: 0
+  count_on_hand: 500
+  is_master: true
+
