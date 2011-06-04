@@ -20,6 +20,11 @@ Rails.application.routes.draw do
       resources :conditions
       resources :features
     end
+    resources :comments do
+      collection do
+        get :confirmed
+      end
+    end
   end
 
   resources :products do
