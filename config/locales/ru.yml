@@ -8,6 +8,14 @@ ru:
   action_comments: Комментарии
   action_description: Описание
   add_comment: Добавить комментарий
+  comment_actions: "Действия"
+  approve: "Одобрить"
+  confirm_approve: "Подтверждение одобрения комментария"
+  successfully_approved: "Комментарий был успешно одобрен!"
+  comment: "Комментарий"
+  new_comments: "Новые комментарии"
+  confirmed_comments: "Одобренные комментарии"
+  comments: "Комментарии"
   comments_for_product: Комментарии к акции
   conditions: Условия
   features: Особенности

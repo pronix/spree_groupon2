@@ -1,0 +1,29 @@
+= render :partial => 'admin/shared/comment_sub_menu', :locals => {:current => "Confirmed"}
+
+%h1
+  = "#{t("actions.listing")} #{t("confirmed_comments")}"
+
+%div{:id => 'new_product'}
+
+%table{:class => 'index', :id =>'listing_comments'}
+  %tr
+    %th
+      = t("comment")
+    %th
+      = t("user")
+    %th
+      = t("product")
+    %th
+      = t("comment_actions")
+  - @collection.each do |object|
+    %tr{:id => dom_id(object)}
+      %td
+        = object.description
+      %td
+        = object.user.email
+      %td
+        = object.product.name
+      %td{:class => 'actions'}
+        = link_to_delete object
+
+= will_paginate(@collection, :previous_label => "&#171; #{t('previous')}", :next_label => "#{t('next')} &#187;")
