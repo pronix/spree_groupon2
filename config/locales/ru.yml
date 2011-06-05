@@ -1,5 +1,9 @@
 ---
 ru:   
+  vkontakte: Вконтакте
+  facebook: Facebook
+  one_more_step: Еще один шаг
+  sign_in_through_one_of_these_services: Войти через одну из этих соц сетей
   change_password: Смена пароля
   old_password: Старый пароль
   new_password: Новый пароль
