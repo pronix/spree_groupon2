@@ -1,5 +1,8 @@
+= render 'top_menu'
+%h2
+  =t("view.profile.header.edit")
+
 = form_for @profile do |f|
-  = f.hidden_field :id
   %p
     %label 
       = t("view.profile.edit.firstname")
@@ -11,17 +14,51 @@
     %br/
     =f.text_field :lastname
   %p
-    = fields_for @profile.user do |u|
+    = f.fields_for :user do |u|
       %label 
         =t("view.profile.edit.mobile")
       %br/
       = u.text_field :phone
   %p
     %label 
-    =t("view.profile.edit.sex")
+      =t("view.profile.edit.sex")
     %br/
-    = select_tag :sex, options_for_select([[t("view.profile.edit.sex_male"), "male"], [t("view.profile.edit.sex_female"), "female"]], "male")
+    = f.select :sex, options_for_select([[t("view.profile.edit.sex_male"), true], [t("view.profile.edit.sex_female"), false]])
+
+  %p
+    %label
+      =t("view.profile.edit.birthday")
+    %br
+    = f.date_select :birthday, :start_year => Date.current.year, :end_year => 1950
+  %p
+    = f.fields_for :user do |u|
+      %label
+        =t("view.profile.edit.state")
+      %br
+      = u.select :state_id, options_from_collection_for_select(@states, :id, :name)
+  %p
+    %label=t("view.profile.edit.metro")
+    %br/
+    = f.text_field :metro  
 
   = f.submit t("submits.save")
+  = link_to t('back'), profile_path(@profile) 
 
 = link_to t("links.resend_confirmation_token"), user_resend_confirmation_token_path(:email => @profile.user.email)
+%br/
+%br/
+
+
+
+:css
+  .edit_profile input[type=text] {
+    border: #ccc solid 1px;
+    font-size:14px;
+    padding: 5px;
+    color: #666;
+  }
+  
+  .edit_profile label {
+    font-size:14px;
+  }
+

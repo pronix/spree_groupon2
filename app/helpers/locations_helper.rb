@@ -2,7 +2,6 @@ module LocationsHelper
   
   # Отображает текущий город
   def current_state
-    logger.info "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
     if current_user
       unless session[:state_id]
         state = current_user.state

@@ -6,7 +6,10 @@ Rails.application.routes.draw do
     get "user/resend_confirmation_token", :to => "user_registrations#resend_confirmation_token"
   end
 
-  resource :profile  
+  match "/change_password"=>"users#change_password", :via=>:get,  :as=>:change_password
+  match "/update_password"=>"users#update_password", :via=>:post, :as=>:update_password
+
+  resources :profiles  
 
   resources :locations do
     collection do
@@ -39,5 +42,7 @@ Rails.application.routes.draw do
   get '/recently' => "products#recently"
   get '/current' => "products#current"
   match "/change_state/:id" => "locations#change_state"
+  match "/user/deposit" => "user_deposit#new", :as=>:user_deposit
 
 end
+

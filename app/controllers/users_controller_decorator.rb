@@ -2,6 +2,15 @@ UsersController.class_eval do
   prepend_before_filter :load_object, :only => [:show, :edit, :update]
   prepend_before_filter :authorize_actions, :only => :new
   before_filter :init_regions
+  helper :locations
+
+  def change_password
+  end
+
+  def update_password
+    flash[:notice] = t("password_updated_successfuly")
+    redirect_to profile_path(current_user.profile)
+  end
 
   def show
     @orders = @user.orders.complete
@@ -10,7 +19,6 @@ UsersController.class_eval do
   def create
     @user = User.new(params[:user])
     if @user.save
-
       if current_order
         current_order.associate_user!(@user)
         session[:guest_token] = nil

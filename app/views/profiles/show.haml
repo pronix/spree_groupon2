@@ -1,0 +1,77 @@
+= render 'top_menu'
+%table#personal-info
+  %tr
+    %td
+      = t("view.profile.show.name")+":"
+    %td
+      = "#{@profile.firstname} #{@profile.lastname}"
+  %tr
+    %td
+      = t("view.profile.show.sex")+":"
+    %td
+      = @profile.sex ? t("view.profile.edit.sex_male") : t("view.profile.edit.sex_female")
+  %tr
+    %td
+      = t("view.profile.show.email")+":"
+    %td
+      = current_user.email
+  %tr
+    %td
+      = t("view.profile.show.state")+":"
+    %td
+      = current_user.state
+  %tr
+    %td
+      = t("view.profile.show.metro")+":"
+    %td
+      = @profile.metro
+  %tr
+    %td
+      = t("view.profile.show.birthday")+":"
+    %td
+      = @profile.birthday
+  %tr
+    %td
+      = t("view.profile.show.mailing")+":"
+    %td
+      = t("view.profile.show.mailing_subscrybed")
+#bonuses
+  %h3
+    = t("view.profile.show.bonuses")+":"
+    = current_user.profile.bonuses.to_i
+  %h3
+    = t("view.profile.show.your_balance_is")+":"
+    = current_user.profile.balance
+    = t("currency")
+
+
+#links
+  = link_to t("view.profile.show.edit"), edit_profile_path(p)
+  = link_to t("view.profile.show.change_password"), edit_user_password_path
+  = link_to t("view.profile.show.setup_mailing"), "#"
+
+
+:css
+  table#personal-info {
+    font-size:14px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 400px;
+    float:left;
+    margin-top:20px;
+  }
+  #bonuses {
+    width: 400px;
+    float: right;
+    margin-top:20px;
+  }
+  
+  #links {
+    float:left;
+    width:100%;
+    margin-bottom:20px;
+  }
+
+  #links a {
+    margin-right:10px;
+  }
+

@@ -1,5 +1,8 @@
 ---
 ru:   
+  change_password: Смена пароля
+  old_password: Старый пароль
+  new_password: Новый пароль
   contact_us: Форма обратной связи
   send_message: Отправить
   topic: Тема сообщения
@@ -51,8 +54,29 @@ ru:
   featured: "Акция дня"
   features: "Особенности"
   action_type: "Тип акции"
+  fill_deposit: Пополнение баланса
+  input_deposit_ammount: Введите сумму пополнения
   must_have_at_least_one_condition: "Должно быть хотя бы одно условие"
   must_have_at_least_one_feature: "Должна быть хотя бы одна особенность"
+  date:
+    formats:
+      default: "%d.%m.%Y"
+      short: "%d %b"
+      long: "%d %B %Y"
+
+    day_names: [воскресенье, понедельник, вторник, среда, четверг, пятница, суббота]
+    standalone_day_names: [Воскресенье, Понедельник, Вторник, Среда, Четверг, Пятница, Суббота]
+    abbr_day_names: [Вс, Пн, Вт, Ср, Чт, Пт, Сб]
+
+    month_names: [~, января, февраля, марта, апреля, мая, июня, июля, августа, сентября, октября, ноября, декабря]
+    standalone_month_names: [~, Январь, Февраль, Март, Апрель, Май, Июнь, Июль, Август, Сентябрь, Октябрь, Ноябрь, Декабрь]
+    abbr_month_names: [~, янв., февр., марта, апр., мая, июня, июля, авг., сент., окт., нояб., дек.]
+    standalone_abbr_month_names: [~, янв., февр., март, апр., май, июнь, июль, авг., сент., окт., нояб., дек.]
+
+    order:
+      - :day
+      - :month
+      - :year
   time:
     formats:
       long: "%d.%m.%Y %H:%M"
@@ -92,7 +116,28 @@ ru:
        country: Страна
        buttons:
         registration: Зарегистрироваться
+    profile_updated_successfully: Ваш профайл успешно обновлен
     profile:
+      show:
+        name: Имя
+        sex: Пол
+        email: Эл. почта
+        state: Город
+        metro: Метро
+        birthday: День рождения
+        mailing: Рассылка
+        mailing_subscrybed: Вы получаете ежедневную рассылку
+        bonuses: Бонусы
+        your_balance_is: Ваш баланс
+        edit: Редактировать
+        change_password: Сменить пароль
+        setup_mailing: Настроить рассылку
+      tab:
+        personal: Личная информация
+        cupons: Купоны
+        friends: Друзья
+      header:
+        edit: Редактирование профиля
       edit:
         firstname: Имя
         lastname: Фамилия
@@ -100,6 +145,9 @@ ru:
         sex: Пол
         sex_male: Мужской
         sex_female: Женский
+        birthday: День рождения
+        state: Город
+        metro: Метро
         
   'no': "Нет"
   'yes': "Да"
