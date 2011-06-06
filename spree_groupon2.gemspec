@@ -18,4 +18,6 @@ Gem::Specification.new do |s|
 
   s.add_dependency('spree_core', '>= 0.60.00')
   s.add_dependency('spree_robokassa', '~> 0.50.1')
+  s.add_dependency('haml', '~> 3.1.1')
+  s.add_dependency('sass', '~> 3.1.2')
 end

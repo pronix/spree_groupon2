@@ -1,10 +1,10 @@
-= render "shared/error_messages", :target => @order 
+= render "shared/error_messages", :target => @order
 %table#cart-detail
   %thead
     %tr
       = hook :cart_items_headers do
         %th= t("item")
-        %th= "#{t('valid_until')} #{@product.available_till.strftime('%d %b %Y')}"
+        %th= "#{t('valid_until')} #{@order.products.first.available_till.strftime('%d %b %Y')}"
         %th= t("price")
         %th= t("qty")
         %th= t("total")

@@ -4,12 +4,12 @@
 
 %h2
   = "#{t('all_actions')} #{@state.name}"
-  
+
 - if products.empty?
   = t(:no_products_found)
 - elsif params.key?(:keywords)
   %h3= t(:search_results, :keywords => h(params[:keywords]))
- 
+
 - if products.any?
   - products.each do |product|
     - if Spree::Config[:show_zero_stock_products] || product.has_stock?
@@ -17,7 +17,7 @@
         = link_to small_image(product), product
         = link_to raw(product.name + " <span class='price selling'>#{product_price(product)}</span>"), product, :class => 'info'
 
- 
+
 %hr.space
 
 - if paginated_products.respond_to?(:total_pages)

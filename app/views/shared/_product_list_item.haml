@@ -10,9 +10,9 @@
 
   .product-info
     %span
-      = "#{t('already_buyed')} 2 #{t('people')}"
+      = "#{t('already_buyed')} #{product.master.line_items.count} #{t('people')}"
     %span
-      = "#{t('time_left')} 3 дня 22 часа 45 минут"
+      = "#{t('time_left')} #{time_ago_in_words(product.available_till) }"
 
   .price-block
     = t("price_from")+": "

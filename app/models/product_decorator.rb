@@ -5,6 +5,17 @@ Product.class_eval do
   has_many :comments, :dependent => :destroy
   has_many :confirmed_comments, :class_name=>"Comment", :conditions=>{:confirmed=>true}
 
+
+  scope :available_coupon, lambda{ where(" :date between available_on and available_till ", :date => Time.now)}
+
+  scope :recently_coupon, lambda{ where(" available_till <= :date ", :date => Time.now) }
+
+  scope :for_state, lambda{|state_id| where(" state_id = :state_id", :state_id  => state_id)}
+
+  scope :current_groupon, lambda{
+    where("available_till > :date AND available_on <= :date", :date => Time.now)
+  }
+
   attr_accessible :name, :description, :price, :cost_price, :discount, :available_on, :sku,
     :on_hand, :action_type, :state_id, :permalink, :conditions, :conditions_attributes,
     :features, :features_attributes, :available_on, :available_till, :featured
