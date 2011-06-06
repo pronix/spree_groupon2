@@ -1,0 +1,6 @@
+= content_for :sub_menu do
+  %ul#sub_nav  
+    %li{:class => current.include?("New") && "selected"}
+      = link_to t("new_comments"), admin_comments_path
+    %li{:class => current.include?("Confirmed") && "selected"}
+      = link_to t("confirmed_comments"), confirmed_admin_comments_path

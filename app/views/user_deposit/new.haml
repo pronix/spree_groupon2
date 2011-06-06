@@ -1,0 +1,12 @@
+%h2=t('fill_deposit')
+%p
+  = t("input_deposit_ammount")
+  = text_field_tag 'ammount', "200"
+  = t("currency")
+%br/
+
+%h2=t("choose_payment_method")
+%p
+  %ul
+    - @payment_methods.each do |method|
+      %li= link_to method.name, "#"

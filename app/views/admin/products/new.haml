@@ -1,0 +1,128 @@
+= render :partial => 'admin/shared/product_sub_menu'
+
+= render "shared/error_messages", :target => @product
+
+= form_for(@product, :url => collection_url, :html => { :multipart => true }) do |f|
+  %fieldset
+    = f.field_container :name do
+      = f.label :name, t("name")
+      %span{:class => "required"}
+        *
+      %br
+      = f.text_field :name, :class => 'fullwidth title'
+
+    = f.field_container :description do
+      = f.label :description, t("description")
+      %span{:class => "required"}
+        *
+      %br
+      = f.text_area :description, {:cols => 60, :rows => 4, :class => 'fullwidth'}
+      = f.error_message_on :description
+
+  %div{:class => "yui-gb"}
+    %div{:class => "yui-u first"}
+      %p
+        = f.label :available_on, t("available_on")
+        %br
+        = f.error_message_on :available_on
+        = f.spree_date_picker :available_on, :style=>"width:150px"
+
+      = f.field_container :action_type do
+        = f.label :action_type, t("action_type")
+        %br
+        = select_tag "product[action_type]", options_for_select([["Акция", 0], ["Бонусная акция", 1]], 0)
+
+      = f.field_container :featured do
+        = f.label :featured, t("featured")
+        %br
+        = f.check_box :featured
+
+      = f.field_container :state_id do
+        = f.label :name, t("view.user_registrations.new.country")
+        %br
+        = select_tag "country", options_for_select([["Россия", "ru"], ["Украина", "ua"]], "ru")
+
+        %br
+        = f.label :name, t("view.user_registrations.new.state")
+        #city_select
+          = select_tag "product[state_id]", options_from_collection_for_select(@states, "id", "name")
+
+    %div{:class => "yui-u"}
+      %p
+        = f.label :available_till, t("available_till")
+        %br
+        = f.error_message_on :available_till
+        = f.spree_date_picker :available_till, :style=>"width:150px"
+
+      = f.field_container :price do
+        = f.label :price, t("master_price")
+        %span{:class => "required"}
+          *
+        %br
+        = f.text_field :price
+
+      = f.field_container :cost_price do
+        = f.label :cost_price, t("cost_price")
+        %br
+        = f.text_field :cost_price
+
+      = f.field_container :discount do
+        = f.label :discount, t("discount")
+        %span{:class => "required"}
+          *
+        %br
+        = f.text_field :discount
+
+      = f.field_container :on_hand do
+        = f.label :on_hand, t("on_hand")
+        %span{:class => "required"}
+          *
+        %br
+        = f.text_field :on_hand
+
+
+  %table{:class => "index"}
+    %thead
+      %tr
+        %th
+          = t("description")
+        %th
+          = t("action")
+    %tbody{:id => "conditions"}
+  = f.fields_for :conditions do |pp_form|
+    = render 'condition_fields', :f => pp_form
+  %input{:type => "hidden", :name => "clear_conditions", :value => "true"}
+
+  %p{:class => "add_condition"}
+    = link_to_add_fields icon('add') + ' ' + t("add_condition"),
+                              "tbody#conditions",
+                              f,
+                              :conditions
+
+  %table{:class => "index"}
+    %thead
+      %tr
+        %th
+          = t("description")
+        %th
+          = t("action")
+    %tbody{:id => "features"}
+  = f.fields_for :features do |pp_form|
+    = render 'feature_fields', :f => pp_form
+  %input{:type => "hidden", :name => "clear_features", :value => "true"}
+
+  %p{:class => "add_feature"}
+    = link_to_add_fields icon('add') + ' ' + t("add_feature"),
+                              "tbody#features",
+                              f,
+                              :features
+
+
+  = render :partial => 'admin/shared/new_resource_links'
+
+:javascript
+  $(document).ready(function() {
+    get_states('product')
+  });
+
+= javascript_tag "datePickerController.create();"

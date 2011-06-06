@@ -1,0 +1,7 @@
+#main-page-tabs
+  -# unless @product.nil?
+    =# link_to "#{t("action_header")} #{@product.available_till}", "#", :class=>"selected"
+  = link_to t("current_actions"), "/current", :class=>"selected"
+  = link_to t("past_actions"), "/recently"
+%br/
+%br/

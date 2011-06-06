@@ -1,0 +1,77 @@
+= render 'shared/main_tabs', :locals=>{:product=>@product}
+#current-action
+  .action-banner
+    = link_to large_image(@product, :size=>"610x300"), "#"
+    .action-head
+      = link_to @product.name, "#"
+  .action-info
+    .action-price
+      ="#{t('self_price')}: #{@product.cost_price.to_i} #{t('currency')}"
+    .action-skidka
+      ="#{t('discount')}: #{@product.discount}%"
+    .action-economy
+      ="#{t('economy')}: #{(@product.cost_price.to_i/100)*@product.discount.to_i} #{t('currency')}"
+    .action-bigprice
+      ="#{@product.price.to_i}"
+      %span=t('currency')
+      = render 'cart_form'
+    .action-deadline
+      = hidden_field_tag 'end_time', @product.available_till.to_s
+      =t("time_left_show")+":"
+      %br/
+      %span#timeLeft
+        3 дня 22 часа 45 минут
+    .action-kupleno
+      =t('already_buyed')+":"
+      %span
+        200
+      =t('cupons')
+      = link_to t('join_us'), "#", :class=>"action-join"
+#current-action-tabs
+  =link_to_function t("action_description"), "loadContent('description')", :class=>"action-conditions selected-action-tab"
+  =link_to_function t("action_conditions"), "loadContent('conditions')", :class=>"action-about"
+  =link_to_function t("action_comments"), "loadContent('comments')", :class=>"action-comments"
+  =link_to_function t("add_comment"), "loadContent('add_comment')", :class=>"action-addcomment"
+%br/
+%br/
+#action-desc-wrapper
+  =@product.description
+
+%br/
+:css
+  .action-bye {
+    background-color: #FFF;
+    display: block;
+    height: 30px;
+    width: 120px;
+    font-size: 16px;
+    text-align: center;
+    color: #000;
+    text-decoration: none;
+    line-height: 30px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px white solid;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-weight:bold;
+    padding:0px;
+    coursor:pointer;
+  }
+  .action-bye:hover {}
+
+:javascript
+  var endDate = new Date(Date.parse($('#end_time').val()))
+  TimeLeft(endDate, "#timeLeft")
+  function loadContent(url){
+    $("#current-action-tabs").children().each( function(indx,child){
+      $(this).removeClass("selected-action-tab")
+    });
+    $(event.target).addClass("selected-action-tab");
+    $("#action-desc-wrapper").html("Загружается...")
+    $("#action-desc-wrapper").load(window.location.pathname+'/'+url);
+  }
+

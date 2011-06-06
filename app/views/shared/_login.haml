@@ -1,0 +1,17 @@
+= form_for(:user, :url => user_session_path) do |f| 
+  #password-credentials
+    %p
+      = f.label(:email, t("email"))
+      %br/
+      = f.text_field('email', :class => 'title')
+    %p
+      = f.label :password, t("password")
+      %br/
+      = f.password_field 'password', :class => 'title'
+  %p
+    %label
+      = f.check_box :remember_me
+      = f.label :remember_me, t('remember_me')
+
+  %p
+    = submit_tag t("log_in"), :class => 'button primary'

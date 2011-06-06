@@ -1,0 +1,14 @@
+= render "shared/error_messages", :target => @order 
+%table#cart-detail
+  %thead
+    %tr
+      = hook :cart_items_headers do
+        %th= t("item")
+        %th= "#{t('valid_until')} #{@product.available_till.strftime('%d %b %Y')}"
+        %th= t("price")
+        %th= t("qty")
+        %th= t("total")
+  %tbody#line_items
+    = order_form.fields_for :line_items do |item_form|
+      = render 'line_item', :variant => item_form.object.variant, :line_item => item_form.object, :item_form => item_form
+

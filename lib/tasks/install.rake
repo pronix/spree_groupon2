@@ -3,6 +3,7 @@ namespace :spree_groupon2 do
   task :install do
     Rake::Task['spree_groupon2:install:migrations'].invoke
     Rake::Task['spree_groupon2:install:assets'].invoke
+    Rake::Task['spree_groupon2:install:layouts'].invoke
   end
 
   namespace :install do
@@ -18,6 +19,14 @@ namespace :spree_groupon2 do
       source = File.join(File.dirname(__FILE__), '..', '..', 'public')
       destination = File.join(Rails.root, 'public')
       puts "INFO: Mirroring assets from #{source} to #{destination}"
+      Spree::FileUtilz.mirror_files(source, destination)
+    end
+    
+    desc "Copies layout "
+    task :layouts do 
+      source = File.join(File.dirname(__FILE__), '..', '..', 'app', 'views', 'layouts')
+      destination = File.join(Rails.root, 'app', 'views', 'layouts')
+      puts "INFO: Mirroring layouts from #{source} to #{destination}"
       Spree::FileUtilz.mirror_files(source, destination)
     end
   end

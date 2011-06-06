@@ -1,0 +1,26 @@
+= render :partial => 'admin/shared/product_sub_menu'
+
+= render :partial => 'admin/shared/product_tabs', :locals => {:current => "Conditions"}
+
+= render "shared/error_messages", :target => @product
+
+= form_for(@product, :url => admin_product_url(@product), :html => { :method => :put }) do |f|
+  %table{:class => "index"}
+    %thead
+      %tr
+        %th
+          = t("description")
+        %th
+          = t("action")
+    %tbody{:id => "conditions"}
+      = f.fields_for :conditions do |pp_form|
+        = render 'condition_fields', :f => pp_form
+
+  %input{:type => "hidden", :name => "clear_conditions", :value => "true"}
+
+  %p{:class => "add_condition"}
+    = link_to_add_fields icon('add') + ' ' + t("add"),
+                              "tbody#conditions",
+                              f,
+                              :conditions
+  = render :partial => 'admin/shared/edit_resource_links'

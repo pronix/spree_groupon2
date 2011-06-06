@@ -4,22 +4,12 @@
   = f.text_field :email, :class => 'title'
 %p
   %label
-  = f.label :password
-  %br/
-  = f.password_field :password
-%p
-  %label
-  = f.label :password_confirmation, t(:confirm_password)
-  %br/
-  = f.password_field :password_confirmation
-%p
-  %label
     = t("view.user_registrations.new.mobile")
   %br/
   = f.text_field :phone, :class => 'title'
 %p
   %label
-    = t("view.user_registrations.new.country") 
+    = t("view.user_registrations.new.country")
   %br
   - if params[:country].nil?
     = select_tag "country", options_for_select([["Украина", "ua"], ["Россия", "ru"]], "ru")
@@ -33,12 +23,14 @@
     - if params[:user].nil?
       = select_tag "user[state_id]", options_from_collection_for_select(@states, "id", "name")
     - else
-      = select_tag "user[state_id]", options_from_collection_for_select(@states, "id", "name", params[:user][:region_id])
+      = select_tag "user[state_id]", options_from_collection_for_select(@states, "id", "name", params[:user][:state_id])
 
+%p
 
 = hook :signup_below_password_fields
 
 :javascript
   $(document).ready(function() {
-    get_cities()
+    get_states()
   });
+

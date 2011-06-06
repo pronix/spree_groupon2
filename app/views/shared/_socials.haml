@@ -1,0 +1,21 @@
+- if !current_user || !current_user.user_authentications
+  %h2= t(:sign_in_through_one_of_these_services)+":"
+  %ul.socials_list
+    - AuthenticationMethod.where(:environment => ::Rails.env).each do |user|
+      - if user.active
+        %li= link_to t(user.preferred_provider), user_authentication_omniauth_authorize_path(user.preferred_provider.to_sym)
+
+
+:css
+  .socials_list {
+    list-style:none;
+  }
+
+  .socials_list li {
+    margin-top:10px;
+  }
+
+  .socials_list li a {
+    margin-top:10px;
+    font-size:16px;
+  }

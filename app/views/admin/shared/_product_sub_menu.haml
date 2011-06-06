@@ -1,0 +1,4 @@
+= content_for :sub_menu do
+  %ul#sub_nav  
+    = hook :admin_product_sub_tabs do
+      = tab :products, :match_path => '/products'

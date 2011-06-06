@@ -1,0 +1,5 @@
+%tr{:class => "product_feature fields"}
+  %td{:class => "desc"}
+    = f.text_area :desc, {:cols => 100, :rows => 2, :class => 'fullwidth', :style => 'height:50px'}
+  %td{:class => "actions"}
+    = link_to_remove_fields t("remove"), f

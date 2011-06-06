@@ -1,5 +1,98 @@
 ---
-ru: 
+ru:   
+  vkontakte: Вконтакте
+  facebook: Facebook
+  one_more_step: Еще один шаг
+  sign_in_through_one_of_these_services: Войти через одну из этих соц сетей
+  change_password: Смена пароля
+  old_password: Старый пароль
+  new_password: Новый пароль
+  contact_us: Форма обратной связи
+  send_message: Отправить
+  topic: Тема сообщения
+  message_body: Тело сообщения
+  action_conditions: Условия акции
+  action_comments: Комментарии
+  action_description: Описание
+  add_comment: Добавить комментарий
+  comment_actions: "Действия"
+  approve: "Одобрить"
+  confirm_approve: "Подтверждение одобрения комментария"
+  successfully_approved: "Комментарий был успешно одобрен!"
+  comment: "Комментарий"
+  new_comments: "Новые комментарии"
+  confirmed_comments: "Одобренные комментарии"
+  comments: "Комментарии"
+  comments_for_product: Комментарии к акции
+  conditions: Условия
+  features: Особенности
+  action_header: Акция
+  action_of_the_day: Акция дня
+  current_actions: Активные акции
+  past_actions: Прошедшие акции
+  bonus_actions: Бонусные акции
+  buy: Купить
+  already_buyed: Уже купили
+  price_from: Цена
+  self_price: Стоимость
+  economy: Экономия
+  people: человек
+  time_left: До завершения акции
+  time_left_show: До завершения осталось
+  back_to_description: Вернуться к описанию
+  choose_payment_method: Выберите метод оплаты
+  cupons: купонов
+  join_us: Присоединяйтесь
+  no_comments: Комментариев к продукту еще нет
+  all_actions: Все акции
+  info: Инфо
+  valid_until: Действует до
+  discount_to: Скидка
+  sign_in_to_post_comments: Войдите в систему чтобы оставлять комментарий.
+  thank_you_for_comment: Спасибо за комментарий
+  comment_sent_to_moderation: Ваш комментарий отправлен на премодерацию, и вскоре появится на сайте.
+  add_condition: "Добавить условие"
+  add_feature: "Добавить особенность"
+  conditions: "Условия"
+  discount: "Скидка"
+  featured: "Акция дня"
+  features: "Особенности"
+  action_type: "Тип акции"
+  fill_deposit: Пополнение баланса
+  input_deposit_ammount: Введите сумму пополнения
+  must_have_at_least_one_condition: "Должно быть хотя бы одно условие"
+  must_have_at_least_one_feature: "Должна быть хотя бы одна особенность"
+  date:
+    formats:
+      default: "%d.%m.%Y"
+      short: "%d %b"
+      long: "%d %B %Y"
+
+    day_names: [воскресенье, понедельник, вторник, среда, четверг, пятница, суббота]
+    standalone_day_names: [Воскресенье, Понедельник, Вторник, Среда, Четверг, Пятница, Суббота]
+    abbr_day_names: [Вс, Пн, Вт, Ср, Чт, Пт, Сб]
+
+    month_names: [~, января, февраля, марта, апреля, мая, июня, июля, августа, сентября, октября, ноября, декабря]
+    standalone_month_names: [~, Январь, Февраль, Март, Апрель, Май, Июнь, Июль, Август, Сентябрь, Октябрь, Ноябрь, Декабрь]
+    abbr_month_names: [~, янв., февр., марта, апр., мая, июня, июля, авг., сент., окт., нояб., дек.]
+    standalone_abbr_month_names: [~, янв., февр., март, апр., май, июнь, июль, авг., сент., окт., нояб., дек.]
+
+    order:
+      - :day
+      - :month
+      - :year
+  time:
+    formats:
+      long: "%d.%m.%Y %H:%M"
+  sms:
+    confirmation_text: Код подтверждения телефона
+  devise:
+    user_registrations:
+      user:
+        signed_up: Регистрация прошла успешно
+    confirmations:
+      user:
+        confirmed: Ваш аккаунт активирован
   links:
     resend_mobile_code: Повторно выслать код подтверждения
     resend_confirmation_token: Отправить письмо повторно
@@ -27,13 +120,38 @@ ru:
        country: Страна
        buttons:
         registration: Зарегистрироваться
+    profile_updated_successfully: Ваш профайл успешно обновлен
     profile:
+      show:
+        name: Имя
+        sex: Пол
+        email: Эл. почта
+        state: Город
+        metro: Метро
+        birthday: День рождения
+        mailing: Рассылка
+        mailing_subscrybed: Вы получаете ежедневную рассылку
+        bonuses: Бонусы
+        your_balance_is: Ваш баланс
+        edit: Редактировать
+        change_password: Сменить пароль
+        setup_mailing: Настроить рассылку
+      tab:
+        personal: Личная информация
+        cupons: Купоны
+        friends: Друзья
+      header:
+        edit: Редактирование профиля
       edit:
         firstname: Имя
         lastname: Фамилия
+        mobile: Мобильный телефон
         sex: Пол
         sex_male: Мужской
         sex_female: Женский
+        birthday: День рождения
+        state: Город
+        metro: Метро
         
   'no': "Нет"
   'yes': "Да"
@@ -113,18 +231,25 @@ ru:
         total: "Итого"
       product: 
         available_on: "Доступно с"
-        cost_price: "Себестоимость"
-        description: "Описание"
-        master_price: "Основная цена"
+        available_till: "Доступно до"
+        cost_price: "Стоимость услуги"
+        conditions: "Условия"
+        discount: "Скидка"
+        featured: "Акция дня"
+        features: "Особенности"
+        master_price: "Цена"
         name: "Название"
         on_hand: "В наличии"
+        permalink: "Линк"
+        price: "Цена"
         shipping_category: "Категория доставки"
         tax_category: "Налоговая категория"
+        action_type: "Тип акции"
       product_group: 
         name: "Название"
         product_count: "Кол-во товаров"
         product_scopes: "Фильтры"
-        products: "Товары"
+        products: "Купоны"
         url: "URL"
       product_scope: 
         arguments: "Аргументы"
@@ -158,7 +283,7 @@ ru:
         state_id: Город
         password: "Пароль:"
       variant: 
-        cost_price: "Себестоимость"
+        cost_price: "Стоимость услуги"
         depth: "Глубина"
         height: "Высота"
         price: "Цена"
@@ -200,8 +325,8 @@ ru:
         one: "Платеж"
         other: "Платежи"
       product: 
-        one: "Товар"
-        other: "Товары"
+        one: "Купон"
+        other: "Купоны"
       product_group: 
         one: "Группа товаров"
         other: "Группы товаров"
@@ -254,20 +379,45 @@ ru:
             email:
               blank: не может быть пустой
               invalid: имеет не допустимый формат
+              taken: уже существует
             password:
               blank: не может быть пустым
             phone: 
               blank: не может быть пустым
+              taken: уже существует
             state_id:
               blank: обязательно должен быть выбран
+        product:
+          attributes:
+            conditions:
+              blank: "не могут быть пустыми"
+            description:
+              blank: "не может быть пустым"
+            discount:
+              blank: "не может быть пустым"
+            features:
+              blank: "не могут быть пустыми"
+            name:
+              blank: "не может быть пустым"
+            on_hand:
+              must_be_greater_than_zero: "должно быть больше нуля"
+            price:
+              blank: "не может быть пустым"
+            permalink:
+              blank: "не может быть пустым"
+            state_id:
+              blank: "не может быть пустым"
+            action_type:
+              blank: "должен присутствовать"
+            
   add: "Добавить"
   add_category: "Добавить категорию"
   add_country: "Добавить страну"
   add_option_type: "Добавить опцию"
   add_option_types: "Добавить опции"
   add_option_value: "Добавить значение опции"
-  add_product: "Добавить товар"
-  add_product_properties: "Добавить свойства товара"
+  add_product: "Добавить купон"
+  add_product_properties: "Добавить свойства купона"
   add_rule_of_type: "Добавить правило типа"
   add_scope: "Добавить фильтр"
   add_state: "Добавить регион/область"
@@ -316,6 +466,7 @@ ru:
   authorization_failure: "Ошибка авторизации"
   authorized: "Авторизован"
   available_on: "Доступно с"
+  available_till: "Доступно до"
   available_taxons: "Доступные таксоны"
   awaiting_return: "Ожидает возврата"
   back: "Назад"
@@ -372,7 +523,7 @@ ru:
   continue: "Продолжить"
   continue_shopping: "Продолжить покупки"
   copy_all_mails_to: "Копировать все письма на"
-  cost_price: "Себестоимость"
+  cost_price: "Стоимость услуги"
   count: "Количество"
   count_of_reduced_by: "количество '%{name}' уменьшено на %{count}"
   country: "Страна"
@@ -418,7 +569,7 @@ ru:
   editing_option_type: "Редактирование опции"
   editing_option_types: "Редактирование опций"
   editing_payment_method: "Редактирование способа оплаты"
-  editing_product: "Редактирование товара"
+  editing_product: "Редактирование купона"
   editing_product_group: "Редактирование группы товаров"
   editing_promotion: "Редактирование промо-акции"
   editing_property: "Редактирование свойства"
@@ -545,6 +696,7 @@ ru:
   loading: "Загружается"
   locale_changed: "Язык изменён"
   log_in: "Вход для клиентов"
+  do_log_in: "Войти"
   logged_in_as: "Пользователь"
   logged_in_succesfully: "Вы вошли в систему"
   logged_out: "Вы вышли из системы."
@@ -561,7 +713,7 @@ ru:
   mail_server_preferences: "Настройки почтового сервера"
   make_refund: "Сделать возврат"
   mark_shipped: "Отметить как отправленный"
-  master_price: "Основная цена"
+  master_price: "Цена"
   max_items: "Максимальное число наименований по начальной ставке"
   may_be_combined_with_other_promotions: "Может быть совмещена с другими рекламными акциями"
   meta_description: "Описание"
@@ -570,6 +722,8 @@ ru:
   minimal_amount: "Минимальная сумма"
   missing_required_information: "Пропущена необходимая информация"
   month: "Месяц"
+  currency: "руб."
+  private: "Личный кабинет"
   my_account: "Моя учетная запись"
   my_orders: "Мои заказы"
   name: "Наименование"
@@ -587,7 +741,7 @@ ru:
   new_order_completed: "Оформление заказа завершено"
   new_payment: "Новый платёж"
   new_payment_method: "Новый способ оплаты"
-  new_product: "Новый товар"
+  new_product: "Новый купон"
   new_product_group: "Новая группа товаров"
   new_promotion: "Новая акция"
   new_property: "Новое свойство"
@@ -609,7 +763,7 @@ ru:
   no_items_in_cart: "нет товаров к корзине"
   no_match_found: "Совпадений не найдено"
   no_payment_methods_available: "Невозможно оформить заказ, так как отстуствуют способы оплаты."
-  no_products_found: "Не найдено ни одного товара"
+  no_products_found: "Не найдено ни одного купона"
   no_results: "Ничего не найдено"
   no_rules_added: "Ни одного правила не задано"
   no_user_found: "Пользователь с таким адресом email не найден."
@@ -715,6 +869,15 @@ ru:
   place_order: "Разместить заказ"
   please_create_user: "Пожалуйста, создайте учётную запись."
   powered_by: "Работает на"
+  about_company: "О компании"
+  contacts: "Контакты"
+  offer: "Оферта"
+  faq: "FAQ"
+  feedback: "Обратная связь"
+  invite_friend: "Пригласи друга, получи бонус"
+  russia: "Россия"
+  ukraine: "Украина"
+  subbscrybe_in_socrial_networks: "Подписка на каналы в соц сетях"
   presentation: "Отображать как"
   preview: "Предпросмотр"
   previous: "пред."
@@ -726,8 +889,8 @@ ru:
   problems_processing_order: "При обработке Вашего заказа возникли проблемы"
   proceed_as_guest: "Нет, спасибо. Продолжить как гость."
   process: "Обработать"
-  product: "Товар"
-  product_details: "Описание товара"
+  product: "Купон"
+  product_details: "Описание купона"
   product_group: "Группа товаров"
   product_group_invalid: "Группа товаров содержит некорректные фильтры"
   product_groups: "Группы товаров"
@@ -857,7 +1020,7 @@ ru:
         description: "Выбирает все товары, у которых есть хотя бы один вариант, для которого указанное свойство имеет указанное значение(например, вес:10)"
         name: "Имеет свойство с указанным значением  "
         sentence: "есть свойство <em>%s</em> со значением <em>%s</em>"
-  products: "Товары"
+  products: "Купоны"
   products_with_zero_inventory_display: "Отсутсвующие товары %{not} будут отображаться"
   promotion: "Промо-акция"
   promotion_form: 
@@ -981,7 +1144,7 @@ ru:
   shipping_methods_description: "Управление методами доставки"
   shipping_total: "Доставка"
   shop_by_taxonomy: "%{taxonomy}"
-  shopping_cart: "Корзина"
+  shopping_cart: "Покупка купона"
   show: "Показать"
   show_active: "Показать активные"
   show_deleted: "Показать удаленные"
@@ -1120,4 +1283,3 @@ ru:
   zone_based: "Состоит из других зон"
   zone_setting_description: "Настройка торговых зон на основе стран, областей и других торговых зон."
   zones: "Торговые зоны"
-
