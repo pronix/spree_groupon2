@@ -7,6 +7,10 @@ ProductsController.class_eval do
     render :index
   end
 
+  def featured
+    @featured = Product.featured
+  end
+
   def recently
     @products = Product.recently_coupon
     render :index

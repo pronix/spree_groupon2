@@ -16,6 +16,8 @@ Product.class_eval do
     where("available_till > :date AND available_on <= :date", :date => Time.now)
   }
 
+  scope :featured, where(:featured => true )
+
   attr_accessible :name, :description, :price, :cost_price, :discount, :available_on, :sku,
     :on_hand, :action_type, :state_id, :permalink, :conditions, :conditions_attributes,
     :features, :features_attributes, :available_on, :available_till, :featured

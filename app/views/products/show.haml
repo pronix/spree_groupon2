@@ -24,9 +24,10 @@
     .action-kupleno
       =t('already_buyed')+":"
       %span
-        200
-      =t('cupons')
-      = link_to t('join_us'), "#", :class=>"action-join"
+      = @product.master.line_items.count
+      = t('cupons')
+      %br
+      = link_to( t('join_us'), signup_path, :class=>"action-join") unless current_user
 #current-action-tabs
   =link_to_function t("action_description"), "loadContent('description')", :class=>"action-conditions selected-action-tab"
   =link_to_function t("action_conditions"), "loadContent('conditions')", :class=>"action-about"
