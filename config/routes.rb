@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   root :to => "products#featured"
+
+    devise_for :users, :controllers => {
+    :invitations        => "invitations"
+  }
+
   devise_scope :user do
     get "user/confirm_phone", :to => "user_registrations#confirm_phone"
     get "user/resend_code", :to => "user_registrations#resend_code"

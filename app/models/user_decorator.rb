@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 User.class_eval do
 
-  devise :confirmable, :database_authenticatable, :token_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :encryptable, :encryptor => "authlogic_sha512"
+  devise :invitable, :confirmable, :database_authenticatable, :token_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :encryptable, :encryptor => "authlogic_sha512"
 
   # TODO: fix validation duplication of email
   validates_presence_of :phone, :state_id
@@ -21,7 +21,7 @@ User.class_eval do
   after_save :create_user_profile
 
   def create_user_profile
-    Profile.new(:balance => 0, :user_id => self.id).save(:validate => false)
+    create_profile(:balance => 0, :user_id => self.id).save(:validate => false)
   end
 
   def phone_confirm!

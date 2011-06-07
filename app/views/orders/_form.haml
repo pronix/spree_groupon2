@@ -4,7 +4,7 @@
     %tr
       = hook :cart_items_headers do
         %th= t("item")
-        %th= "#{t('valid_until')} #{@order.products.first.available_till.strftime('%d %b %Y')}"
+        %th= "#{t('valid_until')} #{ l @order.products.first.available_till, :format => '%d %b %Y'}"
         %th= t("price")
         %th= t("qty")
         %th= t("total")

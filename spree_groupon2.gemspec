@@ -20,4 +20,5 @@ Gem::Specification.new do |s|
   s.add_dependency('spree_robokassa', '~> 0.50.1')
   s.add_dependency('haml', '~> 3.1.1')
   s.add_dependency('sass', '~> 3.1.2')
+  s.add_dependency('devise_invitable','~> 0.4.0')
 end
