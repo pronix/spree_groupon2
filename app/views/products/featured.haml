@@ -1,0 +1,12 @@
+= render 'shared/main_tabs'
+= render :partial => "product", :object => @current_feature
+- @products.each do |product|
+  .action-more
+    .action-more-banner
+      = product_image(product, :height => "120")
+    .action-more-info
+      .action-more-data
+        = "#{ l product.available_on, :format => "%d %B" } - #{ l product.available_till, :format => "%d %B"} "
+      .action-more-head
+        = product.name
+      = link_to "Учавствовать", product, :class=>"action-more-in"

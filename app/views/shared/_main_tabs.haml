@@ -1,7 +1,11 @@
 #main-page-tabs
-  - unless @product.nil?
-    =# link_to "#{t("action_header")} #{@product.available_till}", "#", :class=>"selected"
-  = link_to t("current_actions"), "/current", :class=>"selected"
-  = link_to t("past_actions"), "/recently"
+  - if @featured
+    - link_to  root_path, :class => ( current_page?(root_path) ? "selected" : "") do
+      = "Акция дня #{ l @current_feature.available_on, :format => "%d %B" } - #{ l @current_feature.available_till, :format => "%d %B"} "
+  - else
+    = link_to "Акция дня", root_path, :class => ( current_page?(root_path) ? "selected" : "")
+
+  = link_to t("current_actions"), "/current",  :class=>( current_page?(:action => 'current') ? "selected" : "")
+  = link_to t("past_actions"),    "/recently", :class=>( current_page?(:action => 'recently') ? "selected" : "")
 %br/
 %br/

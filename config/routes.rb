@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  root :to => "products#featured"
   devise_scope :user do
     get "user/confirm_phone", :to => "user_registrations#confirm_phone"
     get "user/resend_code", :to => "user_registrations#resend_code"
@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   match "/change_password"=>"users#change_password", :via=>:get,  :as=>:change_password
   match "/update_password"=>"users#update_password", :via=>:post, :as=>:update_password
 
-  resources :profiles  
+  resources :profiles
 
   resources :locations do
     collection do
@@ -17,7 +17,7 @@ Rails.application.routes.draw do
       get 'get_list'
     end
   end
-  
+
   namespace :admin do
     resources :products do
       resources :conditions
@@ -37,10 +37,14 @@ Rails.application.routes.draw do
       get 'description'
       get 'add_comment'
     end
+
   end
 #  match '/add_to_cart/:id' => "products#add_to_cart", :via=>:get, :as=>:add_to_cart
+
   get '/recently' => "products#recently"
-  get '/current' => "products#current"
+  get '/current'  => "products#current"
+  get '/featured' => "products#featured"
+
   match "/change_state/:id" => "locations#change_state"
   match "/user/deposit" => "user_deposit#new", :as=>:user_deposit
 

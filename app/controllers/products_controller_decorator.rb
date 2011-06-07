@@ -9,6 +9,8 @@ ProductsController.class_eval do
 
   def featured
     @featured = Product.featured
+    @current_feature = @featured.last
+    @products = Product.available_coupon.for_state(@state.id)
   end
 
   def recently
