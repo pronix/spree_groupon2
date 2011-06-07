@@ -67,7 +67,7 @@ div#footer a:hover{
 	padding-top: 3px;
 	right: 350px;
 	top: 45px;
-  
+
 }
 
 #header a {
@@ -190,7 +190,7 @@ div#states {
   -moz-border-radius-topright: 6px;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
-  
+
 }
 
 /*FROM ORIGINAL*/
@@ -249,7 +249,7 @@ div#states {
     float: right;
     width: 325px;
     height: 300px;
-    padding-top: 10px;  
+    padding-top: 10px;
   }
   .action-price {
     font-size: 12px;
@@ -285,7 +285,7 @@ div#states {
   .action-bigprice span {
     font-size: 14px;
   }
-  
+
   .action-deadline {
     width: 300px;
     font-size: 14px;
@@ -344,7 +344,7 @@ div#states {
     text-decoration: none;
   }
 
-  
+
   .action-conditions:hover {
     background-color: #666;
     color: #FFF;
@@ -399,7 +399,7 @@ div#states {
     -webkit-border-bottom-right-radius: 6px;
     -moz-border-radius-bottomright: 6px;
     border-bottom-right-radius: 6px;
-    
+
     font-size: 14px;
     color: #000;
     text-decoration: none;
@@ -421,11 +421,11 @@ div#states {
     overflow: hidden;
     background-color: #FFF;
     margin-bottom: 10px;
-    width: 950px;
+    width: 100%;
   }
   .action-more-banner {
     float: left;
-    width: 500px;
+    width: 50%;
   }
   .action-more-info {
     float: right;
@@ -463,7 +463,7 @@ div#states {
     border-radius: 3px;
     font-size:14px;
     margin-top: 6px;
-  
+
   }
   .action-more-in:hover {}
 
@@ -484,7 +484,7 @@ div#states {
     padding-right:30px;
     padding-left:30px;
   }
-  
+
   #main-page-tabs{
     position:relative;
     margin-left:-30px;
@@ -528,7 +528,7 @@ div#states {
     border-radius: 4px;
     padding:5px;
     text-align:center;
-    width:200px; 
+    width:200px;
     float:left;
     font-size:12px;
     margin-top:-4px;
@@ -596,7 +596,7 @@ div#states {
     font-weight:bold;
   }
 
- 
+
 
 
 
