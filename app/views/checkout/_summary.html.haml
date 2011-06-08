@@ -1,0 +1,25 @@
+%h3= t(:coupon_summary)
+%table
+  %tbody
+    %tr
+      %td
+        %strong= t('coupon_total')
+        \:
+      %td
+        %strong= number_to_currency order.item_total
+    %tbody#summary-order-charges
+      - order.adjustments.each do |adjustment|
+        %tr
+          %td
+            = adjustment.label
+            \:
+          %td= number_to_currency adjustment.amount
+    %tr
+      %td
+        %strong= t('total')
+        \:
+      %td
+        %strong
+          %span#summary-order-total
+            = number_to_currency @order.total
+

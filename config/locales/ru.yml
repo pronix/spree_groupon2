@@ -1,5 +1,10 @@
 ---
-ru:   
+ru:
+  my_coupons: Мои купоны
+  coupon_total: Итого(купоны)
+  coupon_summary: Сводка
+  checkout_coupon: Оформление купона
+  present: Купить в подарок
   vkontakte: Вконтакте
   facebook: Facebook
   one_more_step: Еще один шаг
@@ -152,7 +157,7 @@ ru:
         birthday: День рождения
         state: Город
         metro: Метро
-        
+
   'no': "Нет"
   'yes': "Да"
   5_biggest_spenders: "5 крупнейших покупателей"
@@ -162,7 +167,7 @@ ru:
   account: "Учетная запись"
   account_updated: "Учетная запись обновлена!"
   action: "Действие"
-  actions: 
+  actions:
     cancel: "Отменить"
     create: "Создать"
     destroy: "Удалить"
@@ -171,9 +176,9 @@ ru:
     new: "Новый"
     update: "Изменить"
   active: "Активен"
-  activerecord: 
-    attributes: 
-      address: 
+  activerecord:
+    attributes:
+      address:
         address1: "Адрес"
         address2: "Адрес (2я строка)"
         city: "Город"
@@ -185,8 +190,8 @@ ru:
         phone: "Телефон"
         state: "Регион/Область"
         zipcode: "Индекс"
-      checkout: 
-        bill_address: 
+      checkout:
+        bill_address:
           address1: "Платёжный адрес. Адрес"
           city: "Платёжный адрес. Город"
           firstname: "Платёжный адрес. Имя"
@@ -194,7 +199,7 @@ ru:
           phone: "Платёжный адрес. Телефон"
           state: "Платёжный адрес. Регион/Область"
           zipcode: "Платёжный адрес. Индекс"
-        ship_address: 
+        ship_address:
           address1: "Адрес доставки. Адрес"
           city: "Адрес доставки. Город"
           firstname: "Адрес доставки. Имя"
@@ -202,24 +207,24 @@ ru:
           phone: "Адрес доставки. Телефон"
           state: "Адрес доставки. Регион/Область"
           zipcode: "Адрес доставки. Индекс"
-      country: 
+      country:
         iso: "ISO"
         iso3: "ISO3"
         iso_name: "Название ISO"
         name: "Название"
         numcode: "Код ISO"
-      creditcard: 
+      creditcard:
         cc_type: "Тип"
         month: "Месяц"
         number: "Номер"
         verification_value: "Код верификации"
         year: "Год"
-      inventory_unit: 
+      inventory_unit:
         state: "Состояние"
-      line_item: 
+      line_item:
         price: "Цена"
         quantity: "Количество"
-      order: 
+      order:
         checkout_complete: "Заказ завершен"
         completed_at: "Дата завершения"
         coupon_code: "Код купона"
@@ -229,7 +234,7 @@ ru:
         special_instructions: "Дополнительные инструкции"
         state: "Статус"
         total: "Итого"
-      product: 
+      product:
         available_on: "Доступно с"
         available_till: "Доступно до"
         cost_price: "Стоимость услуги"
@@ -245,44 +250,44 @@ ru:
         shipping_category: "Категория доставки"
         tax_category: "Налоговая категория"
         action_type: "Тип акции"
-      product_group: 
+      product_group:
         name: "Название"
         product_count: "Кол-во товаров"
         product_scopes: "Фильтры"
         products: "Купоны"
         url: "URL"
-      product_scope: 
+      product_scope:
         arguments: "Аргументы"
         description: "Описание"
-      property: 
+      property:
         name: "Наименование"
         presentation: "Отображать как"
-      prototype: 
+      prototype:
         name: "Наименование"
-      return_authorization: 
+      return_authorization:
         amount: "Сумма"
-      role: 
+      role:
         name: "Наименование"
-      state: 
+      state:
         abbr: "Аббревиатура"
         name: "Название"
-      tax_category: 
+      tax_category:
         description: "Описание"
         name: "Наименование"
-      tax_rate: 
+      tax_rate:
         amount: "Налоговая ставка"
-      taxon: 
+      taxon:
         name: "Наименование"
         permalink: "Постоянная ссылка"
         position: "Позиция"
-      taxonomy: 
+      taxonomy:
         name: "Наименование"
-      user: 
+      user:
         phone: "Мобильный телефон:"
         email: "Электронная почта:"
         state_id: Город
         password: "Пароль:"
-      variant: 
+      variant:
         cost_price: "Стоимость услуги"
         depth: "Глубина"
         height: "Высота"
@@ -290,86 +295,86 @@ ru:
         sku: "Артикул"
         weight: "Вес"
         width: "Ширина"
-      zone: 
+      zone:
         description: "Описание"
         name: "Наименование"
-    models: 
-      address: 
+    models:
+      address:
         one: "Адрес"
         other: "Адресов"
-      cheque_payment: 
+      cheque_payment:
         one: "Оплата чеком"
         other: "Оплаты чеками"
-      country: 
+      country:
         one: "Страна"
         other: "Страны"
-      creditcard: 
+      creditcard:
         one: "Кредитная карта"
         other: "Кредитные карты"
-      creditcard_payment: 
+      creditcard_payment:
         one: "Платеж кредитной картой"
         other: "Платежи кредитной картой"
-      creditcard_txn: 
+      creditcard_txn:
         one: "Транзакция по кредитной карте"
         other: "Транзакции по кредитным картам"
-      inventory_unit: 
+      inventory_unit:
         one: "Единица учета"
         other: "Единицы учета"
-      line_item: 
+      line_item:
         one: "Позиция"
         other: "Позиции"
-      order: 
+      order:
         one: "Заказ"
         other: "Заказы"
-      payment: 
+      payment:
         one: "Платеж"
         other: "Платежи"
-      product: 
+      product:
         one: "Купон"
         other: "Купоны"
-      product_group: 
+      product_group:
         one: "Группа товаров"
         other: "Группы товаров"
-      property: 
+      property:
         one: "Свойство"
         other: "Свойства"
-      prototype: 
+      prototype:
         one: "Прототип"
         other: "Прототипы"
-      return_authorization: 
+      return_authorization:
         one: "Разрешение возврата"
         other: "Разрешения возврата"
-      role: 
+      role:
         one: "Роль"
         other: "Роли"
-      shipment: 
+      shipment:
         one: "Отправка"
         other: "Отправки"
-      shipping_category: 
+      shipping_category:
         one: "Категория доставки"
         other: "Категории доставки"
-      state: 
+      state:
         one: "Регион/Область"
         other: "Регионы"
-      tax_category: 
+      tax_category:
         one: "Налоговая категория"
         other: "Налоговые категории"
-      tax_rate: 
+      tax_rate:
         one: "Налоговая ставка"
         other: "Налоговые ставки"
-      taxon: 
+      taxon:
         one: "Таксон"
         other: "Таксоны"
-      taxonomy: 
+      taxonomy:
         one: "Таксономия"
         other: "Таксономии"
-      user: 
+      user:
         one: "Пользователь"
         other: "Пользователи"
-      variant: 
+      variant:
         one: "Вариант"
         other: "Варианты"
-      zone: 
+      zone:
         one: "Зона"
         other: "Зоны"
     errors:
@@ -382,7 +387,7 @@ ru:
               taken: уже существует
             password:
               blank: не может быть пустым
-            phone: 
+            phone:
               blank: не может быть пустым
               taken: уже существует
             state_id:
@@ -409,7 +414,7 @@ ru:
               blank: "не может быть пустым"
             action_type:
               blank: "должен присутствовать"
-            
+
   add: "Добавить"
   add_category: "Добавить категорию"
   add_country: "Добавить страну"
@@ -441,10 +446,10 @@ ru:
   alternative_phone: "Дополнительный телефон"
   amount: "Сумма"
   analytics_trackers: "Трекеры веб-аналитики"
-  api: 
+  api:
     access: "API доступ"
     clear_key: "Очистить ключ API"
-    errors: 
+    errors:
       invalid_event: "Неверное имя события, допустимые имена: %{events}"
       invalid_event_for_object: "Верное имя события, но не допускается для данного объекта, допустимые имена: %{events}"
       missing_event: "Не указано имя события"
@@ -595,10 +600,10 @@ ru:
   enter_password_to_confirm: "(необходимо указать Ваш текущий пароль для подтверждения изменений)"
   environment: "Среда окружения"
   error: "ошибка"
-  errors: 
-    messages: 
+  errors:
+    messages:
       no_shipping_methods_available: "Для указанного местоположения отсутствуют способы доставки, пожалуйста, смените адрес и попробуйте снова."
-  errors_prohibited_this_record_from_being_saved: 
+  errors_prohibited_this_record_from_being_saved:
     one: "1 ошибка не позволяет сохранить запись в базе"
     other: "%{count} ошибок не позволяют сохранить запись в базе"
   event: "Событие"
@@ -671,8 +676,8 @@ ru:
   item: "Наименование"
   item_description: "Описание товара"
   item_total: "Итого (товары)"
-  item_total_rule: 
-    operators: 
+  item_total_rule:
+    operators:
       gt: "больше"
       gte: "больше или равно"
   items: "Наимено<wbr />вания"
@@ -773,7 +778,7 @@ ru:
   not: "не"
   not_shown: "не показано"
   note: "Примечание"
-  notice_messages: 
+  notice_messages:
     option_type_removed: "Товарная опция успешно убрана."
     product_cloned: "Копия товара создана"
     product_deleted: "Товар успешно удалён"
@@ -796,18 +801,18 @@ ru:
   order_date: "Дата заказа"
   order_details: "Детали заказа"
   order_email_resent: "Письмо с описанием заказа выслано повторно"
-  order_mailer: 
-    cancel_email: 
+  order_mailer:
+    cancel_email:
       subject: "Аннулирование заказа"
-    confirm_email: 
+    confirm_email:
       subject: "Подтверждение заказа"
   order_not_in_system: "Заказа с стаким номером у нас не существует."
   order_number: "Заказ"
   order_operation_authorize: "Авторизовать"
   order_processed_but_following_items_are_out_of_stock: "Ваш заказ был обработан, но нижеуказанные товары закончились на складе:"
   order_processed_successfully: "Ваш заказ был успешно обработан"
-  order_state: 
-    # keys correspond to Checkout state names: 
+  order_state:
+    # keys correspond to Checkout state names:
     address: "Адрес"
     adjustments: "Надбавки"
     awaiting_return: "Ожидает возврата"
@@ -851,7 +856,7 @@ ru:
   payment_methods_setting_description: "Настройка способов оплаты, которые может использовать клиент"
   payment_processing_failed: "Невозможно произвести платёж, пожалуйста, проверьте введённую информацию"
   payment_state: "Статус платежа"
-  payment_states: 
+  payment_states:
     balance_due: частично
     checkout: оформляется
     completed: завершен
@@ -896,125 +901,125 @@ ru:
   product_groups: "Группы товаров"
   product_has_no_description: "У данного товара нет описания."
   product_properties: "Свойства товара"
-  product_rule: 
+  product_rule:
     choose_products: "Выбранные товары"
     label: "Заказ должен включать %{select} из этих товаров"
     match_all: "все"
     match_any: "хотя бы один"
-    product_source: 
+    product_source:
       group: "Из группы товаров"
       manual: "Выбрать вручную"
-  product_scopes: 
-    groups: 
-      price: 
+  product_scopes:
+    groups:
+      price:
         description: "Фильтры для выбора товаров на основе цены"
         name: "Цена"
-      search: 
+      search:
         description: "Фильтры для выбора товаров на основе названия товара, его описания и ключевых слов"
         name: "Тестовый поиск"
-      taxon: 
+      taxon:
         description: "Фильтры для выбора товаров на основе принадлежности к таксонам"
         name: "Таксоны"
-      values: 
+      values:
         description: "Фильтры для выбора товаров на основе значений свойств и товарных опций товара"
         name: "Значения"
-    scopes: 
-      ascend_by_master_price: 
+    scopes:
+      ascend_by_master_price:
         name: "по основной цене товара (по возрастанию)"
-      ascend_by_name: 
+      ascend_by_name:
         name: "по названию товара (по алфавиту)"
-      ascend_by_updated_at: 
+      ascend_by_updated_at:
         name: "по дате обновления информации о товаре (прямой порядок)"
-      descend_by_master_price: 
+      descend_by_master_price:
         name: "по основной цене товара (по убыванию)"
-      descend_by_name: 
+      descend_by_name:
         name: "по названию товара (по алфавиту в обратном порядке)"
-      descend_by_popularity: 
+      descend_by_popularity:
         name: "По популярности (обратный порядок)"
-      descend_by_updated_at: 
+      descend_by_updated_at:
         name: "по дате обновления информации о товаре (обратный порядок)"
-      in_name: 
-        args: 
+      in_name:
+        args:
           words: ""
         description: "(разделённые пробелом или запятой)"
         name: "Название товара содержит следующие слова"
         sentence: "Название товара содержит '<em>%s</em>'"
-      in_name_or_description: 
-        args: 
+      in_name_or_description:
+        args:
           words: ""
         description: "(разделённые пробелом или запятой)"
         name: "Название товара или его описание содержит следующие слова"
         sentence: "Название товара или его описание содержит '<em>%s</em>'"
-      in_name_or_keywords: 
-        args: 
+      in_name_or_keywords:
+        args:
           words: ""
         description: "(разделённые пробелом или запятой)"
         name: "Название товара или его ключевые слова содержат следующие слова"
         sentence: "Название товара или его ключевые слова содержат '<em>%s</em>'"
-      in_taxons: 
-        args: 
+      in_taxons:
+        args:
           "taxon_names": "названия таксонов"
         description: "(разделённые пробелом или запятой)"
         name: "Принадлежит следующим таксонам или их наследникам,"
         sentence: "принадлежит таксону <em>%s</em> или его наследнику"
-      master_price_gte: 
-        args: 
+      master_price_gte:
+        args:
           amount: ""
         description: ""
         name: "Основная цена больше или равна"
         sentence: "цена больше или равна <em>%.2f</em>"
-      master_price_lte: 
-        args: 
+      master_price_lte:
+        args:
           amount: ""
         description: ""
         name: "Основная цена меньше или равна"
         sentence: "цена меньше или равна <em>%.2f</em>"
-      price_between: 
-        args: 
+      price_between:
+        args:
           high: "до"
           low: "от"
         description: ""
         name: "Основная цена находится в диапазоне"
         sentence: "цена в диапазоне от <em>%.2f</em> до <em>%.2f</em>"
-      taxons_name_eq: 
-        args: 
+      taxons_name_eq:
+        args:
           taxon_name: "название таксона"
         description: "принадлежит указанному таксону - без наследников"
         name: "Принадлежит таксону (без наследников)"
         sentence: "принадлежит таксону <em>%s</em>"
-      with: 
-        args: 
+      with:
+        args:
           value: ""
         description: "(выберите товары, которые будут входить в группу)"
         name: "Выбранные товары"
         sentence: "c ID <em>%s</em>"
-      with_ids: 
-        args: 
+      with_ids:
+        args:
           ids: ""
         description: "(выберите товары, которые будут входить в группу)"
         name: "Выбранные товары"
         sentence: "c ID <em>%s</em>"
-      with_option: 
-        args: 
+      with_option:
+        args:
           option: ""
         description: "Выбирает все товары, которые имеют указанную опцию (например, цвет)"
         name: "Имеет следующую товарную опцию"
         sentence: "с опцией <em>%s</em>"
-      with_option_value: 
-        args: 
+      with_option_value:
+        args:
           option: "Товарная опция"
           value: "Значение"
         description: "Выбирает все товары, у которых есть хотя бы один вариант, для которого указанная опция имеет указанное значение(например, цвет:красный)"
         name: "Имеет опцию с указанным значением"
         sentence: "есть опция <em>%s</em> со значением <em>%s</em>"
-      with_property: 
-        args: 
+      with_property:
+        args:
           property: ""
         description: "Выбирает все товары, которые имеют указанное свойство (например, вес)"
         name: "Имеет следующее свойство"
         sentence: "со свойством <em>%s</em>"
-      with_property_value: 
-        args: 
+      with_property_value:
+        args:
           property: "Свойство товара"
           value: "Значение"
         description: "Выбирает все товары, у которых есть хотя бы один вариант, для которого указанное свойство имеет указанное значение(например, вес:10)"
@@ -1023,21 +1028,21 @@ ru:
   products: "Купоны"
   products_with_zero_inventory_display: "Отсутсвующие товары %{not} будут отображаться"
   promotion: "Промо-акция"
-  promotion_form: 
-    match_policies: 
+  promotion_form:
+    match_policies:
       all: "Соответсвует всем этим правилам"
       any: "Соответсвует хотя бы одному правилу"
-  promotion_rule_types: 
-    first_order: 
+  promotion_rule_types:
+    first_order:
       description: "Должен быть первым заказом покупателя"
       name: "Первый заказ"
-    item_total: 
+    item_total:
       description: "Сумма заказа соответсвует следующим критериям"
       name: "Сумма заказа"
-    product: 
+    product:
       description: "Заказ включает указанные товары"
       name: "Товары"
-    user: 
+    user:
       description: "Доступно только для указанных пользователей"
       name: "Пользователи"
   promotions: "Промо-акции"
@@ -1069,7 +1074,7 @@ ru:
   resend_confirmation_instructions: "Отправить повторно инструкции по подтверждению"
   resend_unlock_instructions: "Отправить повторно инструкции по разблокированию"
   reset_password: "Сбросить мой пароль"
-  resource_controller: 
+  resource_controller:
     member_object_not_found: "Запрашиваемая запись не найдена."
     successfully_created: "Запись успешно создана!"
     successfully_removed: "Запись успешно удалена!"
@@ -1117,12 +1122,12 @@ ru:
   ship_address: "Адрес доставки"
   shipment: "Отправка"
   shipment_details: "Детали отправки"
-  shipment_mailer: 
-    shipped_email: 
+  shipment_mailer:
+    shipped_email:
       subject: "Уведомление о доставке"
   shipment_number: "Отправка №"
   shipment_state: "Статус отправки"
-  shipment_states: 
+  shipment_states:
     backorder: задерживается
     partial: частично
     pending: ожидает
@@ -1169,7 +1174,7 @@ ru:
   sold: "Продано"
   sort_ordering: "Порядок сортировки"
   special_instructions: "Дополнительные инструкции"
-  spree: 
+  spree:
     date: "Дата"
     time: "Время"
   spree_gateway_error_flash_for_checkout: "Возникли проблемы с Вашими реквизитами. Пожалуйста, проверьте их и попробуйте ещё раз."
@@ -1252,11 +1257,11 @@ ru:
   user_account: "Учетная запись пользователя"
   user_created_successfully: "Учётная запись успешно создана"
   user_details: "Дополнительно"
-  user_rule: 
+  user_rule:
     choose_users: "Выбрать пользователей"
   users: "Пользователи"
   validate_on_profile_create: "Проверять при создании профиля"
-  validation: 
+  validation:
     cannot_be_less_than_shipped_units: "не может быть меньше, чем количество отгруженных единиц"
     is_too_large: "слишком много - количество на складе меньше запрошенного количества!"
     must_be_int: "должно быть целым числом"

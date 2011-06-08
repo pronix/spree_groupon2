@@ -5,7 +5,7 @@
   - else
     = link_to "Акция дня", root_path, :class => ( current_page?(root_path) ? "selected" : "")
 
-  = link_to t("current_actions"), "/current",  :class=>( current_page?(:action => 'current') ? "selected" : "")
+  = link_to t("current_actions"), "/current",  :class=>( (current_page?(:action => 'current') || current_page?(:controller => "products", :action => 'index')) ? "selected" : "")
   = link_to t("past_actions"),    "/recently", :class=>( current_page?(:action => 'recently') ? "selected" : "")
 %br/
 %br/

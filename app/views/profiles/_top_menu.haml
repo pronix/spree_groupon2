@@ -1,6 +1,6 @@
 #main-page-tabs
-  = link_to t("view.profile.tab.personal"), profile_path(current_user.profile), :class=>"selected"
-  = link_to t("view.profile.tab.cupons"), "#"
+  = link_to t("view.profile.tab.personal"), profile_path(current_user.profile), :class => (controller_name == "profiles" ? "selected" : "")
+  = link_to t("view.profile.tab.cupons"), account_path, :class => (current_page?(:controller => "users", :action => "show") ? "selected" : "")
   = link_to t("view.profile.tab.friends"), "#"
 %br/
 %br/

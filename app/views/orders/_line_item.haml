@@ -15,6 +15,8 @@
   %td
     = hook :cart_item_quantity, locals do
       = item_form.text_field :quantity, :size => 3, :class => "line_item_quantity"
+    %button.button3.white
+      = t("change")
 
   %td
     = hook :cart_item_total, locals do

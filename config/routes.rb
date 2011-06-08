@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
   root :to => "products#featured"
 
-    devise_for :users, :controllers => {
-    :invitations        => "invitations"
-  }
+  devise_for :user,
+  :controllers => { :sessions => 'user_sessions',
+    :registrations => 'user_registrations',
+    :passwords => "user_passwords",
+    :invitations => "invitations" },
+  :skip => [:unlocks, :omniauth_callbacks],
+  :path_names => { :sign_out => 'logout'}
+
 
   devise_scope :user do
     get "user/confirm_phone", :to => "user_registrations#confirm_phone"

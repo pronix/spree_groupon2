@@ -1,0 +1,56 @@
+%table.index
+  %tbody#line-items
+    %tr
+      = hook :order_details_line_items_headers do
+        %th= t('description')
+        %th.price= t('price')
+        %th.qty= t('qty')
+        %th.total
+          %span= t('total')
+
+
+    - @order.line_items.each do |item|
+      %tr
+        - locals = {:item => item}
+        = hook :order_details_line_item_row, locals do
+          %td{:width =>"300"}
+            = item.variant.product.name
+            = "(" + variant_options(item.variant) + ")" unless item.variant .option_values.empty?
+          %td.price
+            = number_to_currency item.price
+          %td.qty=item.quantity
+          %td.total
+            %span
+              = number_to_currency (item.price * item.quantity)
+
+  = hook :order_details_subtotal do
+    %tbody#subtotal
+      %tr.total#subtotal-row
+        %td{ :colspan => "3"}
+          %b
+            = t('subtotal')
+            \:
+        %td.total
+          %span
+            = number_to_currency @order.item_total
+
+  = hook :order_details_adjustments do
+    %tbody#order-charges
+      - @order.adjustments.each do |adjustment|
+        %tr.total
+          %td{ :colspan => "3"}
+            %strong
+              = adjustment.label
+          %td.total
+            %span
+              = number_to_currency adjustment.amount
+  = hook :order_details_total do
+    %tbody#order-total
+      %tr.total
+        %td{ :colspan => "3"}
+          %b
+            = t('total')
+            \:
+        %td.total
+          %span#order_total= number_to_currency @order.total
+

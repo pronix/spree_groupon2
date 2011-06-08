@@ -13,7 +13,7 @@ UsersController.class_eval do
   end
 
   def show
-    @orders = @user.orders.complete
+    @orders = @user.orders
   end
 
   def create
