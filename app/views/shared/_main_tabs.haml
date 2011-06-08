@@ -2,7 +2,7 @@
   - if @featured
     - link_to  root_path, :class => ( current_page?(root_path) ? "selected" : "") do
       = "Акция дня #{ l @current_feature.available_on, :format => "%d %B" } - #{ l @current_feature.available_till, :format => "%d %B"} "
-  - else
+  - elsif Product.featured.count > 0
     = link_to "Акция дня", root_path, :class => ( current_page?(root_path) ? "selected" : "")
 
   = link_to t("current_actions"), "/current",  :class=>( (current_page?(:action => 'current') || current_page?(:controller => "products", :action => 'index')) ? "selected" : "")

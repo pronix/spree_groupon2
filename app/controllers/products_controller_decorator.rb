@@ -9,8 +9,13 @@ ProductsController.class_eval do
 
   def featured
     @featured = Product.featured
-    @current_feature = @featured.last
+
+    unless @current_feature = @featured.last
+      redirect_to products_path and return
+    end
+
     @products = Product.available_coupon.for_state(@state.id)
+
   end
 
   def recently
