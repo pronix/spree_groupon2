@@ -1,4 +1,4 @@
-= form_for(:user, :url => user_session_path) do |f| 
+= form_for(:user, :url => user_session_path) do |f|
   #password-credentials
     %p
       = f.label(:email, t("email"))
@@ -12,6 +12,5 @@
     %label
       = f.check_box :remember_me
       = f.label :remember_me, t('remember_me')
-
   %p
-    = submit_tag t("log_in"), :class => 'button primary'
+    = submit_tag t("groupon.log_in"), :class => 'button primary'

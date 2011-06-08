@@ -1,5 +1,8 @@
 ---
 ru:
+  groupon:
+    log_in: Вход
+    login_as_existing: Войти
   my_coupons: Мои купоны
   coupon_total: Итого(купоны)
   coupon_summary: Сводка

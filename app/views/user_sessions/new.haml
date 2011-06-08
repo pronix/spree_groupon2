@@ -6,11 +6,12 @@
 
 #existing-customer
   %h2
-    = t("login_as_existing")
+    = t("groupon.login_as_existing")
   = hook :login do
     = render :partial => 'shared/login'
-    = t("or") 
-    = link_to t("create_a_new_account"), signup_path 
-    =" | "
-    = link_to t("forgot_password"), new_user_password_path
+    %br
+    = t("or")
+    = link_to t("create_a_new_account"), signup_path, :class => "button3 white"
+    = link_to t("forgot_password"), new_user_password_path, :class => "button3 white"
+    %hr
 
