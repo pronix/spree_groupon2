@@ -21,6 +21,11 @@ Rails.application.routes.draw do
 
   resources :profiles
 
+  match "/coupons(/:state)" => "coupons#index", :as => :coupons
+  match "/coupons/:id/accept" => "coupons#gift", :as => :accept_gift
+
+  match "friends" => "friends#index", :as => :friends
+
   resources :locations do
     collection do
       get 'get_state'

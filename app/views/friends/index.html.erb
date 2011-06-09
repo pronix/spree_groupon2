@@ -1,0 +1,21 @@
+<%= render :partial => 'profiles/top_menu' %>
+
+  <table class="order-summary" width="545">
+    <thead>
+      <tr>
+        <th><%= t("email") %></th>
+        <th>Статус</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @friends.each do |friend| %>
+      <tr class="<%= cycle('even', 'odd') %>">
+        <td><%= friend.email %></td>
+        <td><%= friend.invitation_token.blank? ? " -- " : "Приглашение принято" %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<br/>
+
+

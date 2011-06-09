@@ -1,0 +1,46 @@
+<%= render :partial => 'profiles/top_menu' %>
+<h2>
+  <%= link_to "Действующие", coupons_path, :class => "button3 #{(params[:state].blank? || params[:state] == 'active') ? 'orange' : ''}" %> /
+  <%= link_to "Все", coupons_path(:all), :class => "button3 #{params[:state] == 'all' ? 'orange' : ''}" %> /
+  <%= link_to "Подарки", coupons_path(:present), :class => "button3 #{params[:state] == 'present' ? 'orange' : ''}" %>
+</h2>
+<% if @orders.present? %>
+  <table class="order-summary" width="545">
+    <thead>
+      <tr>
+        <th><%= t("coupon") %></th>
+        <th><%= t('valid_until') %></th>
+        <th><%= t("status") %></th>
+        <th><%= t("payment_state") %></th>
+        <th><%= t("total") %></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @orders.each do |order| %>
+      <tr class="<%= cycle('even', 'odd') %>">
+        <td><%= link_to order.coupon, order_url(order) %></td>
+        <td><%=l order.products.first.available_till, :format => '%d %b %Y'%></td>
+        <td><%= t(order.state).titleize %></td>
+        <td><%= t("payment_states.#{order.payment_state}") if order.payment_state %></td>
+        <td><%= number_to_currency order.total %></td>
+        <td>
+          <% if order.in_present? && order.gift_wait? %>
+             <%= link_to "Принять подарок", accept_gift_path(order), :class => "button3 green" %>
+          <% else %>
+            <% if order.complete? %>
+              <%= link_to "Печать", order_path(order), :class => "button3 white" %>
+              <%= link_to "Отправить по смс", "", :class => "button3 white" %>
+            <% end %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p><%= t(:you_have_no_orders_yet) %></p>
+<% end %>
+<br />
+
+

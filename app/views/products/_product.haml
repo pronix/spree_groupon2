@@ -5,11 +5,11 @@
       = link_to product.name, "#"
   .action-info
     .action-price
-      ="#{t('self_price')}: #{product.cost_price.to_i} #{t('currency')}"
+      ="#{t('self_price')}: #{number_to_currency(product.cost_price, :precision => 0)}"
     .action-skidka
-      ="#{t('discount')}: #{product.discount}%"
+      ="#{t('discount')}: #{number_to_percentage product.discount, :precision => 0}"
     .action-economy
-      ="#{t('economy')}: #{(product.cost_price.to_i/100)*product.discount.to_i} #{t('currency')}"
+      ="#{t('economy')}: #{ number_to_currency( (product.cost_price.to_i/100)*product.discount.to_i, :precision => 0) }"
     .action-bigprice
       ="#{product.price.to_i}"
       %span=t('currency')

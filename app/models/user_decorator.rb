@@ -46,6 +46,12 @@ User.class_eval do
     logger.info("Confirmation code send by email to number '#{self.phone}'")
   end
 
+  # Список друзей
+  # Список будет строится через инвайты
+  #
+  def friends
+    self.class.where(:invited_by_id => self.id)
+  end
 
   protected
 
