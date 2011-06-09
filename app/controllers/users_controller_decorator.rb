@@ -13,7 +13,7 @@ UsersController.class_eval do
   end
 
   def show
-    @orders = @user.orders
+    redirect_to coupons_path
   end
 
   def create

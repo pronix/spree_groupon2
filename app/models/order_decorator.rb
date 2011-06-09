@@ -35,7 +35,7 @@ end
 
 
 Order.class_eval do
-  belong_to :author_coupon, :class_name => "User"
+  belongs_to :author_coupon, :class_name => "User"
   state_machine :gift_state, :initial => 'no_gift', :use_transactions => false, :namespace => 'gift' do
 
     event :send do

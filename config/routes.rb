@@ -19,7 +19,11 @@ Rails.application.routes.draw do
   match "/change_password"=>"users#change_password", :via=>:get,  :as=>:change_password
   match "/update_password"=>"users#update_password", :via=>:post, :as=>:update_password
 
-  resources :profiles
+  resources :profiles do
+    collection do
+      match "subscription" => "profiles#subscription", :as => :subscription
+    end
+  end
 
   match "/coupons(/:state)" => "coupons#index", :as => :coupons
   match "/coupons/:id/accept" => "coupons#gift", :as => :accept_gift

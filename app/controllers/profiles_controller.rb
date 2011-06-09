@@ -2,11 +2,11 @@ class ProfilesController < ApplicationController
   include SpreeBase
   helper :users, 'spree/base', :locations
   before_filter :load_states, :only=>[:edit, :update]
-  
+
   def show
     @profile = Profile.find(params[:id])
   end
-    
+
 
   def edit
     @profile = if params[:email]
@@ -23,7 +23,16 @@ class ProfilesController < ApplicationController
     end
     redirect_to profile_path(@profile.id)
   end
-
+  def subscription
+    @profile = current_user.profile
+    if request.post? && params[:profile] &&
+        params[:profile][:subscription] &&
+        @profile.update_attribute(:subscription, params[:profile][:subscription])
+      redirect_to profiles_path
+    else
+      render :subscription
+    end
+  end
   private
   def load_states
     @states = State.all

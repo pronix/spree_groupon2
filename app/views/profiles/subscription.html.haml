@@ -1,0 +1,14 @@
+= render 'top_menu'
+%h2
+  Рассылка
+
+= form_for @profile do |f|
+  %p
+    %label
+      Доставка рассылка
+    %br/
+    = f.select :subscription, [[t(Profile::SUBSCRIPTION_DAILY), Profile::SUBSCRIPTION_DAILY],
+                               [t(Profile::SUBSCRIPTION_NEVER), Profile::SUBSCRIPTION_NEVER ]]
+  %p
+    = f.submit t("submits.save"), :class => " button3 green"
+    = link_to t("back"), :back, :class => " button3 white"

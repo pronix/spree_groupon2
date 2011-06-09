@@ -34,7 +34,10 @@
     %td
       = t("view.profile.show.mailing")+":"
     %td
-      = t("view.profile.show.mailing_subscrybed")
+      - if @profile.mailer_daily?
+        = t("view.profile.show.mailing_subscrybed")
+      - else
+        = t("view.profile.show.not_mailing_subscrybed")
 #bonuses
   %h3
     = t("view.profile.show.bonuses")+":"
@@ -48,7 +51,7 @@
 #links
   = link_to t("view.profile.show.edit"), edit_profile_path(p)
   = link_to t("view.profile.show.change_password"), change_password_path
-  = link_to t("view.profile.show.setup_mailing"), "#"
+  = link_to t("view.profile.show.setup_mailing"), subscription_profiles_path
 
 
 :css
@@ -64,7 +67,7 @@
     float: right;
     margin-top:20px;
   }
-  
+
   #links {
     float:left;
     width:100%;

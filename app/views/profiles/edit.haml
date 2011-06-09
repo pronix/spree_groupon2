@@ -4,23 +4,23 @@
 
 = form_for @profile do |f|
   %p
-    %label 
+    %label
       = t("view.profile.edit.firstname")
     %br/
     =f.text_field :firstname
   %p
-    %label 
+    %label
       =t("view.profile.edit.lastname")
     %br/
     =f.text_field :lastname
   %p
     = f.fields_for :user do |u|
-      %label 
+      %label
         =t("view.profile.edit.mobile")
       %br/
       = u.text_field :phone
   %p
-    %label 
+    %label
       =t("view.profile.edit.sex")
     %br/
     = f.select :sex, options_for_select([[t("view.profile.edit.sex_male"), true], [t("view.profile.edit.sex_female"), false]])
@@ -39,10 +39,10 @@
   %p
     %label=t("view.profile.edit.metro")
     %br/
-    = f.text_field :metro  
+    = f.text_field :metro
 
-  = f.submit t("submits.save")
-  = link_to t('back'), profile_path(@profile) 
+  = f.submit t("submits.save"), :class => " button3 green"
+  = link_to t('back'), profile_path(@profile) , :class => " button3 white"
 
 = link_to t("links.resend_confirmation_token"), user_resend_confirmation_token_path(:email => @profile.user.email)
 %br/
@@ -57,7 +57,7 @@
     padding: 5px;
     color: #666;
   }
-  
+
   .edit_profile label {
     font-size:14px;
   }

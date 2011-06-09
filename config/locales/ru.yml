@@ -1,5 +1,7 @@
 ---
 ru:
+  daily: Ежедневно
+  never: Никогда
   checkout_coupon_in_present: 'Оформление купона (в подарок %{email})'
   print: Напечатать
   groupon:
@@ -141,6 +143,7 @@ ru:
         birthday: День рождения
         mailing: Рассылка
         mailing_subscrybed: Вы получаете ежедневную рассылку
+        not_mailing_subscrybed: Вы не получаете ежедневную рассылку
         bonuses: Бонусы
         your_balance_is: Ваш баланс
         edit: Редактировать
