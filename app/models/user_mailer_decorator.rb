@@ -3,6 +3,12 @@ UserMailer.class_eval do
   include Devise::Controllers::ScopedViews
   attr_reader :scope_name, :resource
 
+  # Deliver an invitation email
+  def invitation_instructions(record)
+    setup_mail(record, :invitation_instructions)
+  end
+
+
   # Отправка пароля по почте
   def password
     setup_mail(record, :password)
@@ -24,6 +30,7 @@ UserMailer.class_eval do
 
   # Configure default email options
   def setup_mail(record, action)
+    default_url_options[:host] = Spree::Config[:site_url]
     initialize_from_record(record)
     mail headers_for(action)
   end

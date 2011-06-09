@@ -1,12 +1,38 @@
-%h1= accurate_title
+%p
+  = link_to t('print'), "", :class =>"button3 green", :onclick => "window.print(); return false;"
+  = link_to t('back_to_store'), account_path, :class =>"button3 white"
 
-%div#order
-  - if params.has_key?( :checkout_complete)
-    %h3= t('thank_you_for_your_order')
-  = render :partial => 'shared/order_details', :locals => {:order => @order}
-  %p
-    = link_to t('back_to_store'), root_path
-    - unless params.has_key? :checkout_complete
-      \|
-      = link_to t('my_account'), account_path if current_user
+%section{:style => "border: .2em gray solid;"}
+  %h1= @order.products.first.name
+  %section
+    = product_image(@order.products.first)
+  %section
+    %hr
+    %h2
+      = raw "Номер вашего купона: <b>#{@order.coupon}</b>"
+    %hr
+    %h3
+      = "Воспользоваться купоном можно до #{l @order.products.first.available_till, :format => "%d %B %Y"}"
+    %hr
+      Описание:
+      %br
+      = @order.products.first.description
+    %hr
+    %table
+      %tr
+        %td.conditions-wrapper
+          %h2= t('conditions')
+          %ul
+            - (@order.products.first.conditions||[]).each do |condition|
+              %li= condition.desc
+        %td.conditions-wrapper
+          %h2=t('features')
+          %ul
+            - (@order.products.first.features||[]).each do |feature|
+              %li= feature.desc
+%br
+%p
+  = link_to t('print'), "", :class =>"button3 green", :onclick => "window.print(); return false;"
+  = link_to t('back_to_store'), account_path, :class =>"button3 white"
+
 

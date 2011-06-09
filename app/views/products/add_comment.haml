@@ -4,7 +4,7 @@
     = p.fields_for :comment do |f|
       %p
         = f.text_area :description, :class=>"comment-area"
-    = p.submit "Добавить", :class=>"add-comment-submit"
+    = p.submit "Добавить", :class=>"button3 green"
 - else
   =t('sign_in_to_post_comments')
 
@@ -46,4 +46,4 @@
     margin-left:10px;
     text-decoration:none;
   }
-  
+

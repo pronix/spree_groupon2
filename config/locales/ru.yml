@@ -1,5 +1,6 @@
 ---
 ru:
+  print: Напечатать
   groupon:
     log_in: Вход
     login_as_existing: Войти

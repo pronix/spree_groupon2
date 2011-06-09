@@ -1,4 +1,4 @@
-<h2>Send invitation</h2>
+<h2>Отправить приглашение</h2>
 
 <%= form_for resource, :as => resource_name, :url => invitation_path(resource_name) do |f| %>
   <%= devise_error_messages! %>
@@ -6,7 +6,10 @@
   <p><%= f.label :email %><br />
   <%= f.text_field :email %></p>
 
-  <p><%= f.submit "Send an invitation" %></p>
+  <p>
+    <%= f.submit "Отправить", :class => "button3 white" %>
+    <%= link_to "Вернутся", after_sign_in_path_for(resource_name), :class => "button3 white" %>
+  </p>
 <% end %>
 
-<%= link_to "Home", after_sign_in_path_for(resource_name) %><br />
+

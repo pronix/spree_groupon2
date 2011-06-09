@@ -5,8 +5,8 @@
   = t("currency")
 %br/
 
-%h2=t("choose_payment_method")
+%h2
+  =t("choose_payment_method")
 %p
-  %ul
-    - @payment_methods.each do |method|
-      %li= link_to method.name, "#"
+  - @payment_methods.each do |method|
+    = link_to method.name, "#", :class => "button3 white"
