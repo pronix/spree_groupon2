@@ -5,6 +5,17 @@ OrdersController.class_eval do
     @order = current_order(true)
   end
 
+  # Покупка в подарок
+  #
+  def present
+    @order = current_order(true)
+
+    if params[:present] && params[:present][:email]
+      @order.update_attribute(:present_email,params[:present][:email])
+    end
+
+    redirect_to checkout_state_path(:payment)
+  end
   def populate
 
     @order = current_order(true)

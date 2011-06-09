@@ -2,6 +2,9 @@
 Order.state_machines[:state] = StateMachine::Machine.new(Order, :initial => 'cart', :use_transactions => false) do
 
   event :next do
+    transition :from => 'cart', :to => 'present'
+    transition :from => 'present', :to => 'payment'
+
     transition :from => 'cart', :to => 'payment'
     # note: some payment methods will not support a confirm step
     transition :from => 'payment',  :to => 'confirm',
@@ -28,4 +31,9 @@ Order.class_eval do
     self.coupon
 
   end
+
+  def in_present?
+    !present_email.blank?
+  end
+
 end

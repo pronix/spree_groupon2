@@ -3,7 +3,10 @@
 
 %div#checkout
   %h1
-    = t("checkout_coupon")
+    - if @order.in_present?
+      = t("checkout_coupon_in_present", :email => @order.present_email)
+    - else
+      = t("checkout_coupon")
   %br{:clear => "left"}
   = render "shared/error_messages", :target => @order
   %div#checkout-summary

@@ -1,5 +1,7 @@
 - content_for :head do
+  != stylesheet_link_tag 'overcast/jquery-ui'
   = javascript_include_tag  'checkout', '/states'
+  = javascript_include_tag  'jquery-ui'
 
 - @body_id = 'cart'
 - @product = @order.line_items.first.product
@@ -15,7 +17,8 @@
     = render :partial => 'form', :locals => {:order_form => order_form}
   .links
     = link_to t("buy"), checkout_state_path(:payment), :class => 'button3 primary white'
-    = link_to t("present"), "", :class => 'button3 primary white'
+    = link_to t("present"),  "", :class => 'button3 primary white present'
+
   %hr.space
 :css
   .back-to-product {
@@ -23,3 +26,23 @@
     margin-bottom:10px;
     margin-top:10px;
   }
+
+:javascript
+  $(function(){
+   $("a.present").click(function(){
+     var dialog = $("#present-dialog");
+     if ($(dialog).length == 0){
+       dialog = $("<div id='present-dialog'></div>").appendTo('body');
+     };
+       $(dialog).html("<form method='post' action='#{cart_present_path}' id='buy_present'><input type='email' name='present[email]' class='button3 required' style='width:250px;'/></form>")
+       $(dialog).dialog({ modal: true,
+               title: 'Покупка в подарок. Введите email друга.', width: 350, height: 150,
+              buttons:{
+                "Продолжить": function(){ $("#buy_present").submit(); },
+                "Закрыть": function(){ $(dialog).dialog("close");}
+              }
+          });
+
+     return false;
+   });
+  });

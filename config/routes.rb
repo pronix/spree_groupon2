@@ -49,7 +49,10 @@ Rails.application.routes.draw do
     end
 
   end
-#  match '/add_to_cart/:id' => "products#add_to_cart", :via=>:get, :as=>:add_to_cart
+
+  match "cart/present" => "orders#present"
+
+  #  match '/add_to_cart/:id' => "products#add_to_cart", :via=>:get, :as=>:add_to_cart
 
   get '/recently' => "products#recently"
   get '/current'  => "products#current"

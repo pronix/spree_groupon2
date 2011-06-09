@@ -16,7 +16,9 @@
         = render 'shared/user_form', :f => f
         %p= submit_tag t("view.user_registrations.new.buttons.registration"), :class => 'button primary'
     = t("or")
-    = link_to t("login_as_existing"), login_path
+    = link_to t("login"), login_path, :class => "button3 white"
+    = link_to t("forgot_password"), new_user_password_path, :class => "button3 white"
+    %hr
 = hook :login_extras
 :javascript
   get_states()
