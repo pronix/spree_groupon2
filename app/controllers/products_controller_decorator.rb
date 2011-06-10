@@ -1,6 +1,7 @@
 ProductsController.class_eval do
 
   before_filter :load_state
+
   def index
     @products = Product.available_coupon.for_state(@state.id)
     render :index

@@ -29,10 +29,12 @@
       %br
       = link_to( t('join_us'), signup_path, :class=>"action-join") unless current_user
 #current-action-tabs
-  = link_to_function t("action_description"), "loadContent('#{description_product_path(product)}')", :class=>"action-conditions selected-action-tab"
-  = link_to_function t("action_conditions"), "loadContent('#{conditions_product_path(product)}')", :class=>"action-about"
-  = link_to_function t("action_comments"), "loadContent('#{comments_product_path(product)}')", :class=>"action-comments"
-  = link_to_function t("add_comment"), "loadContent('#{add_comment_product_path(product) }')", :class=>"action-addcomment"
+  = link_to t("action_description"), description_product_path(product), :class => "action-conditions selected-action-tab load-content"
+  = link_to t("action_conditions"),  conditions_product_path(product),  :class => "action-about load-content"
+  = link_to t("action_comments"),    comments_product_path(product),    :class => "action-comments load-content"
+  = link_to t("add_comment"),        add_comment_product_path(product), :class => "action-addcomment load-content"
+
+
 %br/
 %br/
 #action-desc-wrapper
@@ -67,12 +69,16 @@
 :javascript
   var endDate = new Date(Date.parse($('#end_time').val()))
   TimeLeft(endDate, "#timeLeft")
-  function loadContent(url){
+  $("a.load-content").click(function(){
+
     $("#current-action-tabs").children().each( function(indx,child){
       $(this).removeClass("selected-action-tab")
     });
     $(event.target).addClass("selected-action-tab");
     $("#action-desc-wrapper").html("Загружается...")
-    $("#action-desc-wrapper").load(url);
-  }
+    $("#action-desc-wrapper").load($(this).attr("href")+".js");
+
+    return false;
+  });
+
 
