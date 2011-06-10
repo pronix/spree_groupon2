@@ -1,0 +1,20 @@
+<div style="border: 2em solid green;">
+ <h1><%= @user.state.try(:name)%><br /><%= I18n.l(Time.now, :format => "%a, %d %B %Y")%></h1>
+ <div>
+   <%= @current_coupon.name  %>
+   <div class='action-price'>
+    <%= I18n.t('self_price') %>: <%= number_to_currency(@current_coupon.cost_price, :precision => 0) %>
+   </div>
+   <div class='action-skidka'>
+      <%= I18n.t('discount') %>: <%= number_to_percentage(@current_coupon.discount, :precision => 0) %>
+   </div>
+   <div class='action-economy'>
+      <%= I18n.t('economy') %>: <%= number_to_currency( (@current_coupon.cost_price.to_i/100)*@current_coupon.discount.to_i, :precision => 0) %>
+   </div>
+
+   <div class="action-bigprice">
+      <%= @current_coupon.price.to_i %>
+   </div>
+
+ </div>
+</div>

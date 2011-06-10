@@ -42,10 +42,13 @@ Product.class_eval do
     #
     #
     def subscription
-      @coupons = [ ]
-      @current_coupon = ""
-      Profile.daily_subscription.map{ |user|
-        UserMailer.subscription_coupons(user, @coupons).deliver
+      Profile.daily_subscription.map{ |profile|
+        if @user = profile.user
+          @coupons = Product.available_coupon.for_state(@user.state.try(:id))
+          if @current_coupon = Product.featured.for_state(@user.state.try(:id)).first || @coupons.first
+            UserMailer.subscription_coupons(@user, @current_coupon, @coupons).deliver
+          end
+        end
       }
     end
 

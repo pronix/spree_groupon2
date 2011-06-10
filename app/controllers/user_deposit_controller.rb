@@ -1,5 +1,4 @@
 class UserDepositController < ApplicationController
-  include SpreeBase
   helper :users, 'spree/base'
 
   def new

@@ -10,15 +10,19 @@ User.class_eval do
 
   belongs_to :state
   has_one :profile
+
   has_many :comments
   has_many :deposit_payments
+
+  scope :daily_subscription, includes(:profile).where( "profiles.subscription" => Profile::SUBSCRIPTION_DAILY )
+
   accepts_nested_attributes_for :profile
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :persistence_token, :phone, :state_id, :phone_confirm_key, :phone_confirm
 
   before_create :set_phone_confirm_key
-  after_save :create_user_profile
+  after_create :create_user_profile
 
   def create_user_profile
     create_profile(:balance => 0, :user_id => self.id).save(:validate => false)
@@ -63,7 +67,7 @@ User.class_eval do
 
   def password_required?
     false
-#    !persisted? || password.present? || password_confirmation.present?
+    #    !persisted? || password.present? || password_confirmation.present?
   end
 
 end

@@ -5,8 +5,8 @@ UserMailer.class_eval do
   attr_reader :scope_name, :resource
 
   def subscription_coupons(user, current_coupon, coupons)
-    mail(:subject => current_coupon.try(:name),
-         :to => user.email)
+    @user, @current_coupon, @coupons = user, current_coupon, coupons
+    mail(:subject => current_coupon.try(:name), :to => user.email)
   end
 
   # Deliver an invitation email
