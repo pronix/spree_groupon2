@@ -1,3 +1,15 @@
+$(function(){
+   $("a.subbscrybe_in_socrial_networks").click(function(){
+       $("#social_subbscrybe").dialog({
+           modal: false,
+           title: "Подписка на каналы в соц сетях"
+             });
+     return false;
+   });
+});
+
+
+
 function get_states(issuer) {
   $("#country").change(function () {
     var data = {'country': this.value};

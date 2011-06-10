@@ -4,6 +4,11 @@
 <%= hook :inside_head do %>
   <%= render :partial => 'shared/head'%>
 <% end %>
+
+<%= stylesheet_link_tag 'jqrowl.css' %>
+<%= javascript_include_tag 'jquery.jgrowl.js' %>
+<%= stylesheet_link_tag 'overcast/jquery-ui' %>
+<%= javascript_include_tag  'jquery-ui' %>
 </head>
 <%
 if @body_class.nil?
@@ -29,18 +34,13 @@ end
   </div>
 
   <div id="groupon_wrapper" class="container">
-    
+
     <div id="content">
       <%= breadcrumbs(@taxon) if @taxon %>
-      <% if flash.notice %>
-      <div class="flash notice"><%= flash.notice %></div>
-      <% end %>
-      <% if flash[:error] %>
-      <div class="flash errors"><%= flash[:error] %></div>
-      <% end %>
+      <%= render "shared/flash_notify" %>
       <%= yield %>
     </div>
-    
+
   </div>
 <%= render :partial => 'shared/footer'%>
 </body>

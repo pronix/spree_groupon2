@@ -1,0 +1,8 @@
+- flash.each do |name, msg|
+  - name_flash = name.to_s =~ /error/ ? 'error' : name
+  - if msg.is_a?(String)
+    %noscript
+      %div{ :class => name_flash}
+        = msg
+    = javascript_tag do
+      $(function(){ $.jGrowl("#{msg}", { life: 5000, position: 'center', theme: 'flash_#{ name_flash}' }); });

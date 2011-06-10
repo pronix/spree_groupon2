@@ -1,6 +1,6 @@
-class ProfilesController < ApplicationController
+class ProfilesController < Spree::BaseController
   include SpreeBase
-  helper :users, 'spree/base', :locations
+  helper :users, 'spree/base'
   before_filter :load_states, :only=>[:edit, :update]
 
   def show

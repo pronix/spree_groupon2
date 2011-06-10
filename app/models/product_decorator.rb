@@ -29,14 +29,26 @@ Product.class_eval do
   validate :presence_of_conditions
   validate :presence_of_features
 
-  accepts_nested_attributes_for :conditions,
-    :allow_destroy => true
-  accepts_nested_attributes_for :features,
-    :allow_destroy => true
+  accepts_nested_attributes_for :conditions,    :allow_destroy => true
+  accepts_nested_attributes_for :features,    :allow_destroy => true
 
-  def self.find_all_in_state(state_abbr)
-    state = State.find_by_abbr(state_abbr)
-    self.find_all_by_state_id(state.id)
+  class << self
+    def find_all_in_state(state_abbr)
+      state = State.find_by_abbr(state_abbr)
+      self.find_all_by_state_id(state.id)
+    end
+
+    # Рассылка о новых акция подписынным пользователям
+    #
+    #
+    def subscription
+      @coupons = [ ]
+      @current_coupon = ""
+      Profile.daily_subscription.map{ |user|
+        UserMailer.subscription_coupons(user, @coupons).deliver
+      }
+    end
+
   end
 
   private

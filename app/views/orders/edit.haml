@@ -1,7 +1,5 @@
 - content_for :head do
-  != stylesheet_link_tag 'overcast/jquery-ui'
   = javascript_include_tag  'checkout', '/states'
-  = javascript_include_tag  'jquery-ui'
 
 - @body_id = 'cart'
 - @product = @order.line_items.first.product

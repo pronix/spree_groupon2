@@ -2,7 +2,6 @@ UsersController.class_eval do
   prepend_before_filter :load_object, :only => [:show, :edit, :update]
   prepend_before_filter :authorize_actions, :only => :new
   before_filter :init_regions
-  helper :locations
 
   def change_password
   end

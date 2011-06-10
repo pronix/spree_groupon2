@@ -1,5 +1,4 @@
 CheckoutController.class_eval do
-  helper :locations
 
 #  def edit
 

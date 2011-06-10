@@ -1,5 +1,6 @@
 ---
 ru:
+  profile_updated_successfully: Профиль обновлен
   daily: Ежедневно
   never: Никогда
   checkout_coupon_in_present: 'Оформление купона (в подарок %{email})'

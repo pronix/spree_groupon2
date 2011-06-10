@@ -1,4 +1,9 @@
 .invite
   = link_to t('invite_friend'), new_user_invitation_path
 .social
-  = link_to t('subbscrybe_in_socrial_networks'), "#"
+  = link_to t('subbscrybe_in_socrial_networks'), "", :class => "subbscrybe_in_socrial_networks"
+  %div#social_subbscrybe{:style => "display:none;"}
+    = link_to((image_tag "social-icons/twitter_64.png"), Spree::Config[:twitter_account])
+    = link_to(image_tag( "social-icons/facebook_64.png"), Spree::Config[:facebook_account])
+    = link_to(image_tag( "social-icons/vkontakte_64.png"), Spree::Config[:vkontakte_account])
+

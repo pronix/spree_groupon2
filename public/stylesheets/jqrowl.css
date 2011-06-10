@@ -1,0 +1,196 @@
+/* line 1, ../../../app/stylesheets/jqrowl.scss */
+div.jGrowl {
+  padding: 10px;
+  z-index: 9999;
+  color: #fff;
+  font-size: 12px;
+}
+
+/** Special IE6 Style Positioning **/
+/* line 9, ../../../app/stylesheets/jqrowl.scss */
+div.ie6 {
+  position: absolute;
+}
+
+/* line 13, ../../../app/stylesheets/jqrowl.scss */
+div.ie6.top-right {
+  right: auto;
+  bottom: auto;
+  left: expression(( 0 - jGrowl.offsetWidth + ( document.documentElement.clientWidth ? document.documentElement.clientWidth : document.body.clientWidth ) + ( ignoreMe2 = document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft ) ) + 'px' );
+  top: expression(( 0 + ( ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop ) ) + 'px' );
+}
+
+/* line 20, ../../../app/stylesheets/jqrowl.scss */
+div.ie6.top-left {
+  left: expression(( 0 + ( ignoreMe2 = document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft ) ) + 'px' );
+  top: expression(( 0 + ( ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop ) ) + 'px' );
+}
+
+/* line 25, ../../../app/stylesheets/jqrowl.scss */
+div.ie6.bottom-right {
+  left: expression(( 0 - jGrowl.offsetWidth + ( document.documentElement.clientWidth ? document.documentElement.clientWidth : document.body.clientWidth ) + ( ignoreMe2 = document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft ) ) + 'px' );
+  top: expression(( 0 - jGrowl.offsetHeight + ( document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight ) + ( ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop ) ) + 'px' );
+}
+
+/* line 30, ../../../app/stylesheets/jqrowl.scss */
+div.ie6.bottom-left {
+  left: expression(( 0 + ( ignoreMe2 = document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft ) ) + 'px' );
+  top: expression(( 0 - jGrowl.offsetHeight + ( document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight ) + ( ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop ) ) + 'px' );
+}
+
+/* line 35, ../../../app/stylesheets/jqrowl.scss */
+div.ie6.center {
+  left: expression(( 0 + ( ignoreMe2 = document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft ) ) + 'px' );
+  top: expression(( 0 + ( ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop ) ) + 'px' );
+  width: 100%;
+}
+
+/** Normal Style Positions **/
+/* line 42, ../../../app/stylesheets/jqrowl.scss */
+div.jGrowl {
+  position: absolute;
+}
+
+/* line 46, ../../../app/stylesheets/jqrowl.scss */
+body > div.jGrowl {
+  position: fixed;
+}
+
+/* line 50, ../../../app/stylesheets/jqrowl.scss */
+div.jGrowl.top-left {
+  left: 0px;
+  top: 0px;
+}
+
+/* line 55, ../../../app/stylesheets/jqrowl.scss */
+div.jGrowl.top-right {
+  right: 0px;
+  top: 0px;
+}
+
+/* line 60, ../../../app/stylesheets/jqrowl.scss */
+div.jGrowl.bottom-left {
+  left: 0px;
+  bottom: 0px;
+}
+
+/* line 65, ../../../app/stylesheets/jqrowl.scss */
+div.jGrowl.bottom-right {
+  right: 0px;
+  bottom: 0px;
+}
+
+/* line 70, ../../../app/stylesheets/jqrowl.scss */
+div.jGrowl.center {
+  top: 0px;
+  width: 50%;
+  left: 25%;
+}
+
+/** Cross Browser Styling **/
+/* line 77, ../../../app/stylesheets/jqrowl.scss */
+div.center div.jGrowl-notification, div.center div.jGrowl-closer {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 82, ../../../app/stylesheets/jqrowl.scss */
+div.jGrowl div.jGrowl-notification, div.jGrowl div.jGrowl-closer {
+  /* background: #F6A828 url(/images/ui-lightness/ui-bg_gloss-wave_35_f6a828_500x100.png) repeat-x 50% 50%; */
+  /* border: 1px solid #E78F08; */
+  /* color: white; */
+  /* font-weight: bold; */
+  background: url("/images/overcast/ui-bg_inset-soft_50_c9c9c9_1x100.png") repeat-x scroll 50% top #ffe45c;
+  border: 1px solid #FED22F;
+  color: #363636;
+  background-color: #000;
+  opacity: .85;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=85)";
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85);
+  zoom: 1;
+  width: 235px;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-family: Tahoma, Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  text-align: left;
+  display: none;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+/* line 107, ../../../app/stylesheets/jqrowl.scss */
+div.jGrowl div.jGrowl-notification {
+  min-height: 40px;
+}
+
+/* line 111, ../../../app/stylesheets/jqrowl.scss */
+div.jGrowl div.jGrowl-notification div.jGrowl-header {
+  font-weight: bold;
+  font-size: .85em;
+}
+
+/* line 116, ../../../app/stylesheets/jqrowl.scss */
+div.jGrowl div.jGrowl-notification div.jGrowl-close {
+  z-index: 99;
+  float: right;
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+/* line 124, ../../../app/stylesheets/jqrowl.scss */
+div.jGrowl div.jGrowl-closer {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  cursor: pointer;
+  font-size: .9em;
+  font-weight: bold;
+  text-align: center;
+}
+
+/** Hide jGrowl when printing **/
+@media print {
+  /* line 135, ../../../app/stylesheets/jqrowl.scss */
+  div.jGrowl {
+    display: none;
+  }
+}
+
+/* line 140, ../../../app/stylesheets/jqrowl.scss */
+.warrning-add-to-quote {
+  width: 658px !important;
+  height: 80px !important;
+  border: 2px solid black !important;
+  font-weight: bold !important;
+  font-size: 1.9em !important;
+}
+
+/* line 148, ../../../app/stylesheets/jqrowl.scss */
+.warrning-add-to-quote .jGrowl-message {
+  text-align: center !important;
+}
+
+/*  */
+/* line 153, ../../../app/stylesheets/jqrowl.scss */
+.flash_notice, .flash_error {
+  top: 2px !important;
+  width: 100% !important;
+  max-height: 60px !important;
+  border: .1em solid gray !important;
+  font-weight: bold !important;
+  font-size: 1.1em !important;
+}
+
+/* line 163, ../../../app/stylesheets/jqrowl.scss */
+.flash_notice .jGrowl-message {
+  text-align: center !important;
+  color: green !important;
+}
+
+/* line 168, ../../../app/stylesheets/jqrowl.scss */
+.flash_error .jGrowl-message {
+  text-align: center !important;
+  color: red !important;
+}
