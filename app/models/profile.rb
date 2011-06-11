@@ -10,4 +10,7 @@ class Profile < ActiveRecord::Base
   def mailer_daily?
     Profile::SUBSCRIPTION_DAILY == subscription
   end
+  def fullname
+    "#{self.lastname} #{self.firstname}"
+  end
 end

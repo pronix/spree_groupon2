@@ -4,6 +4,15 @@ UserMailer.class_eval do
   include Devise::Controllers::ScopedViews
   attr_reader :scope_name, :resource
 
+  # Письмо получателю подарков
+  #
+  def present(user, email, present)
+    @user, @email, @present = user, email, present
+    mail(:subject => "Вам подарок от #{@user.fullname}", :to => @email)
+  end
+
+  # Рассылка
+  #
   def subscription_coupons(user, current_coupon, coupons)
     @user, @current_coupon, @coupons = user, current_coupon, coupons
     mail(:subject => current_coupon.try(:name), :to => user.email)

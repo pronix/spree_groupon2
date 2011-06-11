@@ -51,13 +51,13 @@ Order.class_eval do
     end
 
     after_transition :to => 'wait', :do => :send_present
-    before_transition :to => 'accepted', :do => :change_user
+    after_transition :to => 'accepted', :do => :change_user
   end
 
   # Отравляем писмьо получателю подарка
   #
   def send_present
-
+    UserMailer.present(self.user, self.present_email, products.first).deliver
   end
 
   # Устанавливаем пользователя для купона
@@ -65,6 +65,7 @@ Order.class_eval do
   def change_user
     self.author_coupon = self.user
     self.user = User.find_by_email(self.present_email)
+    save(:validate => false)
   end
 
   before_create :generate_coupon_code

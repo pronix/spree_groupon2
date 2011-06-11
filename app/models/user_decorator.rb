@@ -14,6 +14,8 @@ User.class_eval do
   has_many :comments
   has_many :deposit_payments
 
+  delegate :fullname, :to => :profile, :allow_nil => true
+
   scope :daily_subscription, includes(:profile).where( "profiles.subscription" => Profile::SUBSCRIPTION_DAILY )
 
   accepts_nested_attributes_for :profile
